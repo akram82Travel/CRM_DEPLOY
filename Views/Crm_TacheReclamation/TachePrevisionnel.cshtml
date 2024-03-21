@@ -1,0 +1,246 @@
+﻿@model CRMSTUBSOFT.Crm_TacheReclamation
+
+@{
+    ViewBag.Title = "TachePrevisionnel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Rapport Taches Previsionnel</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Impression Taches Previsionnel
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <form action="@Url.Action("ImpressionTachePrevisionnel")" method="post" target="_blank">
+        <input type="hidden" name="Format" id="Format" value="PDF" />
+        @Html.AntiForgeryToken()
+        <nav class="header-navbar navbar-expand-sm navbar navbar-with-menu navbar-light navbar-shadow bg-white bg-lighten-5 border-amber border-lighten-4">
+            <div class="input-group col-xl-4 col-lg-6 col-md-12" style="margin-left:10%;">
+                <label class="mb-1 text-bold-700">DU</label>&nbsp; &nbsp;&nbsp;&nbsp;
+                <input type="date" class="form-control border-success" id="DateDebut" name="DateDebut" value="@ViewData["DateDebut"]" />
+            </div>
+            <div class="input-group col-xl-4 col-lg-6 col-md-12">
+                <label class="mb-1 text-bold-700">AU</label>&nbsp; &nbsp;&nbsp;&nbsp;
+                <input type="date" class="form-control border-success" id="DateFin" name="DateFin" value="@ViewData["DateFin"]" />
+            </div>
+            @*<div class="col-xl-4 col-lg-6 col-md-12">
+                    <button type="submit" class="btn btn-success">Chercher</button>
+                </div>*@
+        </nav>
+        <br />
+
+
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <div class="btn-group float-md-right">
+                                <button type="submit" class="btn btn-dark"><i class="la la-print"></i> Imprimer</button>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            Information Genérale
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="row">
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                    <label class="col-md-10"> Client </label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(model => model.CodeClient, (IEnumerable
+                                        <SelectListItem>)ViewData["ListClient"], "Sélectionner un client", new { @class = "selectize-control input-selectize multi", @onchange = "FixeClient()" })
+                                    </div>
+                                </div>
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                    <label class="col-md-10"> Réalisé par </label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(model => model.CodeRespensable, (IEnumerable
+                                     <SelectListItem>)ViewData["ListResponsable"], "Sélectionner réalisateur ", new { @multiple = "multiple", @class = "selectize-multiple", @onchange = "FixeClient()" })
+                                    </div>
+                                </div>
+                                @*<div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label> Raison Sociale</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.RaisonSociale, new { htmlAttributes = new { @class = "form-control", @id = "RaisonSociale" } })
+                                            @Html.ValidationMessageFor(model => model.RaisonSociale, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>*@      @if (@Session["UserRole"].ToString() != "03")
+                                {
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label class="col-md-10"> Avec Durée Exécution</label>
+                                        <div class="col-md-10">
+                                            <div class="checkbox">
+                                                <input name="DurerExecution" id="DurerExecution" type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label class="col-md-10"> Avec Durée Réel</label>
+                                        <div class="col-md-10">
+                                            <div class="checkbox">
+                                                <input name="DurerReel" id="DurerReel" type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12 hidden">
+                                        <label class="col-md-10"> Avec Durée Exécution</label>
+                                        <div class="col-md-10">
+                                            <div class="checkbox">
+                                                <input name="DurerExecution" id="DurerExecution" type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label class="col-md-10"> Avec Durée Réel</label>
+                                        <div class="col-md-10">
+                                            <div class="checkbox">
+                                                <input name="DurerReel" id="DurerReel" type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                </div>
+                                <div class="row">
+
+                                    @if
+                                     (@Session["UserRole"].ToString() != "03")
+                                    {
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                            <label class="col-md-10"> Validé Par</label>
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.NomValidateur, (IEnumerable
+                                             <SelectListItem>)ViewData["ListResponsable"], "Sélectionner validateur", new { @class = "selectize-control input-selectize multi", @onchange = "FixeClient()" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                            <label class="col-md-10"> Nature </label>
+                                            <div class="col-md-10">
+                                                @Html.ListBoxFor(model => model.Nature, (IEnumerable
+                                             <SelectListItem>)ViewData["ListNature"], new { @multiple = "multiple", @placeholder = "Sélectionner des respensables", @class = "selectize-multiple" })
+                                            </div>
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-12 hidden">
+                                            <label class="col-md-10"> Validé Par</label>
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.NomValidateur, (IEnumerable
+                                             <SelectListItem>)ViewData["ListResponsable"], "Sélectionner validateur", new { @class = "selectize-control input-selectize multi hidden", onchange = "FixeClient()" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-12 hidden">
+                                            <label class="col-md-10"> Nature </label>
+                                            <div class="col-md-10">
+                                                @Html.ListBoxFor(model => model.Nature, (IEnumerable
+                                             <SelectListItem>)ViewData["ListNature"], new { @multiple = "multiple", @placeholder = "Sélectionner des respensables", @class = "selectize-multiple" })
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                                @if (@Session["UserRole"].ToString() != "03")
+                                {
+                                    <div class="row">
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                            <label class="col-md-10"> Testée par </label>
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.NomTesteur, (IEnumerable
+                                                <SelectListItem>)ViewData["ListResponsable"], "Sélectionner testeur", new { @class = "selectize-control input-selectize multi", @onchange = "FixeClient()" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                            <label class="col-md-10"> Planifiée Par</label>
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.NomPlanificateur, (IEnumerable
+                                          <SelectListItem>)ViewData["ListResponsable"], "Sélectionner plannificateur", new { @class = "selectize-control input-selectize multi", @onchange = "FixeClient()" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="row hidden">
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-12 hidden">
+                                            <label class="col-md-10"> Testée par </label>
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.NomTesteur, (IEnumerable
+                                                <SelectListItem>)ViewData["ListResponsable"], "Sélectionner testeur", new { @class = "selectize-control input-selectize multi", @onchange = "FixeClient()" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                            <label class="col-md-10"> Planifiée Par</label>
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.NomPlanificateur, (IEnumerable
+                                          <SelectListItem>)ViewData["ListResponsable"], "Sélectionner plannificateur", new { @class = "selectize-control input-selectize multi", @onchange = "FixeClient()" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                                <div class="row">
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label class="col-md-10"> Etat </label>
+                                        <div class="col-md-10">
+
+                                            @Html.ListBoxFor(model => model.NumeroEtat, (IEnumerable
+                                     <SelectListItem>)ViewData["ListEtat"], new { @multiple = "multiple", @placeholder = "Sélectionner des respensables", @class = "selectize-multiple" })
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        }
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+
+function FixeClient() {
+    var select=document.getElementById("CodeClient");
+    document.getElementById("RaisonSociale").value = select.options[select.selectedIndex].text;
+}
+</script>

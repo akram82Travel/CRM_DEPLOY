@@ -1,0 +1,81 @@
+﻿@model CRMSTUBSOFT.Crm_Projet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Crm_Projet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeTypeProjet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeTypeProjet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontantProjet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontantProjet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDeclenchement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDeclenchement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFinPrevu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFinPrevu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cloture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cloture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCloture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCloture)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

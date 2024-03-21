@@ -1,0 +1,51 @@
+﻿@model CRMSTUBSOFT.Crm_Degres_Sanction
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Crm_Degres_Sanction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.du)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.du)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.au)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.au)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

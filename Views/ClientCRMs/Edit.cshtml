@@ -1,0 +1,158 @@
+﻿@model CRMSTUBSOFT.ClientCRM
+
+@{
+    ViewBag.Title = "Edition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Modifier un Client CRM</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/ClientCRMs">Clients CRM</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Modification
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    @using (Html.BeginForm("Edit", "ClientCRMs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h4 class="card-title">	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;</h4>
+                        <div class="heading-elements">
+                            <button type="submit" name="submit" id="submit" class="btn btn-success pull-right" style=" margin-top: -12px;"><i class="la la-save"></i> Enregistrer</button>
+                        </div>
+                        <hr />
+                    </div>
+                    <div class="card-body row pt-0">
+
+                        <div class="col-md-4">
+                            <fieldset class="border p-2">
+                                <legend class="w-auto">Logo</legend>
+                                <input type="file" name="EditimageElement" id="EditimageElement" onchange="fileCheck(this);" />
+                                <hr />
+                                <img src="/ClientCRMs/RetrieveImage/@Model.CodeClient" alt="" height=100 width=100 />
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset class="border p-2 h-100">
+                                <legend class="w-auto">Informations</legend>
+
+
+                                <div class="form-group">
+                                    <label for="CodeClient" class="col-sm-12"> Code Client: </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.CodeClient, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.CodeClient, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="RaisonSociale" class="col-sm-12"> Raison Sociale: </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.RaisonSociale, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.RaisonSociale, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CodeClientCommercial" class="col-sm-12"> Code Client Commercial: </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.CodeClientCommercial, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.CodeClientCommercial, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="MartriculeFiscale" class="col-sm-12"> Martricule Fiscale: </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.MartriculeFiscale, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.MartriculeFiscale, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset class="border p-2 h-100">
+                                <legend class="w-auto">Contact</legend>
+                                <div class="form-group">
+                                    <label for="Email" class="col-sm-12"> Mot de Passe: </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.MotPasse, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.MotPasse, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Email" class="col-sm-12"> Email: </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Tel1" class="col-sm-12"> Tel: </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Tel1, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Tel1, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Adresse1" class="col-sm-12"> Adresse: </label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Adresse1, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Adresse1, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+     
+        @Html.HiddenFor(model => model.imageElement, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.FileName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.imagephysique, new { htmlAttributes = new { @class = "form-control" } })
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        function fileCheck(obj) {
+            var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
+            if ($.inArray($(obj).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                alert("Only '.jpeg','.jpg', '.png', '.gif', '.bmp' formats are allowed.");
+            }
+        }
+    </script>
+}
+

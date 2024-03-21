@@ -1,0 +1,82 @@
+﻿@model IEnumerable<CRMSTUBSOFT.Crm_CycleExecTache>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroTache)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nomutilisateur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OldStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDebutExecution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateFinExecution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Encours)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+  
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroTache)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nomutilisateur)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OldStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NewStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateDebutExecution)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateFinExecution)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Encours)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.idTacheExec }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.idTacheExec }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idTacheExec })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>

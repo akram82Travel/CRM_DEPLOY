@@ -1,0 +1,195 @@
+﻿@model CRMSTUBSOFT.Crm_ReclamationClient
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Reclamation</title>
+    <link rel="~/Content/css/katex.min.css">
+    <link rel="~/Content/css/monokai-sublime.min.css">
+    <link rel="~/Content/css/quill.snow.css">
+    <link rel="~/Content/css/quill.bubble.css">
+    <link rel="~/Content/css/daterangepicker.css">
+
+    <link href="~/Content/css/vendors.min.css" rel="stylesheet">
+
+    <link href="~/Content/css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="~/Content/css/switchery.min.css" rel="stylesheet">
+    <link href="~/Content/css/selectize.css" rel="stylesheet">
+    <link href="~/Content/css/selectize.default.css" rel="stylesheet">
+    <link href="~/Content/css/select2.min.css" rel="stylesheet">
+
+
+    <link href="~/Content/css/jkanban.min.css" rel="stylesheet">
+    <link href="~/Content/css/quill.snow.css" rel="stylesheet">
+    <link href="~/Content/css/pickadate.css" rel="stylesheet">
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/bootstrap-extended.min.css" rel="stylesheet">
+    <link href="~/Content/css/colors.min.css" rel="stylesheet">
+    <link href="~/Content/css/components.min.css" rel="stylesheet">
+    <link href="~/Content/css/vertical-menu-modern.css" rel="stylesheet">
+    <link href="~/Content/css/switch.min.css" rel="stylesheet">
+    <link href="~/Content/css/palette-gradient.min.css" rel="stylesheet">
+
+
+    <link href="~/Content/css/login-register.min.css" rel="stylesheet">
+    <link href="~/Content/css/search.min.css" rel="stylesheet">
+    <link href="~/Content/css/app-kanban.css" rel="stylesheet">
+    <link href="~/Content/css/bootstrap-select.min.css" rel="stylesheet">
+
+    <link href="~/Content/css/calendars/fullcalendar.min.css" rel="stylesheet" />
+    <link href="~/Content/css/calendars/daygrid.min.css" rel="stylesheet" />
+    <link href="~/Content/css/calendars/timegrid.min.css" rel="stylesheet" />
+    <link href="~/Content/css/calendars/fullcalendars.min.css" rel="stylesheet" />
+    <link href="~/Content/css/calendars/clndr.min.css" rel="stylesheet" />
+    <link href="~/Content/css/fonts/feather/style.min.css" rel="stylesheet">
+    <link href="~/Content/css/fonts/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/Vendors/DataTable/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="~/Content/Vendors/DataTable/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+
+
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <section class="flexbox-container">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-6 col-md-8 col-12 box-shadow-2 p-0 mt-5">
+                        <div class="card border-grey border-lighten-3 m-0">
+                            <div class="card-header border-0 text-center p-0 mt-1">
+                                <div class="card-title text-center">
+                                    <div class="w-100 p-2"><img src="~/Content/img/logomasgroup.png" alt="branding logo"></div>
+                                </div>
+                                <hr />
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body pt-0">
+                                   <div class="text-success">
+                                       <h2 class="text-success"><i class="la la-info-circle"></i> Votre reclamation est envoyé avec succès.</h2> 
+                                   </div>
+                                    <hr />
+                                   <div class="col-md-12 text-right mt-5">
+                                       <a class="text-info" href="/Home/IndexClient"><b>Retour page d'accueil</b></a>
+                                   </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Content/js/ckeditor/ckeditor.js"></script>
+    <!-- BEGIN: Vendor JS-->
+    <script src="~/Content/js/vendors.min.js"></script>
+    <script src="~/Content/js/bootstrap-switch.min.js"></script>
+    <script src="~/Content/js/switchery.min.js"></script>
+    <script src="~/Content/js/bootstrap-checkbox.min.js"></script>
+    <script src="~/Content/js/selectize.min.js"></script>
+    <script src="~/Content/js/form-selectize.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="~/Content/js/jkanban.min.js"></script>
+    <script>
+
+        function FixeClient() {
+            $("#RaisonSociale").val($("#CodeClient").val());
+        }
+
+        var now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        document.getElementById('DateReclamation').value = now.toISOString().slice(0, 16);
+
+    </script>
+
+    <script src="~/Content/js/picker.js"></script>
+    <script src="~/Content/js/picker.date.js"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Theme JS-->
+    <script src="~/Content/Vendors/DataTable/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/Vendors/DataTable/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/js/app-menu.min.js"></script>
+    <script src="~/Content/js/app.min.js"></script>
+    <script src="~/Content/js/customizer.min.js"></script>
+    <script src="~/Content/js/footer.min.js"></script>
+    <script src="~/Content/js/select2.full.min.js"></script>
+    <script src="~/Content/js/bootstrap-select.min.js"></script>
+
+
+
+    <script src="~/Content/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/moment.min.js"></script>
+    <script src="~/Content/js/fullcalendar.min.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/Content/js/switch.min.js"></script>
+    <script src="~/Content/js/app-kanban.js"></script>
+    <script src="~/Content/js/form-select2.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('.fc-icon-left-single-arrow').addClass("la la-angle-left");
+            $('.fc-icon-left-single-arrow').removeClass("fc-icon fc-icon-left-single-arrow");
+            $('.fc-icon-right-single-arrow').addClass("la la-angle-right");
+            $('.fc-icon-right-single-arrow').removeClass("fc-icon fc-icon-right-single-arrow");
+            if ($(".col-sm-12 #DescriptionTache").length > 0) {
+                CKEDITOR.replace("DescriptionTache");
+            } if ($("#DescriptionGeneral").length > 0) {
+                CKEDITOR.replace("DescriptionGeneral");
+            } if ($("#Description").length > 0) {
+                CKEDITOR.replace("Description");
+            } if ($("#DescriptionRapport").length > 0) {
+                CKEDITOR.replace("DescriptionRapport");
+            } 
+
+            $('.collapse')
+                .on('shown.bs.collapse', function () {
+                    $(this)
+                        .parent().parent()
+                        .find(".la-filter")
+                        .removeClass("la-filter")
+                        .addClass("la-close");
+                })
+                .on('hidden.bs.collapse', function () {
+                    $(this)
+                        .parent().parent()
+                        .find(".la-close")
+                        .removeClass("la-close")
+                        .addClass("la-filter");
+                });
+
+
+        });
+
+    </script>
+    <script>
+        function openModal(ID, name) {
+            $(".modal-body").html("Voulez vous Supprimez " + name + ID);
+            $("#myModal").modal('show');
+            $("#supprimer").click(function () {
+                window.location.href = "/Crm_ReclamationClient/DeleteConfirmed?id=" + ID
+            });
+        }
+    </script>
+
+</body>
+</html>

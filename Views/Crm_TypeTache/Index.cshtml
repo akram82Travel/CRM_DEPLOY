@@ -1,0 +1,77 @@
+﻿@model IEnumerable<CRMSTUBSOFT.Crm_TypeTache>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Liste type des tâches</span></div>
+                <div class="col-md-3" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_TypeTache">Type Tâche</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Liste
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group float-md-right">
+                        <a href="@Url.Action("Create","Crm_TypeTache")" class="btn btn-success"><i class="la la-plus"></i>Ajouter</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+                <table class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Libelle)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Libelle)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CodeTypeTache }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.CodeTypeTache }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CodeTypeTache })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+
+                </table
+            </div>
+        </div>
+    </div>
+</div>
+

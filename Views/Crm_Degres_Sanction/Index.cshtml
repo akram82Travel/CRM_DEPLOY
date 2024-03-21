@@ -1,0 +1,104 @@
+﻿@model IEnumerable<CRMSTUBSOFT.Crm_Degres_Sanction>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-4"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Liste des Degres Sanction/Benefication</span></div>
+                <div class="col-md-6" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_Degres_Sanction">Degres Sanction & Bonification</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Liste des degres
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="btn-group pull-right">
+                        <a href="@Url.Action("Create","Crm_Degres_Sanction")" class="btn btn-success"><i class="la la-plus"></i>Ajouter</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.du)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.au)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.libelle)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.type)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.du)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.au)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.libelle)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.type)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+
+                </table>
+
+            </div>
+
+            </div>
+        </div>
+
+
+
+
+            </div>
+           

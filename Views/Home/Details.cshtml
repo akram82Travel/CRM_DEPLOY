@@ -1,0 +1,255 @@
+﻿@model CRMSTUBSOFT.Crm_ReclamationClient
+
+@{
+    ViewBag.Title = "Consulter Reclamation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .info-tiket {
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px
+    }
+</style>
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
+            <h3 class="content-header-title mb-0 d-inline-block">
+                Mes demandes d'assistance
+            </h3>
+            <div class="row breadcrumbs-top d-inline-block">
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Table de board</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/Home/IndexClient">Réclamations</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            Consulter
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <div class="">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="card-title"><b>Correspondance</b></h2>
+                <small>Créez et suivez vos demandes d'assistance en fonction de vos besoins. Vous pouvez les consulter, les trier et accéder à celles déjà archivées.</small>
+                <hr />
+            </div>
+
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-4" >
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row info-tiket">
+                            <div class="col-md-4"><b>Sujet</b></div>
+                            <div class="col-md-8">@Model.Titre</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row info-tiket">
+                            <div class="col-md-6"><b>Numéro</b></div>
+                            <div class="col-md-6">@Model.Id_Reclamation</div>
+                        </div>
+                        
+                        <div class="row info-tiket">
+                            <div class="col-md-6"><b>Date Ouverture</b></div>
+                            <div class="col-md-6">@Model.DateReclamation</div>
+                        </div>
+                       
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row info-tiket">
+                            <label for="NomContact" class="col-sm-6 col-form-label"> Nom Contact </label>
+                            <div class="col-sm-6">
+                                @Html.DropDownListFor(model => model.NomContact, (IEnumerable
+                               <SelectListItem>)ViewData["ListeContactClient"], "Sélectionner un contact", new { @class = "selectize-control input-selectize multi", @disabled = "disabled" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row info-tiket">
+                            <label for="MoyenCommunication" class="col-sm-6 col-form-label"> Moyen Communication </label>
+                            <div class="col-sm-6">
+                                @Html.DropDownListFor(model => model.CodeMoyenCommunication, (IEnumerable
+                               <SelectListItem>)ViewData["ListeMoyenCommunication"], "Sélectionner une moyen", new { @class = "selectize-control input-selectize multi", @disabled = "disabled" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row no-gutters">
+                    <div class="col-md-2 info-tiket">
+                        <div class="row">
+                            <div class="col-md-4"><b>Etat</b></div>
+                            <div class="col-md-8">
+
+                                @{
+
+                                    switch (Model.Status)
+                                    {
+                                        case "E00":
+                                            <b> Annulé </b>
+                                            break;
+                                        case "E01":
+                                            <b> Terminée </b>
+                                            break;
+                                        case "E02":
+                                            <b> En Cours </b>
+                                            break;
+                                        case "E03":
+                                            <b> A Tester </b>
+                                            break;
+                                        case "E04":
+                                            <b> A Valider </b>
+                                            break;
+                                        case "E05":
+                                            <b class="badge badge-danger"> Non Traitée </b>
+                                            break;
+                                        case "E06":
+                                            <b> En Pause </b>
+                                            break;
+                                        case "E07":
+                                            <b class="badge badge-success"> En Exécution </b>
+                                            break;
+                                        case "E08":
+                                            <b> Planifiée </b>
+                                            break;
+                                        case "E09":
+                                            <b class="badge badge-success"> Affectée </b>
+                                            break;
+                                        case "E10":
+                                            <b> Non Planifiée </b>
+                                            break;
+                                        case "E11":
+                                            <b> Non Commencée </b>
+                                            break;
+                                        case "E12":
+                                            <b> Non Confirmée </b>
+                                            break;
+                                        case "E13":
+                                            <b> Confirmée </b>
+                                            break;
+                                        case "E14":
+                                            <b> Validée </b>
+                                            break;
+                                        case "E15":
+                                            <b> A Corriger </b>
+                                            break;
+                                        case "E16":
+                                            <b> Demande Confirmation </b>
+                                            break;
+                                        case "E17":
+                                            <b class="badge badge-success"> Traitée </b>
+                                            break;
+
+
+                                    }
+                                }
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 info-tiket">
+                        <div class="row">
+                            <div class="col-md-6"><b>Date dernière modification</b></div>
+                            <div class="col-md-6">@Model.DatePrisEnCharge</div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 info-tiket">
+                        <div class="row">
+                            <div class="col-md-4"><b>Service</b></div>
+                            <div class="col-md-8">
+                                @Html.DropDownListFor(model => model.Nature, (IEnumerable
+                                          <SelectListItem>)ViewData["ListNature"], new { @class = "selectize-control input-selectize multi", @disabled = "disabled", @id = "Nature" })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Champ de saisie-->
+                <!--FIN Champ de saisie-->
+
+                <form method="post" action="/Crm_ReclamationClient/ChatReclalamtion">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <input type="hidden" name="codeClient" id="codeClient" value="@Model.CodeClient" />
+                    <input type="hidden" name="Id_Reclamation" id="Id_Reclamation" value="@Model.Id_Reclamation" />
+                    <textarea class="form-control" name="Description" id="Description">
+
+</textarea>
+                    <input type="hidden" name="Createur" id="Createur" value="Client" />
+                    <button type="submit" class="btn btn-success">Envoyé</button>
+
+                </form>
+
+                <hr />
+
+
+                <!--MESSAGE ENTRE LES INTERLOCUTEUER-->
+
+
+                @foreach (var item in ViewData["ListChatReclamation"] as List<Crm_ChatReclamation>)
+                {
+
+                    <div class="alert alert-info pb-4" style="border-color: #ccc !important; background-color: transparent !important ">
+                        <p><b>De:</b> @item.Createur</p>
+                        <br />
+                        <p>
+
+                            <br />
+                            <div class="col-sm-12">
+                                @Html.Raw(@item.Description)
+                            </div>
+
+                        <p>
+                            <hr />
+                            <div class="pull-right"><b>Date Réception:</b>  @item.DateCreation</div>
+                        </p>
+
+                    </div>
+                }
+
+
+
+                <!--FIN MESSAGE ENTRE LES INTERLOCUTEUER-->
+
+
+                <div class="alert alert-info pb-4" style="border-color: #ccc !important; background-color: transparent !important ">
+                    <p><b>De:</b> Administrateur</p>
+                    <br />
+                    <div class="col-sm-12">
+                        @Html.Raw(@Model.Description)
+                    </div>
+
+                    <p>
+                        <hr />
+                        <div class="pull-right"><b>Date Réception:</b> @Model.DateReclamation</div>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+
+    
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    
+}
