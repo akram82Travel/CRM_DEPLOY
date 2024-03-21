@@ -1,0 +1,12 @@
+﻿@model IEnumerable<SelectListItem>
+@{ 
+    var count = 0;
+}
+@foreach (var item in Model)
+{
+    <div>
+        <input type="radio" name="CodeMoyenCommunication" id="@count" value="@item.Value" @(item.Selected ? "checked" : "")>
+        <label for="@count">@item.Text</label>
+    </div>
+    count++;
+}

@@ -1,0 +1,315 @@
+﻿@model CRMSTUBSOFT.Crm_TacheReclamation
+@{
+    ViewBag.Title = "Dashbord";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .kanban-container {
+        display: flex;
+    }
+    #SelectedresponsableId {
+        visibility: hidden;
+        height: 0;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-2"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Liste des Tâches</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_TacheReclamation">Tâches</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Liste des Tâches
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group float-md-right">
+                        <a href="@Url.Action("Create","Crm_TacheReclamation")" class="btn btn-success"><i class="la la-plus"></i>Ajouter</a>
+                        <button class="btn btn-primary pull-right" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="la la-filter"></i>   Filtrer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <section id="basic-button-icons">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-content collapse" id="collapseFilter">
+                        <div class="card-body">
+                            <form action="/Crm_TacheReclamation/SearchDateDashbord" method="post">
+                                @Html.AntiForgeryToken()
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label><b>Projet</b></label>
+                                        @Html.DropDownListFor(model => model.NumPiece, (IEnumerable
+                                            <SelectListItem>)ViewData["ListProjet"], "--Selectionner un Projet--", new { @class = "selectpicker form-control", data_live_search = "true", })
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label><b>Client</b></label>
+                                        @Html.DropDownListFor(model => model.CodeClient, (IEnumerable
+                                            <SelectListItem>)ViewData["ListClient"], "--Selectionner un client--", new { @class = "selectpicker form-control", data_live_search = "true", })
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label><b>Numéro Tache</b></label>
+                                        <input type="text" name="NumeroTache" id="NumeroTache" class="form-control" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label><b> Du</b></label>
+                                        <input type="date" class="form-control" id="d1" name="d1" value="@ViewData["d1"]" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label><b> Au</b></label>
+                                        <input type="date" class="form-control" id="d2" name="d2" value="@ViewData["d2"]" />
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label> <b>Planificateur</b></label>
+                                        @Html.DropDownListFor(model => model.NomPlanificateur, (IEnumerable
+                                      <SelectListItem>)ViewData["ListResponsable"], "--Selectionner un planificateur--", new { @class = "selectpicker form-control", data_live_search = "true", })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label><b>Validateur</b></label>
+                                        @Html.DropDownListFor(model => model.NomValidateur, (IEnumerable
+                                          <SelectListItem>)ViewData["ListResponsable"], "--Selectionner un validateur--", new { @class = "selectpicker form-control", data_live_search = "true", })
+
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label><b>Testeur</b></label>
+                                        @Html.DropDownListFor(model => model.NomTesteur, (IEnumerable
+                                          <SelectListItem>)ViewData["ListResponsable"], "--Selectionner un testeur--", new { @class = "selectpicker form-control", data_live_search = "true", })
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label><b>Affecté à</b></label>
+                                        @Html.ListBoxFor(model => model.SelectedresponsableId, new MultiSelectList(Model.ListeRespensables, "CodeRespensable", "Nom"), new { @multiple = "multiple", @placeholder = "Sélectionner des respensables", @class = "select2 form-control" })
+                                        @*@Html.DropDownListFor(model => model.CodeRespensable, (IEnumerable
+                                          <SelectListItem>)ViewData["ListResponsable"], "--Selectionner à qui affecter--", new { @class = "selectpicker form-control", data_live_search = "true", })*@
+
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label><b>Chercher dans Titre ou Description</b></label>
+                                        @Html.TextAreaFor(model => model.DescriptionTache, htmlAttributes: new { @class = "form-control" })
+
+                                    </div>
+                                    <div class="col-md-6"></div>
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-success pull-right mt-2" id="btnFilter">
+                                            <i class="la la-search"></i>  Chercher
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- head end -->
+   
+        <div class="content-body">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2"> <p><i class="ft-alert-triangle font-size-small mr-25"></i> Tache Réclamation</p></div>
+                        <div class="col-md-2"><p><i class="ft-alert-circle font-size-small mr-25"></i> Tache Priorité Urgente</p></div>
+
+                        </div>
+                </div>
+               
+                </div>
+            <div id="loadingScreen">
+                <div class="text-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Basic Kanban App -->
+            <div class="kanban-overlay"></div>
+            <div class="row" style="display: none;">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary mb-1" id="add-kanban">
+                        <i class='ft-plus-square mr-50'></i> Add New Board
+                    </button>
+                    <div id="kanban-app"></div>
+                </div>
+                <div class="form-group text-center add-task">
+                    <!-- new task button -->
+                    <button type="button" class="btn btn-danger btn-glow add-task-btn btn-block my-1">
+                        <i class="ft-plus"></i>
+                        <span>New Task</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- User new mail right area -->
+            <div class="kanban-sidebar">
+                <div class="card shadow-none quill-wrapper">
+                    <div class="card-header d-flex justify-content-between align-items-center border-bottom px-2 py-1">
+                        <h3 class="card-title">Détails Tache N° <span style="font-weight: 800" class="kanban_item_id"></span></h3>
+                        <button type="button" class="close close-icon">
+                            <i class="ft-x"></i>
+                        </button>
+                    </div>
+                    <!-- form start -->
+                    <div class="edit-kanban-item">
+                        <div class="card-content position-relative">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h4>Client</h4>
+                                        <div class="edit-kanban-item-client"></div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h4>Titre de tache</h4>
+                                        <div class="edit-kanban-item-title"></div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h4>Date création</h4>
+                                        <input class="edit-kanban-item-date" placeholder="">
+                                    </div>
+
+                                </div>
+                                <hr />
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h6>Durée</h6>
+                                        <div class="row no-gutters">
+                                            <div class="edit-kanban-item-duree col-md-4 text-warning"></div>
+                                            <div class="col-md-2">/</div>
+                                            <div class="edit-kanban-item-DureeReel col-md-4 text-success"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6>N° Rapport</h6>
+                                        <div class="edit-kanban-item-rapport"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6>N° Réclamation</h6>
+                                        <div class="edit-kanban-item-reclamation"></div>
+                                        <div class="edit-kanban-item-reclamationStatus"></div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-group">
+                                    <h4>Description</h4>
+                                    <div class="edit-kanban-item-comment"></div>
+                                </div>
+                                <hr />
+                                <div class="row no-gutters">
+
+                                    @{
+                                        if (Session["UserRole"].ToString() != "03")
+                                        {
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+
+                                                    @using (Html.BeginForm("EditByTache", "Crm_CycleExecTache", FormMethod.Post, new { target = "_blank" }))
+
+                                                    {
+                                                        @Html.AntiForgeryToken()
+                                                        <input type="hidden" class="kanban_curr_item_id" name="IdTache" id="IdTache" value="" />
+                                                        <button type="submit" class="btn btn-warning text-white"><i class="la la-clock-o"></i> Correction Durée</button>
+
+                                                    }
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <input type="hidden" class="kanban_curr_item_id" name="IdTache" id="IdTache" value="" />
+                                                    <button type="submit" class="btn btn-dark text-white editTache"><i class="la la-edit"></i> Modifier Tache</button>
+                                                </div>
+                                            </div>
+                                        }
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input type="hidden" class="kanban_curr_item_reclamation" name="RCEId" id="RCEId" value="" />
+                                               
+                                                <button type="submit" class="btn btn-secondary text-white accessReclamation"><i class="la la-close"></i> Clôture Réclamation</button>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+                                    @{
+                                        if (Session["UserRole"].ToString() != "02")
+                                        {
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="hidden" class="kanban_curr_item_id" name="IdTache" id="IdTache" value="" />
+                                                    <button type="submit" class="btn btn-dark text-white editTache"><i class="la la-edit"></i> Modifier Tache</button>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- form start end-->
+                </div>
+            </div>
+            <section id="kanban-wrapper">
+
+                <!--/ User Chat profile right area -->
+            </section>
+            <!--/ Sample Project kanban -->
+
+        </div>
+
+    </div>
+    <div class="testKanban"></div>
+
+</div>
+@section Scripts{
+    <script>
+        document.body.style.zoom = "90%";
+        $(".editTache").click(function () {
+            window.open(
+                "/Crm_TacheReclamation/Edit/" + $("#IdTache").val(),
+                '_blank'
+            );
+        });
+        $(".accessReclamation").click(function () {
+            window.open(
+                "/Crm_ReclamationClient/Details/" + $("#RCEId").val(),
+                '_blank'
+            );
+        });
+    </script>
+
+
+}
+

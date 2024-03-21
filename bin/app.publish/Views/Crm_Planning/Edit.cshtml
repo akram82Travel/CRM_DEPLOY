@@ -1,0 +1,453 @@
+﻿@model CRMSTUBSOFT.Crm_Planning
+
+@{
+    ViewBag.Title = "Editer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var ListeDay = ViewData["DayListe"] as IEnumerable<CRMSTUBSOFT.Crm_PlanningTime>;
+    var ListOBJ = ViewData["ListeOBJ"] as List<string>;
+    int i = 0;
+    int z = 0;// compteur date
+    int l = 0;//compteur text par resp par date
+
+}
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block"> Editer des Plans</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_Planning">Planning</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Editer des Plans
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<input type="hidden" name="ListeDay" id="ListeDay" value="@ListeDay" />*@
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="text-bold-700">DU</label><br />
+                            @Html.TextBoxFor(m => m.Datedebut, "{0:yyyy-MM-dd}", new { @type = "date", @onchange = "LicenceToOccupy()" })
+                        </div>
+                        <div class="col-md-3">
+                            <label class="text-bold-700">AU</label><br />
+                            @Html.TextBoxFor(m => m.DateFin, "{0:yyyy-MM-dd}", new { @type = "date" })
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md-12">Responsable</label><br />
+                            @Html.DropDownListFor(model => model.CodeResponsable, (IEnumerable
+                             <SelectListItem>)ViewData["ListResponsable"], "Sélectionner un Responsable", new { @class = "selectize-control input-selectize multi col-md-12", @id = "CodeResponsable" })
+
+
+                        </div>
+                        <div class="col-md-3 mt-1">
+                            <div class="form-group">
+                                <div class="pull-right">
+                                    <button type="button" onclick="addRows()" class="btn btn-info la la-plus" style="color:white">
+                                    </button>
+                                    <button type="button" onclick="deleteRows()" class="btn btn-danger delete  la la-trash-o">
+                                    </button>
+                                    <input type="submit" value="Enregistrer" class="btn btn-success ml-3" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    @Html.HiddenFor(model => model.Id_Planning, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+
+
+                </div>
+                <div class="card-body">
+
+                    <table border="1" style="width:100%" id="MyTable">
+                        <thead>
+                            <tr>
+                                <th style="width:20%">
+                                    Responsable/Date
+                                </th>
+
+                                @foreach (var item in ListeDay)
+                                {
+                                    if (i < 6)
+                                    {
+                                        <th>
+                                            <input id="Day_@i" name="Day_@i" value="@item.Date.ToString().Replace(" 00:00:00", "")" />
+                                        </th>
+                                    }
+
+                                    i++;
+                                }
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                            @foreach (var item in ViewData["ListeRsp"] as List<string>)
+                            {
+                                var developpeur = item;
+
+                                <tr>
+                                    <td id="col0">
+
+                                        @*@Html.DropDownList("developpeur", (IEnumerable
+        <SelectListItem>)ViewData["ListResponsable"], developpeur, new { @name = "developpeur", @class = "form-control" })*@
+
+                                        <input type="text" name="developpeur" id="developpeur" class="form-control" value="@developpeur" />
+
+                                        <hr />
+                                        <label>Objectifs non réalisés</label>
+                                        
+                                            
+                                        <textarea name="OBJ" id="OBJ">
+                                       @if (ListOBJ.Count() > 0)
+                                       {
+
+                                           if(z < ListOBJ.Count())
+                                            {
+                                                @ListOBJ.ElementAt(z)
+                                            }
+                                              
+                                       }
+                                             </textarea>
+                                    
+
+
+                                    </td>
+                                    <td id="col1">
+                                        @{
+                                            l = 0;
+                                        }
+                                        @foreach (var item1 in ListeDay)
+                                        {
+
+                                            if (item1.CodeResponsable == developpeur)
+                                            {
+
+                                                if (l == 0)
+                                                {
+
+                                                    @*@item1.Titre*@
+
+                                                    <i class="ft ft-target"></i>
+                                                    <label>Objectif</label>
+                                                    <textarea name="MatinO1" id="MatinO1" placeholder="Matin">@item1.Matin</textarea>
+                                                    <textarea name="ApresMidiO1" id="ApresMidiO1" placeholder="Aprés Midi">@item1.ApresMidi</textarea><hr />
+                                                    <i class="ft-check-circle"></i>
+                                                    <label>Réel</label>
+                                                    <textarea name="MatinR1" id="MatinR1" placeholder="Matin">@item1.MatinReel</textarea>
+
+                                                    <textarea name="ApresMidiR1" id="ApresMidiR1" placeholder="Aprés Midi">@item1.ApresMidiReel</textarea>
+
+
+
+                                                    l++;
+                                                }
+
+                                            }
+
+                                        }
+                                    </td>
+                                    <td id="col2">
+                                        @{
+                                            l = 0;
+                                        }
+                                        @foreach (var item1 in ListeDay)
+                                        {
+
+                                            if (item1.CodeResponsable == developpeur)
+                                            {
+                                                //@item1.Titre
+                                                //@l
+                                                if (l == 1)
+                                                {
+
+                                                    @*@item1.Titre*@
+                                                    <i class="ft ft-target"></i>
+                                                    <label>Objectif</label>
+                                                    <textarea name="MatinO2" id="MatinO2" placeholder="Matin">@item1.Matin</textarea>
+                                                    <textarea name="ApresMidiO2" id="ApresMidiO2" placeholder="Aprés Midi">@item1.ApresMidi</textarea><hr />
+                                                    <i class="ft-check-circle"></i>
+                                                    <label>Réel</label>
+                                                    <textarea name="MatinR2" id="MatinR2" placeholder="Matin">@item1.MatinReel</textarea>
+
+                                                    <textarea name="ApresMidiR2" id="ApresMidiR2" placeholder="Aprés Midi">@item1.ApresMidiReel</textarea>
+
+                                                }
+                                                l++;
+                                            }
+
+                                        }
+                                    </td>
+                                    <td id="col3">
+                                        @{
+                                            l = 0;
+                                        }
+                                        @foreach (var item1 in ListeDay)
+                                        {
+
+                                            if (item1.CodeResponsable == developpeur)
+                                            {
+                                                //@item1.Titre
+                                                //@l
+                                                if (l == 2)
+                                                {
+
+                                                    @*@item1.Titre*@
+                                                    <i class="ft ft-target"></i>
+                                                    <label>Objectif</label>
+                                                    <textarea name="MatinO3" id="MatinO3" placeholder="Matin">@item1.Matin</textarea>
+                                                    <textarea name="ApresMidiO3" id="ApresMidiO3" placeholder="Aprés Midi">@item1.ApresMidi</textarea><hr />
+                                                    <i class="ft-check-circle"></i>
+                                                    <label>Réel</label>
+                                                    <textarea name="MatinR3" id="MatinR3" placeholder="Matin">@item1.MatinReel</textarea>
+
+                                                    <textarea name="ApresMidiR3" id="ApresMidiR3" placeholder="Aprés Midi">@item1.ApresMidiReel</textarea>
+
+                                                }
+                                                l++;
+                                            }
+
+                                        }
+                                    </td>
+                                    <td id="col4">
+                                        @{
+                                            l = 0;
+                                        }
+                                        @foreach (var item1 in ListeDay)
+                                        {
+
+                                            if (item1.CodeResponsable == developpeur)
+                                            {
+                                                //@item1.Titre
+                                                //@l
+                                                if (l == 3)
+                                                {
+
+                                                    @*@item1.Titre*@
+                                                    <i class="ft ft-target"></i>
+                                                    <label>Objectif</label>
+                                                    <textarea name="MatinO4" id="MatinO4" placeholder="Matin">@item1.Matin</textarea>
+                                                    <textarea name="ApresMidiO4" id="ApresMidiO4" placeholder="Aprés Midi">@item1.ApresMidi</textarea><hr />
+                                                    <i class="ft-check-circle"></i>
+                                                    <label>Réel</label>
+                                                    <textarea name="MatinR4" id="MatinR4" placeholder="Matin">@item1.MatinReel</textarea>
+
+                                                    <textarea name="ApresMidiR4" id="ApresMidiR4" placeholder="Aprés Midi">@item1.ApresMidiReel</textarea>
+
+                                                }
+                                                l++;
+                                            }
+
+                                        }
+                                    </td>
+                                    <td id="col5">
+                                        @{
+                                            l = 0;
+                                        }
+                                        @foreach (var item1 in ListeDay)
+                                        {
+
+                                            if (item1.CodeResponsable == developpeur)
+                                            {
+                                                //@item1.Titre
+                                                //@l
+                                                if (l == 4)
+                                                {
+
+                                                    @*@item1.Titre*@
+
+                                                    <i class="ft ft-target"></i>
+                                                    <label>Objectif</label>
+                                                    <textarea name="MatinO5" id="MatinO5" placeholder="Matin">@item1.Matin</textarea>
+                                                    <textarea name="ApresMidiO5" id="ApresMidiO5" placeholder="Aprés Midi">@item1.ApresMidi</textarea><hr />
+                                                    <i class="ft-check-circle"></i>
+                                                    <label>Réel</label>
+                                                    <textarea name="MatinR5" id="MatinR5" placeholder="Matin">@item1.MatinReel</textarea>
+
+                                                    <textarea name="ApresMidiR5" id="ApresMidiR5" placeholder="Aprés Midi">@item1.ApresMidiReel</textarea>
+
+                                                }
+                                                l++;
+                                            }
+
+                                        }
+                                    </td>
+                                    <td id="col6">
+                                        @{
+                                            l = 0;
+                                        }
+                                        @foreach (var item1 in ListeDay)
+                                        {
+
+                                            if (item1.CodeResponsable == developpeur)
+                                            {
+                                                //@item1.Titre
+                                                //@l
+                                                if (l == 5)
+                                                {
+
+                                                    @*@item1.Titre*@
+
+                                                    <i class="ft ft-target"></i>
+                                                    <label>Objectif</label>
+                                                    <textarea name="MatinO6" id="MatinO6" placeholder="Matin">@item1.Matin</textarea>
+                                                    <textarea name="ApresMidiO6" id="ApresMidiO6" placeholder="Aprés Midi">@item1.ApresMidi</textarea><hr />
+                                                    <i class="ft-check-circle"></i>
+                                                    <label>Réel</label>
+                                                    <textarea name="MatinR6" id="MatinR6" placeholder="Matin">@item1.MatinReel</textarea>
+
+                                                    <textarea name="ApresMidiR6" id="ApresMidiR6" placeholder="Aprés Midi">@item1.ApresMidiReel</textarea>
+
+                                                }
+                                                l++;
+                                            }
+
+                                        }
+                                    </td>
+                                </tr>
+                           z++;
+                            }
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+<script>
+function addRows(){
+    $('.selectpicker').selectpicker('refresh')
+	var table = document.getElementById('MyTable');
+	var rowCount = table.rows.length;
+	var cellCount = table.rows[0].cells.length;
+	var row = table.insertRow(rowCount);
+	for(var i =0; i <= cellCount; i++){
+		var cell = 'cell'+i;
+     	cell = row.insertCell(i);
+		var copycel = document.getElementById('col'+i).innerHTML;
+		cell.innerHTML=copycel;
+    
+
+	}
+    
+
+}
+
+
+
+
+    function deleteRows(){
+	var table = document.getElementById('MyTable');
+	var rowCount = table.rows.length;
+	if(rowCount > '2'){
+		var row = table.deleteRow(rowCount-1);
+		rowCount--;
+	}
+	else{
+		  Swal.fire({
+  position: 'top-center',
+  background:'#c62828',
+  color:'#FFFFFF',
+  showConfirmButton: false,
+  title: 'Il doit y avoir au moins une ligne',
+  timer: 3000
+})
+
+	}
+}
+
+function LicenceToOccupy()
+{
+
+var date = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date.setDate(date.getDate() + 5); // Add 7 days
+$('#DateFin').val(date.toISOString().split('T')[0]);
+
+    //ADD Day
+
+
+var date1 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date1.setDate(date1.getDate()); // Add 1 days
+$('#Day_0').val(date1.toISOString().split('T')[0]);
+ var date2 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date2.setDate(date2.getDate() + 1); // Add 1 days
+$('#Day_1').val(date2.toISOString().split('T')[0]);
+        var date3 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date3.setDate(date3.getDate() + 2); // Add 1 days
+$('#Day_2').val(date3.toISOString().split('T')[0]);
+        var date4 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date4.setDate(date4.getDate() + 3); // Add 1 days
+$('#Day_3').val(date4.toISOString().split('T')[0]);
+        var date5 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date5.setDate(date5.getDate() + 4); // Add 1 days
+$('#Day_4').val(date5.toISOString().split('T')[0]);
+        var date6 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date6.setDate(date6.getDate() + 5); // Add 1 days
+$('#Day_5').val(date6.toISOString().split('T')[0]);
+}
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+var date = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date.setDate(date.getDate() + 5); // Add 7 days
+$('#DateFin').val(date.toISOString().split('T')[0]);
+
+var date1 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date1.setDate(date1.getDate()); // Add 1 days
+$('#Day_0').val(date1.toISOString().split('T')[0]);
+ var date2 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date2.setDate(date2.getDate() + 1); // Add 1 days
+$('#Day_1').val(date2.toISOString().split('T')[0]);
+        var date3 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date3.setDate(date3.getDate() + 2); // Add 1 days
+$('#Day_2').val(date3.toISOString().split('T')[0]);
+        var date4 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date4.setDate(date4.getDate() + 3); // Add 1 days
+$('#Day_3').val(date4.toISOString().split('T')[0]);
+        var date5 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date5.setDate(date5.getDate() + 4); // Add 1 days
+$('#Day_4').val(date5.toISOString().split('T')[0]);
+        var date6 = new Date(Date.parse($('#Datedebut').val())); // Parse date
+date6.setDate(date6.getDate() + 5); // Add 1 days
+$('#Day_5').val(date6.toISOString().split('T')[0]);
+    </script>
+    <script>
+    var select=document.getElementById("CodeResponsable");
+    $("#CodeResponsable").change(function(){
+        $("#developpeur").val(select.options[select.selectedIndex].text);
+    });
+
+    </script>
+}

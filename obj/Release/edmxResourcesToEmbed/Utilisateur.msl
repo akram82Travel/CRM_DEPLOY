@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UtilisateurModelStoreContainer" CdmEntityContainer="UtilisateurEntities">
+    <EntitySetMapping Name="Crm_AccesUtilisateur">
+      <EntityTypeMapping TypeName="UtilisateurModel.Crm_AccesUtilisateur">
+        <MappingFragment StoreEntitySet="Crm_AccesUtilisateur">
+          <ScalarProperty Name="NomUtilisateur" ColumnName="NomUtilisateur" />
+          <ScalarProperty Name="CodeAcces" ColumnName="CodeAcces" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Respensable">
+      <EntityTypeMapping TypeName="UtilisateurModel.Respensable">
+        <MappingFragment StoreEntitySet="Respensable">
+          <ScalarProperty Name="CodeRespensable" ColumnName="CodeRespensable" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="TC1" ColumnName="TC1" />
+          <ScalarProperty Name="TC2" ColumnName="TC2" />
+          <ScalarProperty Name="TC3" ColumnName="TC3" />
+          <ScalarProperty Name="TC4" ColumnName="TC4" />
+          <ScalarProperty Name="TC5" ColumnName="TC5" />
+          <ScalarProperty Name="TC6" ColumnName="TC6" />
+          <ScalarProperty Name="TC7" ColumnName="TC7" />
+          <ScalarProperty Name="TP1" ColumnName="TP1" />
+          <ScalarProperty Name="TP2" ColumnName="TP2" />
+          <ScalarProperty Name="TC8" ColumnName="TC8" />
+          <ScalarProperty Name="TP3" ColumnName="TP3" />
+          <ScalarProperty Name="TP4" ColumnName="TP4" />
+          <ScalarProperty Name="Commercial" ColumnName="Commercial" />
+          <ScalarProperty Name="MatriculePersonnel" ColumnName="MatriculePersonnel" />
+          <ScalarProperty Name="CodeService" ColumnName="CodeService" />
+          <ScalarProperty Name="CodeSuperieurHiearchique" ColumnName="CodeSuperieurHiearchique" />
+          <ScalarProperty Name="Actif" ColumnName="Actif" />
+          <ScalarProperty Name="SupHier" ColumnName="SupHier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisateur">
+      <EntityTypeMapping TypeName="UtilisateurModel.Utilisateur">
+        <MappingFragment StoreEntitySet="Utilisateur">
+          <ScalarProperty Name="NomUtilisateur" ColumnName="NomUtilisateur" />
+          <ScalarProperty Name="CodeSociete" ColumnName="CodeSociete" />
+          <ScalarProperty Name="CodeFonction" ColumnName="CodeFonction" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+          <ScalarProperty Name="Skin" ColumnName="Skin" />
+          <ScalarProperty Name="CodeRepresentant" ColumnName="CodeRepresentant" />
+          <ScalarProperty Name="MotDePasseValidation" ColumnName="MotDePasseValidation" />
+          <ScalarProperty Name="MotDePasseAnnulation" ColumnName="MotDePasseAnnulation" />
+          <ScalarProperty Name="MDPValidation" ColumnName="MDPValidation" />
+          <ScalarProperty Name="MDPReimpression" ColumnName="MDPReimpression" />
+          <ScalarProperty Name="SaisieLibreLivraisonVente" ColumnName="SaisieLibreLivraisonVente" />
+          <ScalarProperty Name="SaisieLibreReceptionAchat" ColumnName="SaisieLibreReceptionAchat" />
+          <ScalarProperty Name="CodeEmployer" ColumnName="CodeEmployer" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="Administrateur" ColumnName="Administrateur" />
+          <ScalarProperty Name="CreerPar" ColumnName="CreerPar" />
+          <ScalarProperty Name="CreerLe" ColumnName="CreerLe" />
+          <ScalarProperty Name="Actif" ColumnName="Actif" />
+          <ScalarProperty Name="SaisieLibreRetourVente" ColumnName="SaisieLibreRetourVente" />
+          <ScalarProperty Name="SaisieLibreRetourAchat" ColumnName="SaisieLibreRetourAchat" />
+          <ScalarProperty Name="CodeService" ColumnName="CodeService" />
+          <ScalarProperty Name="MDPAdministrateur" ColumnName="MDPAdministrateur" />
+          <ScalarProperty Name="CodeIntervenant" ColumnName="CodeIntervenant" />
+          <ScalarProperty Name="CodeFonctionAndroid" ColumnName="CodeFonctionAndroid" />
+          <ScalarProperty Name="SaisieLibreNotification" ColumnName="SaisieLibreNotification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

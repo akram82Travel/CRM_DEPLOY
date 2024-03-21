@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="986a13cd7fe845f6bda8051ce517ae94" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="CrmModels.ContactClient" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_AccesUtilisateur" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_ContactClient" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_CycleExecTache" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Intervention" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_MoyenCommunication" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Notification" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_OperationParTicket" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_PersonnelParRapoort" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_RespensableParIntervention" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TableObjet" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TacheExcution" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TacheLiee" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TicketClient" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TypeOperation" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TypeReclamation" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.EtatCRM" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Respensable" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Utilisateur" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrmModels.Fonction" Width="1.5" PointX="12.5" PointY="16" />
+        <EntityTypeShape EntityType="CrmModels.Service" Width="1.5" PointX="5.375" PointY="15.75" />
+        <AssociationConnector Association="CrmModels.FK_Utilisateur_Fonction" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Personne" Width="1.5" PointX="0.625" PointY="10.125" />
+        <EntityTypeShape EntityType="CrmModels.CompteurPiece" Width="1.5" PointX="15.375" PointY="8.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_ReclamationClient" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CrmModels.Client" Width="1.5" PointX="15.375" PointY="11.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_PersonneParReunion" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_PVReunion" Width="1.5" PointX="17.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Rapport" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_PersonneConcerner" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Planning" Width="1.5" PointX="17.375" PointY="15" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Planning_Responsable" Width="1.5" PointX="3.375" PointY="18.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_PlanningTime" Width="1.5" PointX="19.625" PointY="15.5" />
+        <AssociationConnector Association="CrmModels.FK_Crm_PlanningTime_Crm_Planning" />
+        <EntityTypeShape EntityType="CrmModels.crm_ModeTache" Width="1.5" PointX="11.375" PointY="18.75" />
+        <EntityTypeShape EntityType="CrmModels.ContratClient" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TacheCommercialSoft" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="CrmModels.EmploiDuTemp" Width="1.5" PointX="19.375" PointY="6.75" />
+        <EntityTypeShape EntityType="CrmModels.PersonnelGRH" Width="1.5" PointX="17.375" PointY="20.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_ClientParent" Width="1.5" PointX="19.375" PointY="9.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_ClientParentAssociation" Width="1.5" PointX="19.375" PointY="12.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Equipe" Width="1.5" PointX="19.375" PointY="20.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TypeTache" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Sanction" Width="1.5" PointX="21.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Degres_Sanction" Width="1.5" PointX="3.375" PointY="21.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Document" Width="1.5" PointX="21.75" PointY="11.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_EquipeRespensable" Width="1.5" PointX="21.75" PointY="20.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Service" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_ServiceEquipe" Width="1.5" PointX="22.75" PointY="15.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Projet" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_HistoriqueType" Width="1.5" PointX="21.375" PointY="7.75" />
+        <EntityTypeShape EntityType="CrmModels.ClientCRM" Width="1.5" PointX="11.375" PointY="21.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_ModuleNature" Width="1.5" PointX="7.625" PointY="22.875" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TacheNature" Width="1.5" PointX="5.375" PointY="23" />
+        <AssociationConnector Association="CrmModels.FK_Crm_ModuleNature_Crm_TacheNature" />
+        <EntityTypeShape EntityType="CrmModels.Crm_Motif" Width="1.5" PointX="5.375" PointY="18.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TypeProjet" Width="1.5" PointX="23.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_ChatReclamation" Width="1.5" PointX="23.375" PointY="7.75" />
+        <EntityTypeShape EntityType="CrmModels.Crm_TacheReclamation" Width="1.5" PointX="19.375" PointY="23.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

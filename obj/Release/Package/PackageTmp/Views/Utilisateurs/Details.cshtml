@@ -1,0 +1,227 @@
+﻿@model CRMSTUBSOFT.Utilisateur
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Utilisateur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeSociete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeSociete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prenom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotDePasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotDePasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeRepresentant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeRepresentant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotDePasseValidation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotDePasseValidation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotDePasseAnnulation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotDePasseAnnulation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDPValidation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDPValidation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDPReimpression)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDPReimpression)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaisieLibreLivraisonVente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaisieLibreLivraisonVente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaisieLibreReceptionAchat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaisieLibreReceptionAchat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeEmployer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeEmployer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Administrateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Administrateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreerPar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreerPar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreerLe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreerLe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaisieLibreRetourVente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaisieLibreRetourVente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaisieLibreRetourAchat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaisieLibreRetourAchat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDPAdministrateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDPAdministrateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeIntervenant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeIntervenant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeFonctionAndroid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeFonctionAndroid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaisieLibreNotification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaisieLibreNotification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fonction.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fonction.Libelle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NomUtilisateur }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

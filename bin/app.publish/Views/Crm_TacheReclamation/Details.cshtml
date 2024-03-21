@@ -1,0 +1,1216 @@
+﻿@model CRMSTUBSOFT.Crm_TacheReclamation
+
+@{
+    ViewBag.Title = "Consulter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var ListOBJ = ViewData["attachedTaches"] as List<Crm_TacheLiee>;
+    var ListOBJRsp = ViewData["attachedTachesRsp"] as List<Respensable>;
+    var ListOBJRspCout = ViewData["CoutResponsable"] as List<PersonnelGRH>;
+    var ListOBJTacheLieeComm = ViewData["listTacheLieeToComm"] as List<Crm_TacheReclamation>;
+    var ListOBJTacheLieeTache = ViewData["listTacheLieeToTache"] as List<Crm_TacheLiee>;
+    var ListOBJTacheLieeTacheDureeReel = ViewData["listTacheLieeToTacheDureeReel"] as List<Crm_CycleExecTache>;
+
+    var ListObjectTAcheExecution = ViewData["listCrm_TacheExcution"] as List<Crm_TacheExcution>;
+
+
+}
+<style>
+    table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #e3ebf3;
+        border-top: 1px solid #e3ebf3;
+    }
+    table thead tr {
+        background: transparent;
+        border-right: none !important;
+        color: #6a6e81;
+    }
+</style>
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-5"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Consulter Tâche N° @Model.NumeroTache</span></div>
+                <div class="col-md-3" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_TacheReclamation">Tâches</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Consultation
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+
+        .outer {
+            height: 75vh;
+            min-width: 20vw;
+            flex: 1;
+        }
+
+        .progress {
+            display: inline-flex;
+            height: 100%;
+            padding: 5vh 10%;
+        }
+
+            .progress > div {
+                display: flex;
+                flex-direction: column;
+                color: #333;
+            }
+
+                .progress > div.left {
+                    padding-right: 20px;
+                    text-align: right;
+                }
+
+                    .progress > div.left div:last-of-type:after {
+                        display: none;
+                    }
+
+                    .progress > div.left div:after {
+                        content: "";
+                        background: rgba(51, 51, 51, 0.1);
+                        border-radius: 2px;
+                        position: absolute;
+                        right: -20px;
+                        top: 10px;
+                        height: 101%;
+                        width: 1px;
+                        transform: translateX(50%);
+                    }
+
+                .progress > div.right {
+                    padding-left: 20px;
+                }
+
+                    .progress > div.right div.prev:after {
+                        transition: none;
+                    }
+
+                    .progress > div.right div.current {
+                        color: #333;
+                        font-weight: bold;
+                    }
+
+                        .progress > div.right div.current:before {
+                            background: #333;
+                            padding: 10px;
+                            transition: all 0.2s 0.15s cubic-bezier(0.175, 0.885, 0.32, 2);
+                        }
+
+                        .progress > div.right div.current:after {
+                            height: 0%;
+                            transition: height 0.2s ease-out;
+                        }
+
+                        .progress > div.right div.current ~ div {
+                            color: #666;
+                        }
+
+                            .progress > div.right div.current ~ div:before {
+                                background: #666;
+                                padding: 2.5px;
+                            }
+
+                            .progress > div.right div.current ~ div:after {
+                                height: 0%;
+                                transition: none;
+                            }
+
+                    .progress > div.right div:before {
+                        content: "";
+                        background: #333;
+                        padding: 5px;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: -20px;
+                        top: 10px;
+                        transform: translateX(-50%) translateY(-50%);
+                        transition: padding 0.2s ease;
+                    }
+
+                    .progress > div.right div:after {
+                        content: "";
+                        background: #333;
+                        border-radius: 2px;
+                        position: absolute;
+                        left: -20px;
+                        top: 10px;
+                        height: 101%;
+                        width: 2px;
+                        transform: translateX(-50%);
+                        transition: height 0.2s ease;
+                    }
+
+                .progress > div div {
+                    flex: 1;
+                    position: relative;
+                    line-height: 20px;
+                    cursor: default;
+                    min-height: 30px;
+                }
+
+                    .progress > div div:last-of-type {
+                        flex: 0;
+                    }
+
+            .progress.dark {
+                background: #333;
+                display: inline-flex;
+                height: 100%;
+                width: 100%;
+                padding: 5vh 10%;
+            }
+
+                .progress.dark > div {
+                    display: flex;
+                    flex-direction: column;
+                    color: #ccc;
+                }
+
+                    .progress.dark > div.left {
+                        padding-right: 20px;
+                        text-align: right;
+                    }
+
+                        .progress.dark > div.left div:last-of-type:after {
+                            display: none;
+                        }
+
+                        .progress.dark > div.left div:after {
+                            content: "";
+                            background: rgba(211, 211, 211, 0.05);
+                            border-radius: 2px;
+                            position: absolute;
+                            right: -20px;
+                            top: 10px;
+                            height: 101%;
+                            width: 1px;
+                            transform: translateX(50%);
+                        }
+
+                    .progress.dark > div.right {
+                        padding-left: 20px;
+                    }
+
+                        .progress.dark > div.right div.prev:after {
+                            transition: none;
+                        }
+
+                        .progress.dark > div.right div.current {
+                            color: white;
+                            font-weight: bold;
+                        }
+
+                            .progress.dark > div.right div.current:before {
+                                background: white;
+                                padding: 10px;
+                                transition: all 0.2s 0.15s cubic-bezier(0.175, 0.885, 0.32, 2);
+                            }
+
+                            .progress.dark > div.right div.current:after {
+                                height: 0%;
+                                transition: height 0.2s ease-out;
+                            }
+
+                            .progress.dark > div.right div.current ~ div {
+                                color: #666;
+                            }
+
+                                .progress.dark > div.right div.current ~ div:before {
+                                    background: #666;
+                                    padding: 2.5px;
+                                }
+
+                                .progress.dark > div.right div.current ~ div:after {
+                                    height: 0%;
+                                    transition: none;
+                                }
+
+                        .progress.dark > div.right div:before {
+                            content: "";
+                            background: lightgray;
+                            padding: 5px;
+                            border-radius: 50%;
+                            position: absolute;
+                            left: -20px;
+                            top: 10px;
+                            transform: translateX(-50%) translateY(-50%);
+                            transition: padding 0.2s ease;
+                        }
+
+                        .progress.dark > div.right div:after {
+                            content: "";
+                            background: lightgray;
+                            border-radius: 2px;
+                            position: absolute;
+                            left: -20px;
+                            top: 10px;
+                            height: 101%;
+                            width: 2px;
+                            transform: translateX(-50%);
+                            transition: height 0.2s ease;
+                        }
+
+                    .progress.dark > div div {
+                        flex: 1;
+                        position: relative;
+                        line-height: 20px;
+                        cursor: default;
+                        min-height: 30px;
+                    }
+
+                        .progress.dark > div div:last-of-type {
+                            flex: 0;
+                        }
+
+        .done.current {
+            color: #62af0b !important;
+        }
+
+            .done.current:before {
+                background: #62af0b !important;
+            }
+
+        .dark .done.current {
+            color: lightgreen !important;
+        }
+
+            .dark .done.current:before {
+                background: lightgreen !important;
+            }
+    </style>
+    @if (Model.Nature != "C")
+    {
+
+<div class="row">
+    <div class="card col-md-3">
+        <div class="card-header pb-0">
+            <h4>Liste des états exécuter</h4>
+        </div>
+        <div class="card-body row pt-0">
+           
+            @if (ListObjectTAcheExecution.Count() > 0)
+            {
+                <div class="outer">
+                    <div class="progress ">
+                       
+                        <div class="left">
+                            @foreach (var item in ListObjectTAcheExecution)
+                            {
+                                if (@item.OldStatus == "" && @item.NewStatus == "E11")
+                                {
+                                    <div class="@((@item.OldStatus == "" && @item.NewStatus == "E11" && ListObjectTAcheExecution.Count()==1) ? "current" : "") ">Non Commencer</div>
+                                }
+                            }
+                            @foreach (var item in ListObjectTAcheExecution)
+                            {
+                                if (@item.OldStatus == "E11" && @item.NewStatus == "E07")
+                                {
+                                    <div class="@((@item.OldStatus == "E11" && @item.NewStatus == "E07" && ListObjectTAcheExecution.Count()==2) ? "current" : "") ">En Exécution</div>
+                                } 
+                                if (@item.OldStatus == "E06" && @item.NewStatus == "E07")
+                                {
+                                    <div class="@((@item.OldStatus == "E06" && @item.NewStatus == "E07" && ListObjectTAcheExecution.Count()>2) ? "current" : "") ">En Exécution</div>
+                                }
+                                if (@item.OldStatus == "E07" && @item.NewStatus == "E06")
+                                {
+                                    <div class="@((@item.OldStatus == "E07" && @item.NewStatus == "E07" && ListObjectTAcheExecution.Count()>2) ? "current" : "") ">En Pause</div>
+                                }
+                            }
+                            @foreach (var item in ListObjectTAcheExecution)
+                            {
+                                if (@item.OldStatus == "E07" && @item.NewStatus == "E04")
+                                {
+                                    <div class="@((@item.OldStatus == "E07" && @item.NewStatus == "E04") ? "current" : "") ">A Valider</div>
+                                }
+                            }
+                            @foreach (var item in ListObjectTAcheExecution)
+                            {
+                                if (@item.OldStatus == "E04" && @item.NewStatus == "E01")
+                                {
+                                    <div class="@((@item.OldStatus == "E04" && @item.NewStatus == "E01") ? "current" : "") ">Terminer</div>
+                                }
+                                if (@item.OldStatus == "E06" && @item.NewStatus == "E01")
+                                {
+                                    <div class="@((@item.OldStatus == "E06" && @item.NewStatus == "E01") ? "current" : "") ">Terminer</div>
+                                }
+                                if (@item.OldStatus == "E07" && @item.NewStatus == "E01")
+                                {
+                                    <div class="@((@item.OldStatus == "E07" && @item.NewStatus == "E01") ? "current" : "") ">Terminer</div>
+                                }
+                            }
+
+                        </div>
+                        <div class="right">
+                            @foreach (var item in ListObjectTAcheExecution)
+                            {
+                                if (@item.OldStatus == "" && @item.NewStatus == "E11")
+                                {
+                            <div class="@((@item.OldStatus == "" && @item.NewStatus == "E11" && ListObjectTAcheExecution.Count()==1) ? "current" : "") ">@item.Nomutilisateur<small><br />@item.DateFinExcution</small></div>
+                                }
+                            }
+                            @foreach (var item in ListObjectTAcheExecution)
+                            {
+                                if ((@item.OldStatus == "E11" && @item.NewStatus == "E07"))
+                                {
+                            <div class="@((@item.OldStatus == "E11" && @item.NewStatus == "E07" && ListObjectTAcheExecution.Count()==2) ? "current" : "") ">@item.Nomutilisateur<small><br />@item.DateFinExcution</small></div>
+                                }
+                                if ((@item.OldStatus == "E06" && @item.NewStatus == "E07"))
+                                {
+                            <div class="@((@item.OldStatus == "E06" && @item.NewStatus == "E07" && ListObjectTAcheExecution.Count()>2) ? "current" : "") ">@item.Nomutilisateur<small><br />@item.DateFinExcution</small></div>
+                                }
+                                if (@item.OldStatus == "E07" && @item.NewStatus == "E06")
+                                {
+                            <div class="@((@item.OldStatus == "E07" && @item.NewStatus == "E06" && ListObjectTAcheExecution.Count()>2) ? "current" : "") ">@item.Nomutilisateur<small><br />@item.DateFinExcution</small></div>
+                                }
+                            }
+                            @foreach (var item in ListObjectTAcheExecution)
+                            {
+                                if (@item.OldStatus == "E07" && @item.NewStatus == "E04")
+                                {
+                            <div class="@((@item.OldStatus == "E07" && @item.NewStatus == "E04") ? "current" : "") ">@item.Nomutilisateur<small><br />@item.DateFinExcution</small></div>
+                                }
+                            }
+                            @foreach (var item in ListObjectTAcheExecution)
+                            {
+                                if (@item.OldStatus == "E04" && @item.NewStatus == "E01")
+                                {
+                            <div class="@((@item.OldStatus == "E04" && @item.NewStatus == "E01") ? "done current" : "") ">@item.Nomutilisateur<small><br />@item.DateFinExcution</small></div>
+                                }
+                                if (@item.OldStatus == "E07" && @item.NewStatus == "E01")
+                                {
+                            <div class="@((@item.OldStatus == "E07" && @item.NewStatus == "E01") ? "done current" : "") ">@item.Nomutilisateur<small><br />@item.DateFinExcution</small></div>
+                                }
+                                if (@item.OldStatus == "E06" && @item.NewStatus == "E01")
+                                {
+                            <div class="@((@item.OldStatus == "E06" && @item.NewStatus == "E01") ? "done current" : "") ">@item.Nomutilisateur<small><br />@item.DateFinExcution</small></div>
+                                }
+                            }
+                
+                            
+                                </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="card col-md-9">
+        <div class="card-header pb-0">
+            <h4>Evaluation</h4>
+        </div>
+        <form action="/Crm_HistoriqueType/Create" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="NumeroTache" value="@Model.NumeroTache" />
+            <div class="card-body pt-0">
+                <div class="form-group row no-gutters mb-4">
+                    <div class="col-md-12">
+                        <label class="control-label" for="TypePiece">Type Tache </label>
+                        <div>
+                            @Html.DropDownListFor(model => model.Type, (IEnumerable
+                            <SelectListItem>)ViewData["ListTypeEvalutation"], "Sélectionner Type de tache", new { @class = "select2 form-control", @required = "required", @id = "ListTypeEvalutation" })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label" for="TypePiece">Mode Tache</label>
+                        <div>
+                            @Html.DropDownListFor(model => model.TypePiece, (IEnumerable
+                            <SelectListItem>)ViewData["ListMode"], "Sélectionner mode tache", new { @class = "select2 form-control", @required = "required", @id = "ModeTache" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="control-label">Validateur</label>
+                        <div>
+                            @Html.DropDownListFor(model => model.NomValidateur, (IEnumerable<SelectListItem>)ViewData["ListResponsable"], "Sélectionner un Chef de projet", new { @class = "select2 form-control", @id = "CodeUtilisateur", @required = "required" })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="control-label">Type Sanction&Bonification</label>
+                        <div>
+                            <select name="IdSanction" id="IdSanction" class="select2 form-control" autocomplete="on" required="required">
+                                <option>Choisir une SanctionBonification</option>
+
+                                @foreach (var item in ViewData["ListSanction"] as List<Crm_Sanction>)
+                                {
+                            <option value="@item.IdSanction">@item.LibelleSanction (@item.NoteSanction:@item.TypeSanction)</option>
+                                }
+
+                            </select>
+                        </div>
+                    </div>
+                     <div class="col-md-12">
+                        <label class="control-label">Degres Sanction&Bonification</label>
+                        <div>
+                            <select name="IdDegres" id="IdDegres" class="select2 form-control" autocomplete="on" required="required">
+                                <option>Choisir Degres</option>
+
+                                @foreach (var item in ViewData["ListDegresSanction"] as List<Crm_Degres_Sanction>)
+                                {
+                            <option value="@item.id">@item.libelle (entre @item.du - @item.au -> @item.type)</option>
+                                }
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <button class="btn btn-success" type="submit">Enregistrer l'évaluation</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+       
+        
+    </div>
+
+        <div class="card col-md-12">
+            <div class="card-header pb-0">
+                <h4>Détails Tache</h4>
+
+                <hr />
+            </div>
+            <div>
+                <div class="card-body row pt-0">
+                    <div class="col-md-4">
+                        <div class="form-group  row no-gutters">
+                            <label for="CodeClient" class="col-sm-12 pt-0 col-form-label"> Client </label>
+                            <div class="col-sm-12">
+                                @Html.DropDownListFor(model => model.CodeClient, (IEnumerable
+                                    <SelectListItem>)ViewData["ListClient"], "Sélectionner un client", new { @class = "select2 form-control", @id = "CodeClient", @onchange = "FixeClient()" })
+                            </div>
+                            @Html.HiddenFor(model => model.RaisonSociale, new { htmlAttributes = new { @class = "form-control", @id = "RaisonSociale" } })
+
+                        </div>
+                        <hr />
+                        <div class="form-group row">
+                            <label for="NomPlanificateur" class="col-sm-4  pt-0 col-form-label">Nom Planificateur </label>
+                            <div class="col-sm-8">
+                                @Html.DropDownListFor(model => model.NomPlanificateur, (IEnumerable
+                                   <SelectListItem>)ViewData["ListResponsable"], "", new { @class = "selectize-control input-selectize multi", @id = "NomPlanificateur" })
+                                @Html.ValidationMessageFor(model => model.NomPlanificateur, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="NomValidateur" class="col-sm-4  pt-0 col-form-label">Nom Validateur </label>
+                            <div class="col-sm-8">
+                                @Html.DropDownListFor(model => model.NomValidateur, (IEnumerable
+                                  <SelectListItem>)ViewData["ListResponsable"], "", new { @class = "selectize-control input-selectize multi", @required = "required", @id = "NomValidateur" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="NomTesteur" class="col-sm-4  pt-0 col-form-label">Nom Testeur </label>
+                            <div class="col-sm-8">
+                                @Html.DropDownListFor(model => model.NomTesteur, (IEnumerable
+                                  <SelectListItem>)ViewData["ListResponsable"], "", new { @class = "selectize-control input-selectize multi", @id = "NomTesteur" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="NomTesteur" class="col-sm-4  pt-0 col-form-label">Affectée a </label>
+                            <div class="col-sm-8">
+                                @Html.ListBoxFor(model => model.SelectedresponsableId, new MultiSelectList(Model.ListeRespensables, "CodeRespensable", "Nom"), new { @multiple = "multiple", @placeholder = "Sélectionner des respensables", @class = "selectize-multiple" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Nature" class="col-sm-4  pt-0 col-form-label">Nature </label>
+                            <div class="col-sm-8">
+                                @Html.DropDownListFor(model => model.Nature, (IEnumerable
+                                  <SelectListItem>)ViewData["ListNature"], "Sélectionner nature tache", new { @class = "selectize-control input-selectize multi", @required = "required", @id = "Nature" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row no-gutters">
+                            <label for="TacheTitre" class="col-sm-12 pt-0  col-form-label"> Titre </label>
+                            <div class="col-sm-12">
+                                @Html.EditorFor(model => model.TacheTitre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TacheTitre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row no-gutters">
+                            <label for="DescriptionTache" class="col-sm-12 pt-0  col-form-label"> Description </label>
+                            <div class="col-sm-12">
+                                @Html.TextAreaFor(model => model.DescriptionTache, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.DescriptionTache, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="TypePiece">Type Tache </label>
+                                <div>
+                                    @Html.DropDownListFor(model => model.Type, (IEnumerable
+                                    <SelectListItem>)ViewData["ListType"], "Sélectionner Type tache", new { @class = "select2 form-control", @required = "required", @id = "Type" })
+                                    <div class="invalid-feedback">Sélectionner le typede cette tache!</div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="TypePiece">Mode </label>
+                                <div>
+                                    @Html.DropDownListFor(model => model.TypePiece, (IEnumerable
+                                    <SelectListItem>)ViewData["ListMode"], "Sélectionner mode tache", new { @class = "select2 form-control", @required = "required", @id = "TypePiece" })
+                                    <div class="invalid-feedback">Sélectionner le mode de cette tache!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group row">
+                            <label for="DatePrevus" class="col-sm-3 p-0"> Date Prévue </label>
+                            <div class="col-sm-9">
+                                <input type="datetime-local" name="DatePrevus" id="DatePrevus" class="form-control" value="@ViewData["d1"]" />
+                                @Html.ValidationMessageFor(model => model.DatePrevus, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="DateCreation" class="col-sm-3  p-0"> Date Création </label>
+                            <div class="col-sm-9">
+                                <input type="datetime-local" name="DateCreation" id="DateCreation" class="form-control" value="@ViewData["d2"]" />
+                                @Html.ValidationMessageFor(model => model.DateCreation, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row" id="dureeDeveloppeur">
+                                <label for="Duree" class="col-sm-3 p-0"> Durée Estimée </label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.Duree, new { htmlAttributes = new { @class = "form-control", @type = "time", @onchange = "MaxDuree()  " } })
+                                    @Html.ValidationMessageFor(model => model.Duree, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row" id="dureeCommercial">
+                                <label for="Duree" class="col-sm-3 p-0 "> Durée PREVISIONNEL</label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.Duree, new { htmlAttributes = new { @class = "form-control", @type = "text" } })
+                                    @Html.ValidationMessageFor(model => model.Duree, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                        @Html.HiddenFor(model => model.Degres, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    }
+    else
+    {
+        <div class="row">
+
+            <div class="col-lg-4 col-12">
+                <div class="card pull-up">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="media-body text-left">
+                                    <h6 class="text-muted">Coût Total de la tache </h6>
+                                    <h3>
+                                        @{
+                                            int numberTache = 0;
+                                            int numberTacheTerminer = 0;
+                                        }
+                                        @if (ListOBJ.Count() > 0)
+                                        {
+
+                                            double coutTotal = 0;
+
+
+                                            foreach (var item in ListOBJTacheLieeComm)
+                                            {
+                                                if (item.Status == "E01")
+                                                {
+                                                    numberTacheTerminer++;
+                                                }
+                                                numberTache++;
+                                                double dureeH = 0;
+                                                foreach (var items in ListOBJTacheLieeTacheDureeReel)
+                                                {
+                                                    if (item.NumeroTache == items.NumeroTache)
+                                                    {
+                                                        var heur = (items.Duree / 60);
+                                                        var min = items.Duree - (60 * (items.Duree / 60));
+                                                        dureeH = double.Parse((items.Duree / 60m).ToString());
+
+
+                                                    }
+                                                }
+                                                foreach (var items in ListOBJTacheLieeTache)
+                                                {
+                                                    if (item.NumeroTache == items.NumeroTache)
+                                                    {
+                                                        foreach (var itemss in ListOBJRspCout)
+                                                        {
+                                                            if (items.CodeRespensable == itemss.MatriculePersonnel)
+                                                            {
+                                                                coutTotal = coutTotal + (Math.Ceiling((double)((itemss.SalaireNet + (itemss.SalaireBase * 0.2625m) + (itemss.SalaireBase * 0.2m) + (itemss.SalaireBase * 0.1m)) / 26 / 7) * (dureeH)));
+
+                                                            }
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                            <b>@coutTotal TND</b>
+
+                                        }
+                                        else
+                                        {
+                                            <b>0 TND</b>
+                                        }
+
+
+                                    </h3>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="icon-trophy success font-large-2 float-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="card pull-up">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="media-body text-left">
+                                    <h6 class="text-muted">Nombre de tache exécutés</h6>
+                                    <h3><b>@numberTache</b></h3>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="icon-call-in danger font-large-2 float-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12">
+                <div class="card pull-up">
+                    <div class="card-content collapse show bg-gradient-directional-danger ">
+                        <div class="card-body bg-hexagons-danger">
+                            <h4 class="card-title white">
+                                Avancement réalisation  <span class="white">
+                                    @((numberTacheTerminer * 100) / numberTache)%
+                                </span> <span class="float-right"><span class="white">@numberTacheTerminer</span><span class="red lighten-4">/@numberTache</span></span>
+                            </h4>
+                            <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-12">
+                <div class="row">
+                    <div class="card col-md-12">
+                        <div class="card-header pb-0">
+                            <h4>Liste des taches liées</h4>
+
+                        </div>
+                        <div class="card-body row pt-0">
+                            <table class="table-hover table-xl mb-0 dataTable w-100">
+                                <thead>
+                                    <tr>
+                                        <th>Numero Tache</th>
+                                        <th>Status</th>
+                                        <th>Titre</th>
+                                        <th>Responsable</th>
+                                        <th>Duree R</th>
+                                        <th>Duree E</th>
+                                        <th>Taux avancement</th>
+                                        <th>Coût/H</th>
+                                        <th>Coût TOTAL</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (ListOBJ.Count() > 0)
+                                    {
+                                        double coutTotal = 0;
+
+                                        foreach (var item in ListOBJTacheLieeComm)
+                                        {
+
+                                            <tr>
+                                                <td>@Html.DisplayFor(modelItem => item.NumeroTache)</td>
+                                                <td>
+                                                    @{
+                                                        @*<span>@item.Status</span>*@
+                                                        switch (item.Status)
+                                                        {
+                                                            case "E11":
+                                                                <span class="badge badge-secondary">Non Commencer</span>
+                                                                break;
+                                                            case "E01":
+                                                                <span class="badge badge-danger">Terminé</span>
+                                                                break;
+
+                                                        }
+
+                                                    }
+
+
+
+                                                </td>
+                                                <td>@Html.DisplayFor(modelItem => item.TacheTitre) </td>
+                                                <td>
+                                                    @foreach (var items in ListOBJTacheLieeTache)
+                                                    {
+                                                        if (item.NumeroTache == items.NumeroTache)
+                                                        {
+                                                            foreach (var itemss in ListOBJRspCout)
+                                                            {
+                                                                if (items.CodeRespensable == itemss.MatriculePersonnel)
+                                                                {
+                                                                    @(Html.DisplayFor(modelItem => itemss.Prenom) + " " + Html.DisplayFor(modelItem => itemss.Nom))
+                                                                }
+
+
+                                                            }
+
+
+                                                        }
+
+
+                                                    }
+
+                                                </td>
+                                                <td>
+                                                    @{
+                                                        double dureeH = 0;
+                                                    }
+                                                    @foreach (var items in ListOBJTacheLieeTacheDureeReel)
+                                                    {
+                                                        if (item.NumeroTache == items.NumeroTache)
+                                                        {
+                                                            var heur = (items.Duree / 60);
+                                                            var min = items.Duree - (60 * (items.Duree / 60));
+                                                            dureeH = double.Parse((items.Duree / 60m).ToString());
+
+                                                            @(heur + "h:" + min + "min")
+                                                        }
+                                                    }
+
+                                                </td>
+                                                <td>
+
+                                                    @*@foreach (var items in ListOBJTacheLieeTacheDureeReel)
+                                                        {
+                                                            if (item.NumeroTache == items.NumeroTache)
+                                                            {
+                                                                var heur = (items.Duree / 60);
+                                                                var min = (items.Duree - (60 * (items.Duree / 60)));
+                                                                @(heur + "h:" + min + "min")
+                                                            }
+                                                        }*@
+                                                    @Html.DisplayFor(modelItem => item.Duree)
+
+                                                </td>
+                                                <td>
+                                                    @(Math.Ceiling((dureeH * 100) / numberTache)) %
+                                                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+
+                                                        <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: @((dureeH * 100) / numberTache)%" aria-valuenow="@((dureeH * 100) / numberTache)" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                                <td>
+
+
+                                                    @foreach (var items in ListOBJTacheLieeTache)
+                                                    {
+                                                        if (item.NumeroTache == items.NumeroTache)
+                                                        {
+                                                            foreach (var itemss in ListOBJRspCout)
+                                                            {
+                                                                if (items.CodeRespensable == itemss.MatriculePersonnel)
+                                                                {
+                                                                    @((Math.Ceiling((itemss.SalaireNet + (itemss.SalaireBase * 0.2625m) + (itemss.SalaireBase * 0.2m) + (itemss.SalaireBase * 0.1m)) / 26 / 7)) + " TND")
+                                                                }
+
+
+                                                            }
+
+
+                                                        }
+
+
+                                                    }
+
+                                                </td>
+                                                <td>
+
+
+                                                    @foreach (var items in ListOBJTacheLieeTache)
+                                                    {
+                                                        if (item.NumeroTache == items.NumeroTache)
+                                                        {
+                                                            foreach (var itemss in ListOBJRspCout)
+                                                            {
+                                                                if (items.CodeRespensable == itemss.MatriculePersonnel)
+                                                                {
+                                                                    coutTotal = coutTotal + (Math.Ceiling((double)((itemss.SalaireNet + (itemss.SalaireBase * 0.2625m) + (itemss.SalaireBase * 0.2m) + (itemss.SalaireBase * 0.1m)) / 26 / 7) * (dureeH)));
+
+                                                                    @((Math.Ceiling((double)((itemss.SalaireNet + (itemss.SalaireBase*0.2625m) + (itemss.SalaireBase*0.2m) + (itemss.SalaireBase*0.1m)) / 26 / 7) * (dureeH))) + " TND");
+                                                                }
+
+
+                                                            }
+
+
+                                                        }
+
+
+                                                    }
+
+                                                </td>
+                                                <td>
+                                                    @Html.ActionLink(" ", "Details", new { id = item.NumeroTache }, new { @class = "warning details  la la-eye", @target = "_blank" })
+                                                    @Html.ActionLink(" ", "Edit", new { id = item.NumeroTache }, new { @class = "success edit  la la-pencil", @target = "_blank" })
+                                                </td>
+                                            </tr>
+                                        }
+                                        <tr>
+                                            <td colspan="7" style="text-align: right; font-size: 1.5rem;"><b>TOTAL</b></td>
+                                            <td style="text-align: left; font-size: 1.2rem;"><b>@coutTotal TND</b></td>
+                                            <td></td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card col-md-12">
+                        <div class="card-header pb-0">
+                            <h4>Liste des responsables liées</h4>
+                            <a class="btn btn-primary pull-right" style=" margin-top: -38px" data-toggle="collapse" href="#collapseListeResp" role="button" aria-expanded="false" aria-controls="collapseListeResp">
+                                <i class="la la-eye"></i> Détails
+                            </a>
+                            <hr />
+                        </div>
+                        <div class="collapse" id="collapseListeResp">
+                            <div class="card-body row pt-0">
+
+                                <table class="table-hover table-xl mb-0 dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Numero Tache</th>
+                                            <th>Code Responsable</th>
+                                            <th>Responsable</th>
+                                            <th>Coût/H</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ListOBJ.Count() > 0)
+                                        {
+
+
+                                            foreach (var item in ListOBJ)
+                                            {
+                                                <tr>
+                                                    <td>@Html.DisplayFor(modelItem => item.NumeroTache)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.CodeRespensable)</td>
+                                                    <td>
+                                                        @foreach (var items in ListOBJRspCout)
+                                                        {
+                                                            if (item.CodeRespensable == items.MatriculePersonnel)
+                                                            {
+                                                                @(Html.DisplayFor(modelItem => items.Prenom) + " " + Html.DisplayFor(modelItem => items.Nom))
+                                                            }
+
+
+                                                        }
+
+                                                    </td>
+                                                    <td>
+                                                        @foreach (var itemss in ListOBJRspCout)
+                                                        {
+                                                            var SalaireBrutCotisable = (itemss.SalaireBase / 26m) * 26m;
+                                                            var SalaireNet = itemss.SalaireNet + (itemss.SalaireBase * 26.25m);
+                                                            if (item.CodeRespensable == itemss.MatriculePersonnel)
+                                                            {
+                                                                @(Math.Ceiling((itemss.SalaireNet + (itemss.SalaireBase * 0.2625m) + (itemss.SalaireBase * 0.2m) + (itemss.SalaireBase * 0.1m)) / 26 / 7) + " TND")
+                                                            }
+
+
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+
+                                        }
+                                    </tbody>
+
+                                </table>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h4>Détails Tache Previsionnel</h4>
+                        <a class="btn btn-primary pull-right" style=" margin-top: -38px" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="la la-eye"></i> Détails
+                        </a>
+                        <hr />
+                    </div>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card-body row pt-0">
+                            <div class="col-md-4">
+                                <div class="form-group  row no-gutters">
+                                    <label for="CodeClient" class="col-sm-12 pt-0 col-form-label"> Client </label>
+                                    <div class="col-sm-12">
+                                        @Html.DropDownListFor(model => model.CodeClient, (IEnumerable
+                                            <SelectListItem>)ViewData["ListClient"], "Sélectionner un client", new { @class = "select2 form-control", @id = "CodeClient", @onchange = "FixeClient()" })
+                                    </div>
+                                    @Html.HiddenFor(model => model.RaisonSociale, new { htmlAttributes = new { @class = "form-control", @id = "RaisonSociale" } })
+
+                                </div>
+                                <hr />
+                                <div class="form-group row">
+                                    <label for="NomTesteur" class="col-sm-4  pt-0 col-form-label">Affectée a </label>
+                                    <div class="col-sm-8">
+                                        @Html.ListBoxFor(model => model.SelectedresponsableId, new MultiSelectList(Model.ListeRespensables, "CodeRespensable", "Nom"), new { @multiple = "multiple", @placeholder = "Sélectionner des respensables", @class = "selectize-multiple" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Nature" class="col-sm-4  pt-0 col-form-label">Nature </label>
+                                    <div class="col-sm-8">
+                                        @Html.DropDownListFor(model => model.Nature, (IEnumerable
+                                          <SelectListItem>)ViewData["ListNature"], "Sélectionner nature tache", new { @class = "selectize-control input-selectize multi", @required = "required", @id = "Nature" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group row no-gutters">
+                                    <label for="TacheTitre" class="col-sm-12 pt-0  col-form-label"> Titre </label>
+                                    <div class="col-sm-12">
+                                        @Html.EditorFor(model => model.TacheTitre, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.TacheTitre, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group row no-gutters">
+                                    <label for="DescriptionTache" class="col-sm-12 pt-0  col-form-label"> Description </label>
+                                    <div class="col-sm-12">
+                                        @Html.TextAreaFor(model => model.DescriptionTache, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.DescriptionTache, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="NumeroTache" class="col-sm-12 col-form-label">Type </label>
+                                        <div class="col-sm-9">
+                                            @Html.RadioButtonFor(m => m.Type, "M") <label for="Type">Ajout</label>
+                                            <br />
+                                            @Html.RadioButtonFor(m => m.Type, "A") <label for="Type">Maintenance</label>
+
+                                            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="Nature">Mode </label>
+                                        <div>
+                                            @Html.DropDownListFor(model => model.TypePiece, (IEnumerable
+                                            <SelectListItem>)ViewData["ListMode"], new { @class = "select2 form-control", @required = "required", @id = "TypePiece" })
+                                            <div class="invalid-feedback">Sélectionner la mode de cette tache!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-group row">
+                                    <label for="DatePrevus" class="col-sm-3 p-0"> Date Prévue </label>
+                                    <div class="col-sm-9">
+                                        <input type="datetime-local" name="DatePrevus" id="DatePrevus" class="form-control" value="@ViewData["d1"]" />
+                                        @Html.ValidationMessageFor(model => model.DatePrevus, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row" id="dureeDeveloppeur">
+                                        <label for="Duree" class="col-sm-3 p-0"> Durée Estimée </label>
+                                        <div class="col-sm-9">
+                                            @Html.EditorFor(model => model.Duree, new { htmlAttributes = new { @class = "form-control", @type = "time", @onchange = "MaxDuree()  " } })
+                                            @Html.ValidationMessageFor(model => model.Duree, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row" id="dureeCommercial">
+                                        <label for="Duree" class="col-sm-3 p-0 "> Durée PREVISIONNEL</label>
+                                        <div class="col-sm-9">
+                                            @Html.EditorFor(model => model.Duree, new { htmlAttributes = new { @class = "form-control", @type = "text" } })
+                                            @Html.ValidationMessageFor(model => model.Duree, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                @Html.HiddenFor(model => model.Degres, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+        $('#NumDossier').selectpicker({
+    dropdownAutoWidth : false,
+
+});
+    var code_client = $('#CodeClient').val();
+
+                                if (code_client != "Sélectionner un client") {
+                                    $('#NumDossier').find('option:contains("")').show();
+                                    $('#NumDossier').find('option:not(:contains("' + code_client + '"))').hide();
+                                    $('#NumDossier').selectpicker('refresh');
+
+                                    $('#NumReclamation').find('option:contains("")').show();
+                                    $('#NumReclamation').find('option:not(:contains("' + code_client + '"))').hide();
+                                    $('#NumReclamation').selectpicker('refresh');
+                                } else {
+                                    $('#NumDossier').find('option').show();
+                                    $('#NumDossier').selectpicker('refresh');
+
+                                    $('#NumReclamation').find('option').show();
+                                    $('#NumReclamation').selectpicker('refresh');
+                                }
+        $('#CodeClient').change(function() {
+                                var code_client = $(this).val();
+                                if (code_client != "Sélectionner un client") {
+                                    $('#NumDossier').find('option:contains("")').show();
+                                    $('#NumDossier').find('option:not(:contains("' + code_client + '"))').hide();
+                                    $('#NumDossier').selectpicker('refresh');
+
+                                    $('#NumReclamation').find('option:contains("")').show();
+                                    $('#NumReclamation').find('option:not(:contains("' + code_client + '"))').hide();
+                                    $('#NumReclamation').selectpicker('refresh');
+                                } else {
+                                    $('#NumDossier').find('option').show();
+                                    $('#NumDossier').selectpicker('refresh');
+
+                                    $('#NumReclamation').find('option').show();
+                                    $('#NumReclamation').selectpicker('refresh');
+                                }
+                            });
+
+        });
+    </script>
+    <script>
+         function MaxDuree()
+        {
+           if($("#Duree").val() > "01:00")
+            {
+            Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Durée Estimée ne doit pas dépasse 01:00 H !',
+              })
+            }
+         }
+
+
+        if('@Model.Nature' != 'C')
+        {
+        $("#dureeDeveloppeur").show();
+        $("#dureeCommercial").hide();
+        $("#reclamationrapport").show();
+
+        }
+        else
+        {
+        $("#dureeDeveloppeur").hide();
+        $("#dureeCommercial").show();
+        $("#reclamationrapport").hide();
+        }
+
+
+
+        $("#Nature").change(function(){
+        if($(this).val() != "C"){
+        $("#dureeDeveloppeur").show();
+        $("#dureeCommercial").hide();
+
+        }else{
+
+        $("#dureeDeveloppeur").hide();
+        $("#dureeCommercial").show();
+        }
+        })
+    </script>
+}
+<script>
+
+
+function FixeClient(codeClient) {
+    var select=document.getElementById("CodeClient");
+    var selectR=document.getElementById("NumDossier");
+    document.getElementById("RaisonSociale").value = select.options[select.selectedIndex].text;
+    $("#CodeClient").change(function(){
+    //console.log($('#Rapport .option:contains(""+codeClient+"")').html());
+
+
+    //$("#Rapport .selectize-dropdown-content div:contains("41110039")).html().hide();
+    //$("#Rapport .selectize-dropdown-content").css("visibility", "hidden");
+    });
+
+
+    //alert(selectR.options[selectR.selectedIndex].getAttribute('data-CodeClient'));
+    //selectR.options[selectR.selectedIndex].getAttribute('data-CodeClient')=select.options[select.selectedIndex].text;
+}
+
+
+function LoadList(z,y) {
+  var x = document.getElementById(z);
+  var y = document.getElementById(y);
+
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  }
+   else {
+    x.style.display = "none";
+  }
+  if (y.style.display === "none") {
+    y.style.display = "block";
+  }
+   else {
+    y.style.display = "none";
+  }
+}
+</script>

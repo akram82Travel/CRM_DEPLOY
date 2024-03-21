@@ -1,0 +1,182 @@
+﻿@model IEnumerable<CRMSTUBSOFT.ClientCRM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Liste des Clients CRM</span></div>
+                <div class="col-md-3" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/ClientCRMs">Clients CRM</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Liste
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group float-md-right">
+                        <a href="@Url.Action("Create","ClientCRMs")" class="btn btn-success"><i class="la la-plus"></i>Ajouter</a>
+
+                        <button class="btn btn-primary pull-right" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="la la-filter"></i>   Filtrer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="card-content collapse" id="collapseFilter">
+        <form action="/ContactClient/SearchIndex" method="post">
+            @Html.AntiForgeryToken()
+            <nav class="header-navbar navbar-expand-sm navbar navbar-with-menu navbar-light navbar-shadow bg-white bg-lighten-5 border-amber border-lighten-4">
+                <div class="input-group col-xl-4 col-lg-6 col-md-12" style="margin-left:10%;">
+                    <label class="mb-1 text-bold-700">DU</label>&nbsp; &nbsp;&nbsp;&nbsp;
+                    <input type="datetime-local" class="form-control border-success" id="d1" name="d1" value="@ViewData["d1"]" />
+                </div>
+                <div class="input-group col-xl-4 col-lg-6 col-md-12">
+                    <label class="mb-1 text-bold-700">AU</label>&nbsp; &nbsp;&nbsp;&nbsp;
+                    <input type="datetime-local" class="form-control border-success" id="d2" name="d2" value="@ViewData["d2"]" />
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <button type="submit" class="btn btn-success">Chercher</button>
+                </div>
+            </nav>
+        </form>
+        <br />
+        <div class="row">
+
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12" style="margin-left:10%;">
+
+                <button class="btn btn-filter btn-filter-tous btn-md mb-1">
+                    <i class="ft-crosshair"></i>
+                    @Html.ActionLink("Tous", "SearchDate", "Crm_ReclamationClient", new { d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12">
+                <button class="btn btn-filter btn-filter-NonTraite btn-md mb-1">
+                    <i class="ft-alert-triangle"></i>
+                    @Html.ActionLink("Non Traité", "Search", "Crm_ReclamationClient", new { Status = "E05", d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12">
+                <button class="btn btn-filter btn-filter-Traite btn-md mb-1">
+                    <i class="ft-award"></i>
+                    @Html.ActionLink("Traité", "Search", "Crm_ReclamationClient", new { Status = "E17", d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12">
+                <button class="btn btn-filter btn-filter-Encours btn-md mb-1">
+                    <i class="ft-target"></i>
+                    @Html.ActionLink("En cours", "Search", "Crm_ReclamationClient", new { Status = "E02", d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12">
+                <button class="btn btn-filter btn-filter-terminer btn-md mb-1">
+                    <i class="ft-check-square"></i>
+                    @Html.ActionLink("Terminés", "Search", "Crm_ReclamationClient", new { Status = "E01", d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    Logo
+                                </th>
+                                <th style="width:20%">
+                                    Raison Sociale
+                                </th>
+                                @*<th style="width:20%">
+                           Adresse
+                        </th>*@
+                                @*<th>
+                           Martricule Fiscale
+                        </th>*@
+                                <th style="width:10%">
+                                    Tel
+                                </th>
+                                <th style="width:10%">
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th style="width:20%">
+                                    Code Commercial
+                                </th>
+                                <th style="width:10%">
+                                    Mot de Passe
+                                </th>
+                                <th style="width:10%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>
+                                        <img src="/ClientCRMs/RetrieveImage/@item.CodeClient" alt="" height=50 width=50 />
+                                    </th>
+                                    <td style="width:20%">
+                                        @Html.DisplayFor(modelItem => item.RaisonSociale)
+                                    </td>
+                            @*<td style="width:10%">
+                                @Html.DisplayFor(modelItem => item.Adresse1)
+                            </td>*@
+                                    @*<td>
+                                @Html.DisplayFor(modelItem => item.MartriculeFiscale)
+                            </td>*@
+                                    <td style="width:10%">
+                                        @Html.DisplayFor(modelItem => item.Tel1)
+                                    </td>
+                                    <td style="width:10%">
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td style="width:20%">
+                                        @Html.DisplayFor(modelItem => item.CodeClientCommercial)
+                                    </td>
+                                    <td style="width:10%">
+                                        @Html.DisplayFor(modelItem => item.MotPasse)
+                                    </td>
+                                    <td style="width:10%">
+                                        @Html.ActionLink(" ", "Edit", new { id = item.CodeClient }, new { @class = "success edit la la-pencil" }) |
+                                        @Html.ActionLink(" ", "Details", new { id = item.CodeClient }, new { @class = "warning details  la la-eye" })|
+                                        @Html.ActionLink(" ", "Delete", new { id = item.CodeClient }, new { @class = "danger delete  la la-trash-o" })
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+
+
+                    </table>
+
+                </div>
+                </div>
+            </div>
+    </div>
+</div>
+    
+

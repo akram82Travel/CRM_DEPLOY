@@ -1,0 +1,561 @@
+﻿@model CRMSTUBSOFT.Crm_ReclamationClient
+@{
+    ViewBag.Title = "Email";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Crm_ReclamationClient> ListEmailWithReclamation = ViewData["ListEmailWithReclamation"] as List<Crm_ReclamationClient>;
+}
+<!-- BEGIN: Page CSS-->
+<link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/core/colors/palette-gradient.min.css">
+<link rel="stylesheet" type="text/css" href="~/Content/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css" href="~/Content/app-assets/css/pages/app-email.min.css">
+<!-- END: Page CSS-->
+<style>
+    html body {
+        padding-top: 5rem;
+    }
+</style>
+<div class="vertical-layout vertical-menu-modern content-left-sidebar email-application fixed-navbar  menu-expanded pace-done">
+    <div class="app-content content">
+        <div class="sidebar-left">
+            <div class="sidebar">
+                <div class="sidebar-content email-app-sidebar d-flex">
+                    <!-- sidebar close icon -->
+                    <span class="sidebar-close-icon">
+                        <i class="ft-x"></i>
+                    </span>
+                    <!-- sidebar close icon -->
+                    <div class="email-app-menu">
+                        <div class="form-group form-group-compose">
+                            <!-- compose button  -->
+                            <button type="button" class="btn btn-success btn-block my-2" id="retrieveEmailButton">
+                                <i class="ft-loader"></i>
+                                Charger les nouveaux Emails
+                            </button>
+
+                        </div>
+                        <div class="sidebar-menu-list ps ps--active-y">
+                            <!-- sidebar menu  -->
+                            <div class="list-group list-group-messages">
+                                <a href="/Crm_ReclamationClient/Email" class="list-group-item " id="inbox-menu">
+                                    <div class="d-inline mr-25">
+                                        <i class="ft-inbox"></i>
+                                    </div>
+                                    Boite de réception
+                                    <span class="badge badge-success badge-pill badge-round float-right" id="emailCount">0</span>
+                                </a>
+                                <a href="/Crm_ReclamationClient/EmailEnCours" class="list-group-item " id="inbox-menu">
+                                    <div class="d-inline mr-25">
+                                        <i class="ft-rewind"></i>
+                                    </div>
+                                    Reclamations en cour
+                                    <span class="badge badge-success badge-pill badge-round float-right" id="emailCountExc">0</span>
+                                </a>
+                                <a href="/Crm_ReclamationClient/EmailTraiter" class="list-group-item active" id="inbox-menu">
+                                    <div class="d-inline mr-25">
+                                        <i class="ft-delete"></i>
+                                    </div>
+                                    Reclamations traiter
+                                    <span class="badge badge-success badge-pill badge-round float-right" id="emailCountClosed">0</span>
+                                </a>
+                                <div href="#" class="list-group-item " id="inbox-menu">
+                                    <div class="d-inline mr-25">
+                                        <i class="ft-info"></i>
+                                    </div>
+                                    Filtrer par sujet
+                                    <select class="form-control" id="subject">
+                                        <option selected>Choisir un sujet</option>
+                                        <optgroup label="Comptabilité">Comptabilité</optgroup>
+                                        <option>Journée manquante</option>
+                                        <optgroup label="GRH">GRH</optgroup>
+                                        <option>Jour Férié</option>
+                                        <optgroup label="Technique">Technique</optgroup>
+                                        <option>Annulation validation</option>
+                                        <optgroup label="Finance">Finance</optgroup>
+                                        <option>Changement status</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <!-- sidebar menu  end-->
+                            <!-- sidebar label start -->
+                            <!-- sidebar label end -->
+                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 505px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 494px;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="content-overlay"></div>
+            <div class="content-wrapper">
+                <div class="content-header row">
+                </div>
+                <div class="content-body">
+                    <!-- email app overlay -->
+                    <div class="app-content-overlay"></div>
+                    <div class="email-app-area">
+                        <!-- Email list Area -->
+                        <div class="email-app-list-wrapper">
+                            <div class="email-app-list">
+                                <div class="email-action">
+                                    <!-- action left start here -->
+                                    <div class="action-left d-flex align-items-center">
+                                        <!-- select All checkbox -->
+                                        <div class="custom-control custom-checkbox selectAll mr-50">
+                                            <input type="checkbox" class="custom-control-input" id="checkboxsmall">
+                                            <label class="custom-control-label" for="checkboxsmall"></label>
+                                        </div>
+                                        <!-- delete unread dropdown -->
+
+                                    </div>
+                                    <!-- action left end here -->
+                                    <!-- action right start here -->
+                                    <div class="action-right d-flex flex-grow-1 align-items-center justify-content-around">
+                                        <!-- search bar  -->
+                                        <div class="email-fixed-search flex-grow-1">
+                                            <div class="sidebar-toggle d-block d-lg-none">
+                                                <i class="ft-align-justify"></i>
+                                            </div>
+                                            <fieldset class="form-group position-relative has-icon-left m-0">
+                                                <input type="text" class="form-control" id="email-search" placeholder="Search email">
+                                                <div class="form-control-position">
+                                                    <i class="ft-search"></i>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <!-- pagination and page count -->
+
+
+                                    </div>
+                                </div>
+                                <!-- / action right -->
+                                <!-- email user list start -->
+                                <div class="email-user-list list-group ps">
+                                    <ul class="users-list-wrapper media-list" id="emailContainer">
+                                    </ul>
+                                    <!-- email user list end -->
+                                    <!-- no result when nothing to show on list -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Email list Area -->
+                        <!-- Detailed Email View -->
+                        <div class="email-app-details">
+                            <!-- email detail view header -->
+                            <div class="email-detail-header">
+                                <div class="email-header-left d-flex align-items-center mb-1">
+                                    <span class="go-back mr-50">
+                                        <i class="ft-chevron-left font-medium-4 align-middle"></i>
+                                    </span>
+                                    <h5 class="email-detail-title font-weight-normal mb-0">
+                                        Advertising Internet Online
+                                        <span class="badge badge-light-danger badge-pill ml-1">PRODUCT</span>
+                                    </h5>
+                                </div>
+
+                            </div>
+                            <!-- email detail view header end-->
+                            <div class="email-scroll-area ps ps--active-x ps--active-y">
+                                <!-- email details  -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="collapsible email-detail-head">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h2 class="Title"></h2>
+                                                    <hr />
+                                                </div>
+                                                <form action="/Crm_ReclamationClient/Create" method="post">
+                                                    <div class="card-body">
+                                                        <h4>Détail de réclamation</h4>
+                                                        <textarea name="Description" class="Description" id="DescriptionReclamation"></textarea>
+                                                        <fieldset>
+
+                                                            <div class="row">
+
+                                                                @Html.AntiForgeryToken()
+                                                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                                <input type="hidden" name="CodeMoyenCommunication" id="CodeMoyenCommunication" value="Email" />
+                                                                @Html.HiddenFor(model => model.Id_Reclamation, new { htmlAttributes = new { @class = "form-control" } })
+                                                                @Html.HiddenFor(model => model.DateReclamation, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
+                                                                <input type="hidden" name="Titre" id="Titre" value="" />
+                                                                <input type="hidden" name="NumeroDossier" id="NumeroDossier" value="10">
+                                                                <input type="hidden" name="OutilCommunication" id="EmailId" value="" />
+                                                                <input type="hidden" name="RaisonSociale" id="RaisonSociale" value="">
+                                                                <input type="hidden" name="CodeClient" id="CodeClientId" value="">
+
+                                                                <div class="col-md-6">
+                                                                    <div class="col-md-12">
+                                                                        <label for="CodeClient"> Client </label>
+                                                                        @Html.DropDownListFor(model => model.CodeClient, (IEnumerable
+                                                                        <SelectListItem>)ViewData["ListClient"], "Sélectionner un client", new { @class = "selectize-control input-selectize multi", @id = "CodeClient", @onchange = "FixeClient()" })
+                                                                        @Html.ValidationMessageFor(model => model.CodeClient, "", new { @class = "text-danger" })
+
+                                                                    </div>
+
+                                                                    <label for="UtilisateurContact" class="col-sm-12 col-form-label pt-0"> Responsable </label>
+                                                                    <div class="col-sm-12">
+                                                                        @Html.ListBoxFor(
+                                                                            model => model.UtilisateurContact,
+                                                                            new MultiSelectList((IEnumerable<SelectListItem>)ViewData["ListResponsable"], "Value", "Text"),
+                                                                            new { @multiple = "multiple", @placeholder = "Sélectionner des responsables", @class = "select2 form-control"}
+                                                                        )
+                                                                        @Html.ValidationMessageFor(model => model.UtilisateurContact, "", new { @class = "text-danger" })
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <label for="ObjetReclamation"> Observation </label>
+                                                                        <textarea name="ObjetReclamation" id="ObjetReclamation"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="Nature" class="col-sm-12  pt-0 col-form-label">Nature </label>
+                                                                    <div class="col-sm-12">
+                                                                        @Html.DropDownListFor(model => model.Nature, (IEnumerable
+                                                                          <SelectListItem>)ViewData["ListNature"], "Sélectionner nature", new { @class = "selectize-control input-selectize multi", @required = "required", @id = "Nature" })
+                                                                        @Html.ValidationMessageFor(model => model.Nature, "", new { @class = "text-danger" })
+
+                                                                    </div>
+
+                                                                    <label for="NomContact" class="col-sm-12 col-form-label pt-0"> Nom Contact </label>
+                                                                    <div class="col-sm-12">
+                                                                        @Html.DropDownListFor(model => model.NomContact, (IEnumerable
+                                                                        <SelectListItem>)ViewData["ListeContactClient"], "Sélectionner un contact", new { @class = "selectize-control input-selectize multi", @id = "NomContact" })
+                                                                        @Html.ValidationMessageFor(model => model.NomContact, "", new { @class = "text-danger" })
+                                                                    </div>
+
+                                                                    <label for="NumeroDossier" class="col-sm-12 col-form-label pt-0"> CC Responsable </label>
+                                                                    <div class="col-sm-12">
+                                                                        @Html.ListBoxFor(
+                                                                                model => model.NumeroDossier,
+                                                                                new MultiSelectList((IEnumerable<SelectListItem>)ViewData["ListeContactClient"], "Value", "Text"),
+                                                                                new { @multiple = "multiple", @placeholder = "Sélectionner des responsables", @class = "select2 form-control" }
+                                                                            )
+
+                                                                        @Html.ValidationMessageFor(model => model.NumeroDossier, "", new { @class = "text-danger" })
+                                                                    </div>
+
+                                                                    <label for="PrisEnChargePar" class="col-sm-12 col-form-label pt-0"> Source Erreur </label>
+                                                                    <div class="col-sm-12">
+                                                                        @Html.DropDownListFor(model => model.PrisEnChargePar, (IEnumerable
+                                                                        <SelectListItem>)ViewData["ListeContactClient"], "Sélectionner un contact", new { @class = "selectize-control input-selectize multi", @id = "PrisEnChargePar"})
+                                                                        @Html.ValidationMessageFor(model => model.PrisEnChargePar, "", new { @class = "text-danger" })
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+
+
+                                                    <div class="card-footer">
+                                                            <button type="submit" class="btn btn-dark">Envoyer</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- email details  end-->
+
+                            </div>
+                        </div>
+                        <!--/ Detailed Email View -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <!-- BEGIN: Vendor JS-->
+    <script src="~/Content/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="~/Content/app-assets/vendors/js/editors/quill/quill.min.js"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Theme JS-->
+    <script src="~/Content/app-assets/js/core/app-menu.min.js"></script>
+    <script src="~/Content/app-assets/js/core/app.min.js"></script>
+    <script src="~/Content/app-assets/js/scripts/customizer.min.js"></script>
+    <script src="~/Content/app-assets/js/scripts/footer.min.js"></script>
+
+    <!-- END: Theme JS-->
+    <!-- BEGIN: Page JS-->
+    <script>
+
+        function AddTacheFReclamation(ID) {
+            window.location.href = "/ContactClient/CreateTacheReclamation?id=" + ID;
+        }
+        callEmail();
+        $('#retrieveEmailButton').click(function () {
+           location.reload();
+        });
+
+        function callEmail() {
+            $.ajax({
+                type: 'POST', // Change to 'GET' if your action allows GET requests
+                url: '/Crm_ReclamationClient/RetrieveEmailAndStoreInDatabaseAsyncTraiter', // Replace with your controller name
+                async: false,
+                success: function (result) {
+                    if (result.success) {
+                        var emailList = result.data;
+                        var emailCount = emailList.length;
+                        // Update the email count in the HTML
+                        $('#emailCountClosed').text(emailCount);
+
+                        // Clear and re-populate the email container
+                        var emailContainer = $('#emailContainer');
+                        emailContainer.empty();
+                        var listEmailWithReclamation = @Html.Raw(Json.Encode(ListEmailWithReclamation));
+                        console.log(listEmailWithReclamation);
+                        // Loop through the email data and create div elements
+                        for (var i = 0; i < emailList.length; i++) {
+
+                            var email = emailList[i];
+                            //console.log(email.Id);
+                            // Check if the email has a corresponding reclamation
+                            var hasReclamation = listEmailWithReclamation.some(item => item.OutilCommunication == email.Id);
+                            // Create li element with classes and inner structure
+                            var emailLi = $('<li data-id="' + email.Id + '">').addClass('media mail-read')
+                                .append($('<div>').addClass('user-action')
+                                    .append($('<div>').addClass('checkbox-con mr-25')
+                                        .append($('<div>').addClass('custom-control custom-checkbox')
+                                            .append($('<input>').attr('type', 'checkbox').addClass('custom-control-input').attr('id', 'checkboxsmall' + (i + 1)))
+                                            .append($('<label>').addClass('custom-control-label').attr('for', 'checkboxsmall' + (i + 1)))
+                                        )
+                                    )
+                                    .append($('<span>').addClass('favorite warning').html('<i class="ft-star"></i>'))
+                                )
+                                .append($('<div>').addClass('media-body')
+                                .append($('<div>').addClass('user-details')
+                                        .append($('<div>').addClass('mail-items')
+                                            .append($('<span>').addClass('list-group-item-text text-truncate').text(email.Title))
+                                            .append($('<h6>').addClass('list-group-item-text text-truncate').text(email.Author))
+                                        )
+                                        .append($('<div>').addClass('mail-meta-item')
+                                            .append($('<span>').addClass('float-right')
+                                                .append($('<span>').addClass('mail-date').text(email.Date)) // Assuming you have a 'Date' property in the email object
+                                            )
+                                        )
+                                    )
+                                .append($('<div>').addClass('mail-message')
+                                        .append($('<p>').addClass('list-group-item-text truncate mb-0').text(email.Description))
+                                        .append($('<div>').addClass('mail-meta-item')
+                                            .append($('<span>').addClass('float-right')
+                                                .append($('<span>').addClass('bullet bullet-success bullet-sm'))
+                                            )
+                                        )
+                                    )
+                                );
+
+                            emailContainer.append(emailLi);
+
+                        }
+                    } else {
+                        alert('An error occurred while retrieving and storing emails.');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while making the AJAX request.');
+                }
+            });
+
+
+
+
+            $.ajax({
+                type: 'POST', // Change to 'GET' if your action allows GET requests
+                url: '/Crm_ReclamationClient/RetrieveEmailAndStoreInDatabaseAsyncEnCours', // Replace with your controller name
+                async: false,
+                success: function (result) {
+                    if (result.success) {
+                        var emailList = result.data;
+                        var emailCount = emailList.length;
+                        // Update the email count in the HTML
+                        $('#emailCountExc').text(emailCount);
+
+                    } else {
+                        alert('An error occurred while retrieving and storing emails.');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while making the AJAX request.');
+                }
+            });
+            $.ajax({
+                type: 'POST', // Change to 'GET' if your action allows GET requests
+                url: '/Crm_ReclamationClient/RetrieveEmailAndStoreInDatabaseAsync', // Replace with your controller name
+                async: false,
+                success: function (result) {
+                    if (result.success) {
+                        var emailList = result.data;
+                        var emailCount = emailList.length;
+                        // Update the email count in the HTML
+                        $('#emailCount').text(emailCount);
+
+                    } else {
+                        alert('An error occurred while retrieving and storing emails.');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while making the AJAX request.');
+                }
+            });
+
+
+
+
+        }
+        function convertToHtml(text) {
+            // Replace quoted-printable characters
+            text = text.replace(/=20/g, ' '); // Replace '=20' with space
+            text = text.replace(/=E9/g, 'é'); // Replace '=E9' with 'é'
+            text = text.replace(/=20/g, ' '); // Replace '=20' with space
+
+            // Add HTML tags
+            text = '<p>' + text.replace(/\r\n/g, '</p><p>') + '</p>';
+
+            return text;
+        }
+        function convertQuotedPrintableToHtml(input) {
+            // Replace the quoted-printable encoding with their respective characters
+            let decoded = input.replace(/=20/g, ' ')     // Replace '=20' with space
+        .replace(/=21/g, '!')     // Replace '=21' with '!'
+        .replace(/=22/g, '"')     // Replace '=22' with '"'
+        .replace(/=23/g, '#')     // Replace '=23' with '#'
+        .replace(/=24/g, '$')     // Replace '=24' with '$'
+        .replace(/=25/g, '%')     // Replace '=25' with '%'
+        .replace(/=26/g, '&')     // Replace '=26' with '&'
+        .replace(/=27/g, "'")     // Replace '=27' with '
+        .replace(/=28/g, '(')     // Replace '=28' with '('
+        .replace(/=29/g, ')')     // Replace '=29' with ')'
+        .replace(/=2A/g, '*')     // Replace '=2A' with '*'
+        .replace(/=2B/g, '+')     // Replace '=2B' with '+'
+        .replace(/=2C/g, ',')     // Replace '=2C' with ','
+        .replace(/=2D/g, '-')     // Replace '=2D' with '-'
+        .replace(/=2E/g, '.')     // Replace '=2E' with '.'
+        .replace(/=2F/g, '/')     // Replace '=2F' with '/'
+        .replace(/=3A/g, ':')     // Replace '=3A' with ':'
+        .replace(/=3B/g, ';')     // Replace '=3B' with ';'
+        .replace(/=3C/g, '<')     // Replace '=3C' with '<'
+        .replace(/=3D/g, '=')     // Replace '=3D' with '='
+        .replace(/=3E/g, '>')     // Replace '=3E' with '>'
+        .replace(/=3F/g, '?')     // Replace '=3F' with '?'
+        .replace(/=40/g, '@("@"))')     // Replace '=40' with '@("@"))'
+        .replace(/=5B/g, '[')     // Replace '=5B' with '['
+        .replace(/=5C/g, '\\')    // Replace '=5C' with '\'
+        .replace(/=5D/g, ']')     // Replace '=5D' with ']'
+        .replace(/=5E/g, '^')     // Replace '=5E' with '^'
+        .replace(/=5F/g, '_')     // Replace '=5F' with '_'
+        .replace(/=60/g, '`')     // Replace '=60' with '`'
+        .replace(/=7B/g, '{')     // Replace '=7B' with '{'
+        .replace(/=7C/g, '|')     // Replace '=7C' with '|'
+        .replace(/=7D/g, '}')     // Replace '=7D' with '}'
+        .replace(/=7E/g, '~')     // Replace '=7E' with '~'
+        .replace(/=92/g, "'")     // Replace '=92' with '
+        .replace(/=C3=A9/g, 'é')  // Replace '=C3=A9' with 'é'
+        .replace(/=E0/g, 'à')     // Replace '=E0' with 'à'
+        .replace(/=E8/g, 'è')     // Replace '=E8' with 'è'
+        .replace(/=E9/g, 'é')     // Replace '=E9' with 'é'
+        .replace(/=EA/g, 'ê')     // Replace '=EA' with 'ê'
+        .replace(/=FB/g, 'û')     // Replace '=FB' with 'û'
+        .replace(/=F4/g, 'ô')     // Replace '=F4' with 'ô'
+        .replace(/=EE/g, 'î')     // Replace '=EE' with 'î'
+        .replace(/=E2/g, 'â')     // Replace '=E2' with 'â'
+        .replace(/=E7/g, 'ç')     // Replace '=E7' with 'ç'
+        .replace(/charset "utf-8"/g, '')     // Replace '=E7' with 'ç'
+        .replace(/charset "windows-1256"/g, '')     // Replace '=E7' with 'ç'
+
+        .replace(/=C3=A0/g, 'à')  // Replace '=C3=A0' with 'à'
+        .replace(/=C3=A8/g, 'è')  // Replace '=C3=A8' with 'è'
+        .replace(/=C3=AA/g, 'ê')  // Replace '=C3=AA' with 'ê'
+        .replace(/=C3=BB/g, 'û')  // Replace '=C3=BB' with 'û'
+        .replace(/=C3=B4/g, 'ô')  // Replace '=C3=B4' with 'ô'
+        .replace(/=C3=AE/g, 'î')  // Replace '=C3=AE' with 'î'
+        .replace(/=C3=A2/g, 'â')  // Replace '=C3=A2' with 'â'
+        .replace(/=C3=A7/g, 'ç')  // Replace '=C3=A7' with 'ç'
+        .replace(/=B0/g, '°')  // Replace '=C3=A7' with 'ç'
+        .replace(/=96/g, '-')  // Replace '=C3=A7' with 'ç'
+        .replace(/=20/g, '\n')
+        .replace(/----/g, '')
+        .replace(/=/g, ' ')     // Replace '=E7' with 'ç'
+        //.replace("<p></p>", '')
+        decoded =  decoded.replace(/\r\n/g, '<br>');
+        return decoded;
+        }
+
+        function callEmailById(IdEmail) {
+            $.ajax({
+                type: 'POST', // Change to 'GET' if your action allows GET requests
+                url: '/Crm_ReclamationClient/RetrieveEmailById', // Replace with your controller name
+                data: { "IDEmail": IdEmail },
+                async: false,
+                success: function (result) {
+                    if (result.success) {
+                        var emailList = result.data;
+                        var emailCount = emailList.length;
+                        // Update the email count in the HTML
+                        //$('#emailCount').text(emailCount);
+
+                        // Loop through the email data and create div elements
+                        for (var i = 0; i < emailList.length; i++) {
+                            var email = emailList[i];
+                            $('.email-app-details h5').html(email.Author);
+                            $('.email-app-details #EmailId').val(email.Id);
+                            $('.email-app-details .date').html(email.Date);
+                            $('.email-app-details #date').html(email.Date);
+                            $('.email-app-details .Title').html(email.Title);
+                            $('.email-app-details #Titre').val(email.Title);
+                            if (result.body.includes("charset")) {
+                                var textBody = result.body.replace('charset="iso-8859-1"', '').replace('Content-Transfer-Encoding: quoted-printable', '').replace('charset="us-ascii"', '').replace('Content-Transfer-Encoding: 7bit', '').replace('charset=utf-8','');
+                                CKEDITOR.instances['DescriptionReclamation'].setData(convertQuotedPrintableToHtml(textBody));
+                            } else {
+
+                                CKEDITOR.instances['DescriptionReclamation'].setData(result.body);
+                            }
+
+                        }
+                    } else {
+                        alert('An error occurred while retrieving emails ID.');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while making the AJAX request.');
+                }
+            });
+
+        }
+        function FixeClient() {
+            var select = document.getElementById("CodeClient");
+            document.getElementById("CodeClientId").value = select.options[select.selectedIndex].value;
+            document.getElementById("RaisonSociale").value = select.options[select.selectedIndex].text;
+        }
+        $(".email-user-list li").on("click", function () {
+            callEmailById($(this).data('id'))
+        });
+
+        var now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        document.getElementById('DateReclamation').value = now.toISOString().slice(0, 16);
+
+        if ($("#ObjetReclamation").length > 0) {
+            CKEDITOR.replace("ObjetReclamation");
+
+        }
+        if ($("#DescriptionReclamation").length > 0) {
+            CKEDITOR.replace("DescriptionReclamation");
+        }
+
+    </script>
+    <script src="~/Content/app-assets/js/scripts/pages/app-email.min.js"></script>
+    <!-- END: Page JS-->
+
+
+}

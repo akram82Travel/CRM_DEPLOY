@@ -1,0 +1,203 @@
+﻿@model IEnumerable<CRMSTUBSOFT.Crm_Projet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-wrapper">
+
+
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Liste des Projets</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_Projet">Projet</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Liste des Projets
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="btn-group float-md-right">
+                        <a href="@Url.Action("Create","Crm_Projet")" class="btn btn-success"><i class="la la-plus"></i>  Ajouter</a>
+
+                        <button class="btn btn-primary pull-right" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="la la-filter"></i>   Filtrer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+             
+                <table class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CodeTypeProjet)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Libelle)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MontantProjet)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateDeclenchement)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateFinPrevu)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Cloture)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateCloture)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                      
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <select id="CodeTypeProjet" name="CodeTypeProjet" class="form-control" style="font-size: 12px" disabled>
+                                        <option value="0" @(item.CodeTypeProjet == "0" ? "selected" : "")>Développement Web</option>
+                                        <option value="1" @(item.CodeTypeProjet == "1" ? "selected" : "")>Développment ERP</option>
+                                        <option value="2" @(item.CodeTypeProjet == "2" ? "selected" : "")>Développement SQL</option>
+                                        <option value="3" @(item.CodeTypeProjet == "3" ? "selected" : "")>Développement ROBOT</option>
+                                        <option value="4" @(item.CodeTypeProjet == "4" ? "selected" : "")>Développement Scrapping</option>
+                                        <option value="5" @(item.CodeTypeProjet == "5" ? "selected" : "")>Développement BI</option>
+                                        <option value="6" @(item.CodeTypeProjet == "6" ? "selected" : "")>Développement Mobile</option>
+                                        <option value="7" @(item.CodeTypeProjet == "7" ? "selected" : "")>Développement Divers</option>
+                                        <option value="8" @(item.CodeTypeProjet == "7" ? "selected" : "")>Développement Desktop</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Libelle)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MontantProjet)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateDeclenchement)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateFinPrevu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cloture)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateCloture)
+                                </td>
+                                <td style="width:11%">
+                                    @Html.ActionLink(" ", "Edit", new { id = item.CodeProjet }, new { @class = "success edit  la la-pencil" }) |
+                                    @Html.ActionLink(" ", "Details", new { id = item.CodeProjet }, new { @class = "warning details  la la-eye" }) |
+                                    @*@Html.ActionLink(" ", "Delete", new { id = item.NumeroPVReunion }, new { @class = "danger delete  la la-trash-o" })*@
+                                    <button class="btn p-0" name="delete" id="delete" data-id="@item.CodeProjet" onclick="openModaldelete('@item.CodeProjet', 'Projet N° ')">
+                                        <i class="danger delete  la la-trash-o"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+
+                <h1 class="modal-title">Confirmation Suppression</h1>
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" name="supprimer" id="supprimer" class="btn btn-danger" style="width:100px">Supprimer</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal" style="width:100px">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @if (TempData["SuccessMesage"] != null)
+    {
+        <script>
+
+  Swal.fire({
+  position: 'top-center',
+  icon: 'success',
+  showConfirmButton: false,
+  title: '@TempData["SuccessMesage"]',
+  timer: 3000
+})
+        </script>
+    }
+
+    @if (TempData["SuppressionMessage"] != null)
+    {
+        <script>
+
+  Swal.fire({
+  position: 'top-center',
+  background:'#c62828',
+  color:'#FFFFFF',
+  showConfirmButton: false,
+  title: '@TempData["SuppressionMessage"]',
+  timer: 3000
+})
+
+        </script>
+    }
+
+    <script>
+        function openModaldelete(ID, name) {
+            $(".modal-body").html("Voulez vous Supprimez " + name + ID);
+            $("#myModal").modal('show');
+            $("#supprimer").click(function () {
+                window.location.href = "/Crm_Projet/DeleteConfirmed?id=" + ID
+            });
+        }
+    </script>
+}

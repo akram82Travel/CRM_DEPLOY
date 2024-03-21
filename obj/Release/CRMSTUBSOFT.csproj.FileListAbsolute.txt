@@ -1,0 +1,745 @@
+D:\CRM_AspDotNet_47\bin\CRMSTUBSOFT.dll.config
+D:\CRM_AspDotNet_47\bin\CRMSTUBSOFT.dll
+D:\CRM_AspDotNet_47\bin\CRMSTUBSOFT.pdb
+D:\CRM_AspDotNet_47\bin\roslyn\csc.exe
+D:\CRM_AspDotNet_47\bin\roslyn\csc.exe.config
+D:\CRM_AspDotNet_47\bin\roslyn\csc.rsp
+D:\CRM_AspDotNet_47\bin\roslyn\csi.exe
+D:\CRM_AspDotNet_47\bin\roslyn\csi.exe.config
+D:\CRM_AspDotNet_47\bin\roslyn\csi.rsp
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.Managed.Core.targets
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\CRM_AspDotNet_47\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.AppContext.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Collections.Immutable.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Console.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Globalization.Calendars.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.IO.Compression.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.IO.FileSystem.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Net.Http.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Net.Sockets.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Reflection.Metadata.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.ValueTuple.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Xml.XmlDocument.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Xml.XPath.dll
+D:\CRM_AspDotNet_47\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\CRM_AspDotNet_47\bin\roslyn\vbc.exe
+D:\CRM_AspDotNet_47\bin\roslyn\vbc.exe.config
+D:\CRM_AspDotNet_47\bin\roslyn\vbc.rsp
+D:\CRM_AspDotNet_47\bin\roslyn\VBCSCompiler.exe
+D:\CRM_AspDotNet_47\bin\roslyn\VBCSCompiler.exe.config
+D:\CRM_AspDotNet_47\bin\Antlr3.Runtime.dll
+D:\CRM_AspDotNet_47\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\CRM_AspDotNet_47\bin\CrystalDecisions.Data.AdoDotNetInterop.dll
+D:\CRM_AspDotNet_47\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\CRM_AspDotNet_47\bin\CrystalDecisions.ReportSource.dll
+D:\CRM_AspDotNet_47\bin\CrystalDecisions.Shared.dll
+D:\CRM_AspDotNet_47\bin\CrystalDecisions.Web.dll
+D:\CRM_AspDotNet_47\bin\CrystalDecisions.Windows.Forms.dll
+D:\CRM_AspDotNet_47\bin\EntityFramework.dll
+D:\CRM_AspDotNet_47\bin\EntityFramework.SqlServer.dll
+D:\CRM_AspDotNet_47\bin\FlashControlV71.dll
+D:\CRM_AspDotNet_47\bin\log4net.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.AspNet.Identity.Core.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.Cookies.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.Facebook.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.Google.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.OAuth.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.Twitter.dll
+D:\CRM_AspDotNet_47\bin\Microsoft.Web.Infrastructure.dll
+D:\CRM_AspDotNet_47\bin\Newtonsoft.Json.dll
+D:\CRM_AspDotNet_47\bin\Owin.dll
+D:\CRM_AspDotNet_47\bin\SAPBusinessObjects.WPF.Viewer.dll
+D:\CRM_AspDotNet_47\bin\SAPBusinessObjects.WPF.ViewerShared.dll
+D:\CRM_AspDotNet_47\bin\System.Web.Helpers.dll
+D:\CRM_AspDotNet_47\bin\System.Web.Mvc.dll
+D:\CRM_AspDotNet_47\bin\System.Web.Optimization.dll
+D:\CRM_AspDotNet_47\bin\System.Web.Razor.dll
+D:\CRM_AspDotNet_47\bin\System.Web.WebPages.Deployment.dll
+D:\CRM_AspDotNet_47\bin\System.Web.WebPages.dll
+D:\CRM_AspDotNet_47\bin\System.Web.WebPages.Razor.dll
+D:\CRM_AspDotNet_47\bin\WebGrease.dll
+D:\CRM_AspDotNet_47\bin\EntityFramework.xml
+D:\CRM_AspDotNet_47\bin\EntityFramework.SqlServer.xml
+D:\CRM_AspDotNet_47\bin\log4net.xml
+D:\CRM_AspDotNet_47\bin\System.Web.Helpers.xml
+D:\CRM_AspDotNet_47\bin\System.Web.Mvc.xml
+D:\CRM_AspDotNet_47\bin\System.Web.Optimization.xml
+D:\CRM_AspDotNet_47\bin\System.Web.Razor.xml
+D:\CRM_AspDotNet_47\bin\System.Web.WebPages.xml
+D:\CRM_AspDotNet_47\bin\System.Web.WebPages.Deployment.xml
+D:\CRM_AspDotNet_47\bin\System.Web.WebPages.Razor.xml
+D:\CRM_AspDotNet_47\bin\Newtonsoft.Json.xml
+D:\CRM_AspDotNet_47\bin\Antlr3.Runtime.pdb
+D:\CRM_AspDotNet_47\bin\Microsoft.AspNet.Identity.Core.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.Facebook.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.Cookies.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.Google.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.Twitter.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.Owin.Security.OAuth.xml
+D:\CRM_AspDotNet_47\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\CRM_AspDotNet_47\bin\fr\System.Web.Helpers.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\System.Web.Mvc.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\System.Web.Optimization.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\System.Web.Razor.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\System.Web.WebPages.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\System.Web.WebPages.Deployment.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.AspNet.Identity.Core.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.Owin.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.Owin.Security.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.Owin.Security.Facebook.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.Owin.Security.Google.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.Owin.Security.Twitter.resources.dll
+D:\CRM_AspDotNet_47\bin\fr\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\CRM_AspDotNet_47\obj\Release\CRMSTUBSOFT.csproj.AssemblyReference.cache
+D:\CRM_AspDotNet_47\obj\Release\CRMSTUBSOFT.csproj.CoreCompileInputs.cache
+D:\CRM_AspDotNet_47\obj\Release\CRMSTUBSOFT.csproj.CopyComplete
+D:\CRM_AspDotNet_47\obj\Release\CRMSTUBSOFT.dll
+D:\CRM_AspDotNet_47\obj\Release\CRMSTUBSOFT.pdb
+D:\Projets 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.AssemblyReference.cache
+D:\Projets 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.CoreCompileInputs.cache
+D:\Projets 2022\Web_CRM\obj\Release\CRMSTUBSOFT.dll
+D:\Projets 2022\Web_CRM\obj\Release\CRMSTUBSOFT.pdb
+D:\Projets 2022\Web_CRM\bin\CRMSTUBSOFT.dll.config
+D:\Projets 2022\Web_CRM\bin\CRMSTUBSOFT.dll
+D:\Projets 2022\Web_CRM\bin\CRMSTUBSOFT.pdb
+D:\Projets 2022\Web_CRM\bin\roslyn\csc.exe
+D:\Projets 2022\Web_CRM\bin\roslyn\csc.exe.config
+D:\Projets 2022\Web_CRM\bin\roslyn\csc.rsp
+D:\Projets 2022\Web_CRM\bin\roslyn\csi.exe
+D:\Projets 2022\Web_CRM\bin\roslyn\csi.exe.config
+D:\Projets 2022\Web_CRM\bin\roslyn\csi.rsp
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projets 2022\Web_CRM\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.AppContext.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Collections.Immutable.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Console.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Globalization.Calendars.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.IO.Compression.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.IO.FileSystem.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Net.Http.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Net.Sockets.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.ValueTuple.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Xml.XPath.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Projets 2022\Web_CRM\bin\roslyn\vbc.exe
+D:\Projets 2022\Web_CRM\bin\roslyn\vbc.exe.config
+D:\Projets 2022\Web_CRM\bin\roslyn\vbc.rsp
+D:\Projets 2022\Web_CRM\bin\roslyn\VBCSCompiler.exe
+D:\Projets 2022\Web_CRM\bin\roslyn\VBCSCompiler.exe.config
+D:\Projets 2022\Web_CRM\bin\Antlr3.Runtime.dll
+D:\Projets 2022\Web_CRM\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\Projets 2022\Web_CRM\bin\CrystalDecisions.Data.AdoDotNetInterop.dll
+D:\Projets 2022\Web_CRM\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Projets 2022\Web_CRM\bin\CrystalDecisions.ReportSource.dll
+D:\Projets 2022\Web_CRM\bin\CrystalDecisions.Shared.dll
+D:\Projets 2022\Web_CRM\bin\CrystalDecisions.Web.dll
+D:\Projets 2022\Web_CRM\bin\CrystalDecisions.Windows.Forms.dll
+D:\Projets 2022\Web_CRM\bin\EntityFramework.dll
+D:\Projets 2022\Web_CRM\bin\EntityFramework.SqlServer.dll
+D:\Projets 2022\Web_CRM\bin\FlashControlV71.dll
+D:\Projets 2022\Web_CRM\bin\log4net.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.Google.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Projets 2022\Web_CRM\bin\Microsoft.Web.Infrastructure.dll
+D:\Projets 2022\Web_CRM\bin\Newtonsoft.Json.dll
+D:\Projets 2022\Web_CRM\bin\Owin.dll
+D:\Projets 2022\Web_CRM\bin\SAPBusinessObjects.WPF.Viewer.dll
+D:\Projets 2022\Web_CRM\bin\SAPBusinessObjects.WPF.ViewerShared.dll
+D:\Projets 2022\Web_CRM\bin\System.Web.Helpers.dll
+D:\Projets 2022\Web_CRM\bin\System.Web.Mvc.dll
+D:\Projets 2022\Web_CRM\bin\System.Web.Optimization.dll
+D:\Projets 2022\Web_CRM\bin\System.Web.Razor.dll
+D:\Projets 2022\Web_CRM\bin\System.Web.WebPages.Deployment.dll
+D:\Projets 2022\Web_CRM\bin\System.Web.WebPages.dll
+D:\Projets 2022\Web_CRM\bin\System.Web.WebPages.Razor.dll
+D:\Projets 2022\Web_CRM\bin\WebGrease.dll
+D:\Projets 2022\Web_CRM\bin\EntityFramework.xml
+D:\Projets 2022\Web_CRM\bin\EntityFramework.SqlServer.xml
+D:\Projets 2022\Web_CRM\bin\log4net.xml
+D:\Projets 2022\Web_CRM\bin\System.Web.Helpers.xml
+D:\Projets 2022\Web_CRM\bin\System.Web.Mvc.xml
+D:\Projets 2022\Web_CRM\bin\System.Web.Optimization.xml
+D:\Projets 2022\Web_CRM\bin\System.Web.Razor.xml
+D:\Projets 2022\Web_CRM\bin\System.Web.WebPages.xml
+D:\Projets 2022\Web_CRM\bin\System.Web.WebPages.Deployment.xml
+D:\Projets 2022\Web_CRM\bin\System.Web.WebPages.Razor.xml
+D:\Projets 2022\Web_CRM\bin\Newtonsoft.Json.xml
+D:\Projets 2022\Web_CRM\bin\Antlr3.Runtime.pdb
+D:\Projets 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.Google.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projets 2022\Web_CRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projets 2022\Web_CRM\bin\fr\System.Web.Helpers.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\System.Web.Mvc.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\System.Web.Optimization.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\System.Web.Razor.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\System.Web.WebPages.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\System.Web.WebPages.Deployment.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.Owin.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Google.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Projets 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Projets 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.CopyComplete
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CRMSTUBSOFT.dll.config
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CRMSTUBSOFT.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CRMSTUBSOFT.pdb
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csc.exe
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csc.exe.config
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csc.rsp
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csi.exe
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csi.exe.config
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csi.rsp
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.Managed.Core.targets
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.AppContext.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Collections.Immutable.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Console.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Globalization.Calendars.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.IO.Compression.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.IO.FileSystem.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Net.Http.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Net.Sockets.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Reflection.Metadata.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.ValueTuple.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Xml.XmlDocument.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Xml.XPath.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\vbc.exe
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\vbc.exe.config
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\vbc.rsp
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\VBCSCompiler.exe
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\VBCSCompiler.exe.config
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Antlr3.Runtime.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.Data.AdoDotNetInterop.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.ReportSource.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.Shared.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.Web.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.Windows.Forms.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\EntityFramework.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\EntityFramework.SqlServer.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\FlashControlV71.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\log4net.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Core.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Cookies.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Facebook.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Google.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.OAuth.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Twitter.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Web.Infrastructure.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Newtonsoft.Json.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Owin.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\SAPBusinessObjects.WPF.Viewer.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\SAPBusinessObjects.WPF.ViewerShared.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Helpers.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Mvc.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Optimization.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Razor.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.Deployment.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.Razor.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\WebGrease.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\EntityFramework.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\EntityFramework.SqlServer.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\log4net.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Helpers.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Mvc.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Optimization.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Razor.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.Deployment.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.Razor.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Newtonsoft.Json.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Antlr3.Runtime.pdb
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Core.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Facebook.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Cookies.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Google.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Twitter.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.OAuth.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.Helpers.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.Mvc.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.Optimization.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.Razor.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.WebPages.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.WebPages.Deployment.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.Core.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Facebook.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Google.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Twitter.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.AssemblyReference.cache
+D:\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.CoreCompileInputs.cache
+D:\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.CopyComplete
+D:\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.dll
+D:\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.pdb
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CRMSTUBSOFT.dll.config
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CRMSTUBSOFT.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CRMSTUBSOFT.pdb
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csc.exe
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csc.exe.config
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csc.rsp
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csi.exe
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csi.exe.config
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\csi.rsp
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.Managed.Core.targets
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.AppContext.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Collections.Immutable.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Console.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Globalization.Calendars.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.IO.Compression.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.IO.FileSystem.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Net.Http.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Net.Sockets.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Reflection.Metadata.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.ValueTuple.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Xml.XmlDocument.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Xml.XPath.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\vbc.exe
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\vbc.exe.config
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\vbc.rsp
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\VBCSCompiler.exe
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\roslyn\VBCSCompiler.exe.config
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Antlr3.Runtime.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.Data.AdoDotNetInterop.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.ReportSource.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.Shared.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.Web.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\CrystalDecisions.Windows.Forms.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\EntityFramework.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\EntityFramework.SqlServer.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\FlashControlV71.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\log4net.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Core.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Cookies.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Facebook.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Google.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.OAuth.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Twitter.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Web.Infrastructure.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Newtonsoft.Json.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Owin.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\SAPBusinessObjects.WPF.Viewer.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\SAPBusinessObjects.WPF.ViewerShared.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Helpers.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Mvc.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Optimization.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Razor.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.Deployment.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.Razor.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\WebGrease.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\EntityFramework.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\EntityFramework.SqlServer.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\log4net.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Helpers.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Mvc.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Optimization.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.Razor.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.Deployment.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Web.WebPages.Razor.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Newtonsoft.Json.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Antlr3.Runtime.pdb
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Core.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Facebook.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Cookies.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Google.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.Twitter.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Owin.Security.OAuth.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.Helpers.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.Mvc.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.Optimization.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.Razor.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.WebPages.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.WebPages.Deployment.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.Core.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Facebook.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Google.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.Twitter.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\fr\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.AssemblyReference.cache
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.CoreCompileInputs.cache
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.csproj.CopyComplete
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\obj\Release\CRMSTUBSOFT.pdb
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\BouncyCastle.Cryptography.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\MailKit.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\MimeKit.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Buffers.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Formats.Asn1.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Memory.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Numerics.Vectors.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Threading.Tasks.Extensions.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.ValueTuple.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\BouncyCastle.Cryptography.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\MailKit.pdb
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\MailKit.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\MailKit.dll.config
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\MimeKit.pdb
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\MimeKit.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\MimeKit.dll.config
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Buffers.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Formats.Asn1.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Memory.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Numerics.Vectors.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.Threading.Tasks.Extensions.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\System.ValueTuple.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Exchange.WebServices.Auth.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Exchange.WebServices.dll
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Exchange.WebServices.pdb
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Exchange.WebServices.xml
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Exchange.WebServices.Auth.pdb
+D:\AKRAM\STUBSOFT\Projet 2022\Web_CRM\bin\Microsoft.Exchange.WebServices.Auth.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CRMSTUBSOFT.dll.config
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CRMSTUBSOFT.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CRMSTUBSOFT.pdb
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\csc.exe
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\csc.exe.config
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\csc.rsp
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\csi.exe
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\csi.exe.config
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\csi.rsp
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.Managed.Core.targets
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.AppContext.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Collections.Immutable.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Console.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Globalization.Calendars.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.IO.Compression.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.IO.FileSystem.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Net.Http.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Net.Sockets.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Reflection.Metadata.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.ValueTuple.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Xml.XmlDocument.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Xml.XPath.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\vbc.exe
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\vbc.exe.config
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\vbc.rsp
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\VBCSCompiler.exe
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\roslyn\VBCSCompiler.exe.config
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Antlr3.Runtime.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\BouncyCastle.Cryptography.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CrystalDecisions.Data.AdoDotNetInterop.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CrystalDecisions.ReportSource.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CrystalDecisions.Shared.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CrystalDecisions.Web.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\CrystalDecisions.Windows.Forms.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\EntityFramework.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\EntityFramework.SqlServer.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\FlashControlV71.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\log4net.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\MailKit.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.AspNet.Identity.Core.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Exchange.WebServices.Auth.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Exchange.WebServices.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.Cookies.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.Facebook.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.Google.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.OAuth.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.Twitter.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Web.Infrastructure.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\MimeKit.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Newtonsoft.Json.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Owin.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\SAPBusinessObjects.WPF.Viewer.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\SAPBusinessObjects.WPF.ViewerShared.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Buffers.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Formats.Asn1.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Memory.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Numerics.Vectors.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Threading.Tasks.Extensions.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.ValueTuple.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.Helpers.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.Mvc.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.Optimization.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.Razor.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.WebPages.Deployment.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.WebPages.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.WebPages.Razor.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\WebGrease.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\BouncyCastle.Cryptography.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\EntityFramework.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\EntityFramework.SqlServer.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\log4net.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\MailKit.pdb
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\MailKit.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\MailKit.dll.config
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Exchange.WebServices.pdb
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Exchange.WebServices.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Exchange.WebServices.Auth.pdb
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Exchange.WebServices.Auth.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\MimeKit.pdb
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\MimeKit.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\MimeKit.dll.config
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Buffers.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Formats.Asn1.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Memory.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Numerics.Vectors.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Threading.Tasks.Extensions.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.ValueTuple.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.Helpers.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.Mvc.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.Optimization.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.Razor.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.WebPages.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.WebPages.Deployment.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\System.Web.WebPages.Razor.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Newtonsoft.Json.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Antlr3.Runtime.pdb
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.AspNet.Identity.Core.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.Facebook.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.Cookies.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.Google.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.Twitter.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.Owin.Security.OAuth.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\System.Web.Helpers.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\System.Web.Mvc.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\System.Web.Optimization.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\System.Web.Razor.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\System.Web.WebPages.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\System.Web.WebPages.Deployment.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.AspNet.Identity.Core.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.Owin.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.Owin.Security.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.Owin.Security.Facebook.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.Owin.Security.Google.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.Owin.Security.Twitter.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\bin\fr\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\obj\Release\CRMSTUBSOFT.csproj.AssemblyReference.cache
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\obj\Release\CRMSTUBSOFT.csproj.CoreCompileInputs.cache
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\obj\Release\CRMSTUBSOFT.csproj.CopyComplete
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\obj\Release\CRMSTUBSOFT.dll
+D:\AKRAM\Project 2022\Gestion_Tache_CRM\obj\Release\CRMSTUBSOFT.pdb

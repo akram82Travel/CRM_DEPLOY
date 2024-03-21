@@ -1,0 +1,219 @@
+﻿@model CRMSTUBSOFT.Crm_Rapport
+
+@{
+    ViewBag.Title = "Editer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Editer un Rapport</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_Rapport">Rapport</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Editer
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h4 class="card-title">	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;</h4>
+                        <div class="heading-elements">
+                            <button type="submit" name="submit" id="submit" class="btn btn-success pull-right" style=" margin-top: -12px;"><i class="la la-save"></i> Enregistrer</button>
+                        </div>
+                        <hr />
+                    </div>
+                    <div class="card-body row pt-0">
+                        <div class="card-body">
+                            <div class="form-horizontal">
+                                <h4>Rapport</h4>
+                                <hr />
+
+                                <div class="row">
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label>Numéro Rapport</label>
+
+                                        @Html.EditorFor(model => model.NumeroRapport, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.NumeroRapport, "", new { @class = "text-danger" })
+
+                                    </div>
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label>Date Rapport</label>
+                                        <input type="datetime-local" name="DateRapport" id="DateRapport" class="form-control" value="@ViewData["d1"]" />
+                                        @Html.ValidationMessageFor(model => model.DateRapport, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label>Client</label>
+
+                                        @Html.DropDownListFor(model => model.CodeClient, (IEnumerable
+                                        <SelectListItem>)ViewData["ListClient"], "Sélectionner un client", new { @class = "selectize-control input-selectize multi", @id = "CodeClient", @onchange = "FixeClient()" })
+
+                                    </div>
+
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label> Raison Sociale</label>
+
+                                        @Html.EditorFor(model => model.RaisonSociale, new { htmlAttributes = new { @class = "form-control", @id = "RaisonSociale" } })
+                                        @Html.ValidationMessageFor(model => model.RaisonSociale, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="form-group hidden">
+                                    @Html.LabelFor(model => model.DateCreation, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.DateCreation, new { htmlAttributes = new { @class = "form-control", @type = "datetime" } })
+                                        @Html.ValidationMessageFor(model => model.DateCreation, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group hidden">
+                                    @Html.LabelFor(model => model.UtilisateurCreateur, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.UtilisateurCreateur, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.UtilisateurCreateur, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label>Durée</label>
+
+                                        @Html.EditorFor(model => model.Duree, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Duree, "", new { @class = "text-danger" })
+
+                                    </div>
+
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label>Degrés</label>
+
+                                        @Html.EditorFor(model => model.Degres, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                                        @Html.ValidationMessageFor(model => model.Degres, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="form-group hidden">
+                                    @Html.LabelFor(model => model.NumeroEtat, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.NumeroEtat, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NumeroEtat, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group hidden">
+                                    @Html.LabelFor(model => model.NumeroOrdre, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.NumeroOrdre, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NumeroOrdre, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-xl-6 col-lg-6 col-md-12">
+                                        <label>Date Prévus Prochaine Réunion</label>
+
+                                        @Html.EditorFor(model => model.DatePrevusProchaineReunion, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
+                                        @Html.ValidationMessageFor(model => model.DatePrevusProchaineReunion, "", new { @class = "text-danger" })
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description Rapport</label>
+
+                                    @Html.TextAreaFor(model => model.DescriptionRapport, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DescriptionRapport, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group hidden">
+                                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group hidden">
+                                    @Html.LabelFor(model => model.NumeroDossier, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.NumeroDossier, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NumeroDossier, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+                       
+                     
+                        }
+
+
+                    </div>
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                        <script>
+    function FixeClient(codeClient) {
+            var select = document.getElementById("CodeClient");
+            var selectR = document.getElementById("NumDossier");
+            document.getElementById("RaisonSociale").value = select.options[select.selectedIndex].text;
+            $("#CodeClient").change(function () {
+                //console.log($('#Rapport .option:contains(""+codeClient+"")').html());
+
+
+                //$("#Rapport .selectize-dropdown-content div:contains("41110039")).html().hide();
+                //$("#Rapport .selectize-dropdown-content").css("visibility", "hidden");
+            });
+
+
+            //alert(selectR.options[selectR.selectedIndex].getAttribute('data-CodeClient'));
+            //selectR.options[selectR.selectedIndex].getAttribute('data-CodeClient')=select.options[select.selectedIndex].text;
+        }
+                        </script>
+                    }
+
+
+
+
+
+
+

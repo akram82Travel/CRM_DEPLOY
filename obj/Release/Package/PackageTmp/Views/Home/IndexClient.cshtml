@@ -1,0 +1,161 @@
+﻿@model IEnumerable<CRMSTUBSOFT.Crm_ReclamationClient>
+
+@{
+    ViewBag.Title = "Liste des Réclamations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Liste des reclamations client";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Mes demandes d'assistance</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+
+                                <li class="breadcrumb-item">
+                                    <a href="/Home/IndexClient">Réclamations</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Liste des Réclamations
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="btn-group float-md-right">
+                        <a href="@Url.Action("Reclamation","Crm_ReclamationClient")" class="btn btn-success"><i class="la la-plus"></i>Créer une demande d'assistance</a>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+   
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+                <table class="table table-striped" style="width:100%" id="TableReclamation">
+
+                    <thead>
+                        <tr>
+                            <th> Numéro de ticket</th>
+                            <th>Service</th>
+                            <th>Etat </th>
+                            <th>Sujet</th>
+                            <th>Dernier intervenant</th>
+                            <th>Date Creation</th>
+                            <th style="width:11%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id_Reclamation)
+                                    <input type="hidden" name="Id_reclamation" id="Id_reclamation" value="@item.Id_Reclamation" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RaisonSociale)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Titre)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Createur)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateCreation)
+                                </td>
+                                <td>
+                                    @{
+                                        switch (item.Status)
+                                        {
+                                            case "E00":
+                                                <b> Annulé </b>
+                                                break;
+                                            case "E01":
+                                                <b> Terminée </b>
+                                                break;
+                                            case "E02":
+                                                <b> En Cours </b>
+                                                break;
+                                            case "E03":
+                                                <b> A Tester </b>
+                                                break;
+                                            case "E04":
+                                                <b> A Valider </b>
+                                                break;
+                                            case "E05":
+                                                <b> Non Traitée </b>
+                                                break;
+                                            case "E06":
+                                                <b> En Pause </b>
+                                                break;
+                                            case "E07":
+                                                <b> En Exécution </b>
+                                                break;
+                                            case "E08":
+                                                <b> Planifiée </b>
+                                                break;
+                                            case "E09":
+                                                <b> Affectée </b>
+                                                break;
+                                            case "E10":
+                                                <b> Non Planifiée </b>
+                                                break;
+                                            case "E11":
+                                                <b> Non Commencée </b>
+                                                break;
+                                            case "E12":
+                                                <b> Non Confirmée </b>
+                                                break;
+                                            case "E13":
+                                                <b> Confirmée </b>
+                                                break;
+                                            case "E14":
+                                                <b> Validée </b>
+                                                break;
+                                            case "E15":
+                                                <b> A Corriger </b>
+                                                break;
+                                            case "E16":
+                                                <b> Demande Confirmation </b>
+                                                break;
+                                            case "E17":
+                                                <b> Traitée </b>
+                                                break;
+
+
+                                        }
+
+                                    }
+
+                                 
+
+
+                                </td>
+                                <td style="width:11%;">
+                                    @Html.ActionLink(" Voir Détail", "Details", new { id = item.Id_Reclamation }, new { @class = "btn btn-warning" })  <i class=' la la-eye'></i>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

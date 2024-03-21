@@ -1,0 +1,75 @@
+﻿@model CRMSTUBSOFT.Crm_HistoriqueType
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Crm_HistoriqueType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroTache)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroTache)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeTache)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeTache)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeTache)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeTache)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdSanction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdSanction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdDegres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdDegres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeResponsable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeResponsable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOperation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOperation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

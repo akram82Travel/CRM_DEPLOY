@@ -1,0 +1,76 @@
+﻿@model CRMSTUBSOFT.Crm_TacheNature
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-header card row">
+        <div class="content-header-left col-md-6 col-12 breadcrumb-new">
+            <h3 class="content-header-title mb-0 d-inline-block">Créer Type Tâche</h3>
+            <div class="row breadcrumbs-top d-inline-block">
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Tableau de Bord</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/Crm_TacheNature">Type Tâche</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            Création
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Information Genérale</h4>
+                    <div class="heading-elements">
+                        <button type="submit" class="btn btn-success pull-right" style=" margin-top: -12px;"><i class="la la-save"></i> Enregistrer</button>
+
+                    </div>
+
+                    <hr />
+                </div>
+
+                <div class="card-body row">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="CodeNature" class="col-sm-12"> Code </label>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Nature, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Nature, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="NomNature" class="col-sm-12"> Type </label>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Libelle, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Libelle, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

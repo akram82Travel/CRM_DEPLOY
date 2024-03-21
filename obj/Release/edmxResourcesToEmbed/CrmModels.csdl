@@ -1,0 +1,1033 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CrmModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ContactClient">
+    <Key>
+      <PropertyRef Name="CodeClient" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="CodeClient" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SiteWeb" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeProfession" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_AccesUtilisateur">
+    <Key>
+      <PropertyRef Name="NomUtilisateur" />
+    </Key>
+    <Property Name="NomUtilisateur" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeAcces" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_ContactClient">
+    <Key>
+      <PropertyRef Name="IdContact" />
+    </Key>
+    <Property Name="CodeCLient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdContact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomContact" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MailContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SiteWeb" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CodeProfession" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_CycleExecTache">
+    <Key>
+      <PropertyRef Name="idTacheExec" />
+    </Key>
+    <Property Name="NumeroTache" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nomutilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OldStatus" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NewStatus" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateDebutExecution" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateFinExecution" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Duree" Type="Int32" Nullable="false" />
+    <Property Name="idTacheExec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Encours" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_Intervention">
+    <Key>
+      <PropertyRef Name="NumeroIntervention" />
+    </Key>
+    <Property Name="NumeroIntervention" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateInterventionDebut" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateInterventionFin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateIntervention" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Createur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RaisonSociale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Duree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Visite" Type="Boolean" Nullable="false" />
+    <Property Name="Local" Type="Boolean" Nullable="false" />
+    <Property Name="CodeVoiture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescriptionIntervention" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Voiture" Type="Boolean" Nullable="false" />
+    <Property Name="NumeroDossier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Paye" Type="Boolean" Nullable="false" />
+    <Property Name="Nature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_MoyenCommunication">
+    <Key>
+      <PropertyRef Name="CodeMoyenCommunication" />
+    </Key>
+    <Property Name="CodeMoyenCommunication" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_Notification">
+    <Key>
+      <PropertyRef Name="NumeroNotification" />
+    </Key>
+    <Property Name="NumeroNotification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomTable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NumeroPiece" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Notifier" Type="Boolean" Nullable="false" />
+    <Property Name="Piece" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_OperationParTicket">
+    <Key>
+      <PropertyRef Name="IdOperation" />
+      <PropertyRef Name="IdTicket" />
+    </Key>
+    <Property Name="IdOperation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdTicket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeTypeOperation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_PersonnelParRapoort">
+    <Key>
+      <PropertyRef Name="NumeroRapport" />
+      <PropertyRef Name="IdPresen" />
+    </Key>
+    <Property Name="NumeroRapport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdPresen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RaisonSociale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_RespensableParIntervention">
+    <Key>
+      <PropertyRef Name="CodeRespensable" />
+      <PropertyRef Name="NumeroIntervention" />
+    </Key>
+    <Property Name="CodeRespensable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NumeroIntervention" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_TableObjet">
+    <Key>
+      <PropertyRef Name="NumObjet" />
+    </Key>
+    <Property Name="NumObjet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripotion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_TacheExcution">
+    <Key>
+      <PropertyRef Name="IdtacheExce" />
+    </Key>
+    <Property Name="IdTache" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nomutilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OldEtat" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OldStatus" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NewEtat" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NewStatus" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateExcution" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateFinExcution" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Duree" Type="Int32" Nullable="false" />
+    <Property Name="IdtacheExce" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescriptionAcorriger" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescriptionAValider" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescriptionAExpliquer" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_TacheLiee">
+    <Key>
+      <PropertyRef Name="NumeroTache" />
+      <PropertyRef Name="CodeRespensable" />
+    </Key>
+    <Property Name="NumeroTache" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeRespensable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_TicketClient">
+    <Key>
+      <PropertyRef Name="IdTicket" />
+    </Key>
+    <Property Name="IdTicket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RaisonSociale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Createur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DatePrisEnCharge" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PrisEnChargePar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateTicket" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Crm_TypeOperation">
+    <Key>
+      <PropertyRef Name="CodeTypeOperation" />
+    </Key>
+    <Property Name="CodeTypeOperation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crm_TypeReclamation">
+    <Key>
+      <PropertyRef Name="CodeTypeReclamation" />
+    </Key>
+    <Property Name="CodeTypeReclamation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EtatCRM">
+    <Key>
+      <PropertyRef Name="NumeroEtat" />
+    </Key>
+    <Property Name="NumeroEtat" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Libelle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Respensable">
+    <Key>
+      <PropertyRef Name="CodeRespensable" />
+    </Key>
+    <Property Name="CodeRespensable" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TC1" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TC2" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TC3" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TC4" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TC5" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TC6" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TC7" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TP1" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TP2" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TC8" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TP3" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TP4" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="Commercial" Type="Boolean" Nullable="false" />
+    <Property Name="MatriculePersonnel" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeSuperieurHiearchique" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Actif" Type="Boolean" Nullable="false" />
+    <Property Name="SupHier" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="NomUtilisateur" />
+    </Key>
+    <Property Name="NomUtilisateur" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeSociete" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeFonction" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nom" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prenom" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MotDePasse" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Skin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeRepresentant" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MotDePasseValidation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MotDePasseAnnulation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MDPValidation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MDPReimpression" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SaisieLibreLivraisonVente" Type="Boolean" Nullable="false" />
+    <Property Name="SaisieLibreReceptionAchat" Type="Boolean" Nullable="false" />
+    <Property Name="CodeEmployer" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Admin" Type="Boolean" Nullable="false" />
+    <Property Name="Administrateur" Type="Boolean" Nullable="false" />
+    <Property Name="CreerPar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreerLe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Actif" Type="Boolean" Nullable="false" />
+    <Property Name="SaisieLibreRetourVente" Type="Boolean" Nullable="false" />
+    <Property Name="SaisieLibreRetourAchat" Type="Boolean" Nullable="false" />
+    <Property Name="CodeService" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MDPAdministrateur" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeIntervenant" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeFonctionAndroid" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SaisieLibreNotification" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Fonction" Relationship="CrmModels.FK_Utilisateur_Fonction" FromRole="Utilisateur" ToRole="Fonction" />
+  </EntityType>
+  <EntityContainer Name="CrmModelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ContactClient" EntityType="Self.ContactClient" />
+    <EntitySet Name="Crm_AccesUtilisateur" EntityType="Self.Crm_AccesUtilisateur" />
+    <EntitySet Name="Crm_ContactClient" EntityType="Self.Crm_ContactClient" />
+    <EntitySet Name="Crm_CycleExecTache" EntityType="Self.Crm_CycleExecTache" />
+    <EntitySet Name="Crm_Intervention" EntityType="Self.Crm_Intervention" />
+    <EntitySet Name="Crm_MoyenCommunication" EntityType="Self.Crm_MoyenCommunication" />
+    <EntitySet Name="Crm_Notification" EntityType="Self.Crm_Notification" />
+    <EntitySet Name="Crm_OperationParTicket" EntityType="Self.Crm_OperationParTicket" />
+    <EntitySet Name="Crm_PersonnelParRapoort" EntityType="Self.Crm_PersonnelParRapoort" />
+    <EntitySet Name="Crm_RespensableParIntervention" EntityType="Self.Crm_RespensableParIntervention" />
+    <EntitySet Name="Crm_TableObjet" EntityType="Self.Crm_TableObjet" />
+    <EntitySet Name="Crm_TacheExcution" EntityType="Self.Crm_TacheExcution" />
+    <EntitySet Name="Crm_TacheLiee" EntityType="Self.Crm_TacheLiee" />
+    <EntitySet Name="Crm_TicketClient" EntityType="Self.Crm_TicketClient" />
+    <EntitySet Name="Crm_TypeOperation" EntityType="Self.Crm_TypeOperation" />
+    <EntitySet Name="Crm_TypeReclamation" EntityType="Self.Crm_TypeReclamation" />
+    <EntitySet Name="EtatCRM" EntityType="Self.EtatCRM" />
+    <EntitySet Name="Respensable" EntityType="Self.Respensable" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" />
+    <EntitySet Name="Fonction" EntityType="CrmModels.Fonction" />
+    <EntitySet Name="Service" EntityType="CrmModels.Service" />
+    <AssociationSet Name="FK_Utilisateur_Fonction" Association="CrmModels.FK_Utilisateur_Fonction">
+      <End Role="Fonction" EntitySet="Fonction" />
+      <End Role="Utilisateur" EntitySet="Utilisateur" />
+    </AssociationSet>
+    <EntitySet Name="Crm_Personne" EntityType="CrmModels.Crm_Personne" />
+    <EntitySet Name="CompteurPiece" EntityType="CrmModels.CompteurPiece" />
+    <EntitySet Name="Client" EntityType="CrmModels.Client" />
+    <EntitySet Name="Crm_PersonneParReunion" EntityType="CrmModels.Crm_PersonneParReunion" />
+    <EntitySet Name="Crm_PVReunion" EntityType="CrmModels.Crm_PVReunion" />
+    <EntitySet Name="Crm_Rapport" EntityType="CrmModels.Crm_Rapport" />
+    <EntitySet Name="Crm_PersonneConcerner" EntityType="CrmModels.Crm_PersonneConcerner" />
+    <EntitySet Name="Crm_Planning" EntityType="CrmModels.Crm_Planning" />
+    <EntitySet Name="Crm_Planning_Responsable" EntityType="CrmModels.Crm_Planning_Responsable" />
+    <EntitySet Name="Crm_PlanningTime" EntityType="CrmModels.Crm_PlanningTime" />
+    <AssociationSet Name="FK_Crm_PlanningTime_Crm_Planning" Association="CrmModels.FK_Crm_PlanningTime_Crm_Planning">
+      <End Role="Crm_Planning" EntitySet="Crm_Planning" />
+      <End Role="Crm_PlanningTime" EntitySet="Crm_PlanningTime" />
+    </AssociationSet>
+    <EntitySet Name="crm_ModeTache" EntityType="CrmModels.crm_ModeTache" />
+    <EntitySet Name="ContratClient" EntityType="CrmModels.ContratClient" />
+    <EntitySet Name="Crm_TacheCommercialSoft" EntityType="CrmModels.Crm_TacheCommercialSoft" />
+    <EntitySet Name="EmploiDuTemp" EntityType="CrmModels.EmploiDuTemp" />
+    <EntitySet Name="PersonnelGRH" EntityType="CrmModels.PersonnelGRH" />
+    <EntitySet Name="Crm_ClientParent" EntityType="CrmModels.Crm_ClientParent" />
+    <EntitySet Name="Crm_ClientParentAssociation" EntityType="CrmModels.Crm_ClientParentAssociation" />
+    <EntitySet Name="Crm_Equipe" EntityType="CrmModels.Crm_Equipe" />
+    <EntitySet Name="Crm_TypeTache" EntityType="CrmModels.Crm_TypeTache" />
+    <EntitySet Name="Crm_Sanction" EntityType="CrmModels.Crm_Sanction" />
+    <EntitySet Name="Crm_Degres_Sanction" EntityType="CrmModels.Crm_Degres_Sanction" />
+    <EntitySet Name="Crm_Document" EntityType="CrmModels.Crm_Document" />
+    <EntitySet Name="Crm_EquipeRespensable" EntityType="CrmModels.Crm_EquipeRespensable" />
+    <EntitySet Name="Crm_Service" EntityType="CrmModels.Crm_Service" />
+    <EntitySet Name="Crm_ServiceEquipe" EntityType="CrmModels.Crm_ServiceEquipe" />
+    <EntitySet Name="Crm_Projet" EntityType="CrmModels.Crm_Projet" />
+    <EntitySet Name="Crm_HistoriqueType" EntityType="CrmModels.Crm_HistoriqueType" />
+    <EntitySet Name="ClientCRM" EntityType="CrmModels.ClientCRM" />
+    <EntitySet Name="Crm_ModuleNature" EntityType="CrmModels.Crm_ModuleNature" />
+    <EntitySet Name="Crm_TacheNature" EntityType="CrmModels.Crm_TacheNature" />
+    <AssociationSet Name="FK_Crm_ModuleNature_Crm_TacheNature" Association="CrmModels.FK_Crm_ModuleNature_Crm_TacheNature">
+      <End Role="Crm_TacheNature" EntitySet="Crm_TacheNature" />
+      <End Role="Crm_ModuleNature" EntitySet="Crm_ModuleNature" />
+    </AssociationSet>
+    <EntitySet Name="Crm_Motif" EntityType="CrmModels.Crm_Motif" />
+    <EntitySet Name="Crm_TypeProjet" EntityType="CrmModels.Crm_TypeProjet" />
+    <EntitySet Name="Crm_ChatReclamation" EntityType="CrmModels.Crm_ChatReclamation" />
+    <EntitySet Name="Crm_TacheReclamation" EntityType="CrmModels.Crm_TacheReclamation" />
+    <EntitySet Name="Crm_ReclamationClient" EntityType="CrmModels.Crm_ReclamationClient" />
+  </EntityContainer>
+  <EntityType Name="Fonction">
+    <Key>
+      <PropertyRef Name="CodeFonction" />
+    </Key>
+    <Property Name="CodeFonction" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="CodeSuperieurHiearchique" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HorraireMaxSortie" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Utilisateur" Relationship="CrmModels.FK_Utilisateur_Fonction" FromRole="Fonction" ToRole="Utilisateur" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="CodeService" />
+    </Key>
+    <Property Name="CodeService" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NomUtilisateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeSuperieur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Utilisateur_Fonction">
+    <End Type="CrmModels.Fonction" Role="Fonction" Multiplicity="1" />
+    <End Type="CrmModels.Utilisateur" Role="Utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fonction">
+        <PropertyRef Name="CodeFonction" />
+      </Principal>
+      <Dependent Role="Utilisateur">
+        <PropertyRef Name="CodeFonction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Crm_Personne">
+    <Key>
+      <PropertyRef Name="CodePersonne" />
+    </Key>
+    <Property Name="CodePersonne" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NomPrenom" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Adresse" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Nationalite" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CompteurPiece">
+    <Key>
+      <PropertyRef Name="CodeSociete" />
+      <PropertyRef Name="NomPiecer" />
+    </Key>
+    <Property Name="CodeSociete" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="NomPiecer" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="PrefixPiece" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Annee" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Compteur" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="CodeClient" />
+    </Key>
+    <Property Name="CodeClient" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Respensable" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CodeForme" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="CodeFamilleClient" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="CodeRepresentant" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Tel1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SiteWeb" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RaisonSociale" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RegistreCommerce" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SeuilCredit" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="SoldeCredit" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="SeuilEngagement" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="SoldeEngagement" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="BlocageFacturation" Type="Boolean" Nullable="false" />
+    <Property Name="Adresse1" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="CodeSousRegion" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CodeZone" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CodePostale" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeVille" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="AresseLivraison" Type="String" Nullable="false" MaxLength="160" FixedLength="false" Unicode="true" />
+    <Property Name="CodePostaleLivraison" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Exoneration" Type="Boolean" Nullable="false" />
+    <Property Name="NumeroExonoration" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DateExonoration" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateFinExonoration" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PayerTVA" Type="Boolean" Nullable="false" />
+    <Property Name="Export" Type="Boolean" Nullable="false" />
+    <Property Name="NumeroExport" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CodeRemise" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="MartriculeFiscale" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TimbreFiscal" Type="Boolean" Nullable="false" />
+    <Property Name="CodeBanque" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="RibBanquaire" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CodeModeReglement" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="TauxRemise" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="Observation" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Assujetti" Type="Boolean" Nullable="false" />
+    <Property Name="NbJourReglement" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="SignalReglement" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="Fodec" Type="Boolean" Nullable="false" />
+    <Property Name="CIN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CodeComptable" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Comptabiliser" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UtilisateurCreation" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CalculAutoSeuilCredit" Type="Boolean" Nullable="false" />
+    <Property Name="RemiseDepassement" Type="Boolean" Nullable="false" />
+    <Property Name="Taxe" Type="Boolean" Nullable="false" />
+    <Property Name="DepassementSeuil" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="DivCredit" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="Inactif" Type="Boolean" Nullable="false" />
+    <Property Name="Contentieux" Type="Boolean" Nullable="false" />
+    <Property Name="ObservationGarantie" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ContactAdresseLivraison" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeTypeDecharge" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="DateOuvertureSociete" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NomGerant" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DateNaissanceGerant" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Avis" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CINLivraison" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatriculeFiscaleLivraison" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOuvertureLivraison" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ManqueDocument" Type="Boolean" Nullable="false" />
+    <Property Name="Prospect" Type="Boolean" Nullable="false" />
+    <Property Name="DateProspect" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CodeRespensableAdministration" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Promo" Type="Boolean" Nullable="false" />
+    <Property Name="Comptoir" Type="Boolean" Nullable="false" />
+    <Property Name="Classic" Type="Boolean" Nullable="false" />
+    <Property Name="ChangerRaisonSociale" Type="Boolean" Nullable="false" />
+    <Property Name="CodeDevise" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Extention" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ClientFournisseur" Type="Boolean" Nullable="false" />
+    <Property Name="CodeTypeParrain" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CodeParrain" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="CodePays" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CodeLangue" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CodeSousFamille" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="DroitConsommation" Type="Boolean" Nullable="false" />
+    <Property Name="AfficherNbPallete" Type="Boolean" Nullable="false" />
+    <Property Name="BlocagePreavis" Type="Boolean" Nullable="false" />
+    <Property Name="NbPreavis" Type="Int32" Nullable="false" />
+    <Property Name="RemiseQuantite" Type="Boolean" Nullable="false" />
+    <Property Name="RegimeReel" Type="Boolean" Nullable="false" />
+    <Property Name="Capital" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="AutoriserSeuilSuplementaire" Type="Boolean" Nullable="false" />
+    <Property Name="DateAutorisationSuplementaire" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NbJourSuplementaire" Type="Int32" Nullable="false" />
+    <Property Name="ValeurCreditSuplementaire" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ValeurEngagementSuplementaire" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="PrixUsine" Type="Boolean" Nullable="false" />
+    <Property Name="CodeVilleLivraison" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="DateTelevente" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DateLivraison" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DateRepresentant" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DateOuverturePatente" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Effectif" Type="Int32" Nullable="false" />
+    <Property Name="CodeFournisseur" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AutreAdresse" Type="Boolean" Nullable="false" />
+    <Property Name="NomValidateur" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DateValidation" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SeuilDepassementCredit" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="RecalculSoldeMois" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="DepassementBL" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="Agreer" Type="Boolean" Nullable="false" />
+    <Property Name="AnnulerTousControle" Type="Boolean" Nullable="false" />
+    <Property Name="AutoriserFactoring" Type="Boolean" Nullable="false" />
+    <Property Name="MontantAutorisation" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="LogoCachet" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TotaleGarantie" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="AvecGaranti" Type="Boolean" Nullable="false" />
+    <Property Name="LogoCachet2" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DateDerniereModification" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DerniereModification" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroCarte" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoldePoint" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="SoldeValeurPoint" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="ActiverDepassementPieceNonPaye" Type="Boolean" Nullable="false" />
+    <Property Name="DateAutorisationPieceNonPaye" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NBAutorisationPieceNonPaye" Type="Int32" Nullable="false" />
+    <Property Name="FraisLogistique" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TypeClient" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CodeFournisseurAutreBase" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NomAutreBase" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VIP" Type="Boolean" Nullable="false" />
+    <Property Name="Terme" Type="Boolean" Nullable="false" />
+    <Property Name="DefalcationBL" Type="Boolean" Nullable="false" />
+    <Property Name="CodeClientParent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Promotion" Type="Boolean" />
+    <Property Name="ToleranceVariationQuantiteFabrication" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Crm_PersonneParReunion">
+    <Key>
+      <PropertyRef Name="NumeroPVReunion" />
+      <PropertyRef Name="CodePersonne" />
+    </Key>
+    <Property Name="NumeroPVReunion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodePersonne" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_PVReunion">
+    <Key>
+      <PropertyRef Name="NumeroPVReunion" />
+    </Key>
+    <Property Name="NumeroPVReunion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Projet" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Module" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Createur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Objet" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DateReunion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DatePrevusReunion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CodeClient" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodePersonne" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionGeneral" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Dure" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="Crm_Rapport">
+    <Key>
+      <PropertyRef Name="NumeroRapport" />
+    </Key>
+    <Property Name="NumeroRapport" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionRapport" Type="String" Nullable="false" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UtilisateurCreateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Degres" Type="Int32" Nullable="false" />
+    <Property Name="NumeroEtat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroOrdre" Type="Int32" Nullable="false" />
+    <Property Name="DatePrevusProchaineReunion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Duree" Type="Int32" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RaisonSociale" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroDossier" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateRapport" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Crm_PersonneConcerner">
+    <Key>
+      <PropertyRef Name="NumeroReclamation" />
+      <PropertyRef Name="NomUtilisateur" />
+    </Key>
+    <Property Name="NumeroReclamation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NomUtilisateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vue" Type="Boolean" Nullable="false" />
+    <Property Name="DateVue" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_Planning">
+    <Key>
+      <PropertyRef Name="Id_Planning" />
+    </Key>
+    <Property Name="Id_Planning" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Datedebut" Type="DateTime" Precision="3" />
+    <Property Name="DateFin" Type="DateTime" Precision="3" />
+    <Property Name="Titre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CodeResponsable" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Prenom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CodeClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RaisonSocial" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Crm_PlanningTime" Relationship="CrmModels.FK_Crm_PlanningTime_Crm_Planning" FromRole="Crm_Planning" ToRole="Crm_PlanningTime" />
+  </EntityType>
+  <EntityType Name="Crm_Planning_Responsable">
+    <Key>
+      <PropertyRef Name="CodeRespensable" />
+      <PropertyRef Name="Id_Planning" />
+    </Key>
+    <Property Name="CodeRespensable" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id_Planning" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_PlanningTime">
+    <Key>
+      <PropertyRef Name="Id_Ligne" />
+    </Key>
+    <Property Name="Id_Ligne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Titre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Id_Plannig" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeResponsable" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Crm_Planning" Relationship="CrmModels.FK_Crm_PlanningTime_Crm_Planning" FromRole="Crm_PlanningTime" ToRole="Crm_Planning" />
+    <Property Name="Matin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ApresMidi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CodeClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RaisonSociale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatinReel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ApresMidiReel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ObjectisNonRealiser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Crm_PlanningTime_Crm_Planning">
+    <End Type="CrmModels.Crm_Planning" Role="Crm_Planning" Multiplicity="1" />
+    <End Type="CrmModels.Crm_PlanningTime" Role="Crm_PlanningTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crm_Planning">
+        <PropertyRef Name="Id_Planning" />
+      </Principal>
+      <Dependent Role="Crm_PlanningTime">
+        <PropertyRef Name="Id_Plannig" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="crm_ModeTache">
+    <Key>
+      <PropertyRef Name="CodeModeTache" />
+    </Key>
+    <Property Name="CodeModeTache" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContratClient">
+    <Key>
+      <PropertyRef Name="NumeroContratClient" />
+    </Key>
+    <Property Name="NumeroContratClient" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DateContratClient" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CodeClient" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeTypeContrat" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeArticle" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Actif" Type="Boolean" Nullable="false" />
+    <Property Name="DateDebut" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateFin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OccuranceFacturation" Type="Int32" Nullable="false" />
+    <Property Name="MontantHT" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="DatePremiereFactration" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SuiteContrat" Type="Boolean" Nullable="false" />
+    <Property Name="TauxRemise" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ModeFacturation" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Observation" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NomUtilisateur" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreation" Type="DateTime" Precision="3" />
+    <Property Name="HeureCreation" Type="DateTime" Precision="3" />
+    <Property Name="DateFinProlongation" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Crm_TacheCommercialSoft">
+    <Key>
+      <PropertyRef Name="NumeroTacheCommercial" />
+      <PropertyRef Name="NumeroTacheSoft_Tecnique" />
+    </Key>
+    <Property Name="NumeroTacheCommercial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroTacheSoft_Tecnique" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EmploiDuTemp">
+    <Key>
+      <PropertyRef Name="NumeroEmploiTemp" />
+      <PropertyRef Name="CodeGroupe" />
+    </Key>
+    <Property Name="NumeroEmploiTemp" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeGroupe" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Mois" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PersonnelGRH">
+    <Key>
+      <PropertyRef Name="MatriculePersonnel" />
+    </Key>
+    <Property Name="MatriculePersonnel" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NomPrenom" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Lieu" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="CCB" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Adresse" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="CIN" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Nationalite" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Sexe" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CodeEtatCivil" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NB_Enfant" Type="Int32" Nullable="false" />
+    <Property Name="DateEmbauge" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DateCNSS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ChefFamille" Type="Boolean" Nullable="false" />
+    <Property Name="CodeOrganigramme" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeQualification" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeRegime" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeCategorie" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeEchelon" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CoefConge" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CodeNature" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SalaireBase" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="CodeTypeContrat" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeTypeCNSS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EnActivite" Type="Boolean" Nullable="false" />
+    <Property Name="SoumisImpot" Type="Boolean" Nullable="false" />
+    <Property Name="ParentEnCharge" Type="Boolean" Nullable="false" />
+    <Property Name="Observation" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CodeModePaiement" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="CodeBanque" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="MatriculeAssureSocial" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="CleAssureSocial" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Prenom" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PrenomPere" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NbParentACharge" Type="Int32" />
+    <Property Name="NumCNSS" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="DateNaissance" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DateCIN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DateDebutContrat" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DateFinContrat" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DateSortie" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TypeCNSS2" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="DetailEnfants" Type="Boolean" Nullable="false" />
+    <Property Name="Tel" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NomConjoint" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConjointTravail" Type="Boolean" Nullable="false" />
+    <Property Name="DateValiditeCHandicape" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CodeChargePatronale" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NiveauPersonnel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CodeAssurance" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CotationAssurance" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DateAssurance" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="AssureChargeSociete" Type="Boolean" Nullable="false" />
+    <Property Name="MatriculePersonnelNew" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Session" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeEmplacement" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeTypeProductivité" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeSociete" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NomPrenomArabe" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="AdresseArabe" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="QualificationArabe" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="anciensalairebasegrille" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="RevenuReinvesti" Type="Boolean" Nullable="false" />
+    <Property Name="DateReinvesti" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MontantReinvesti" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="FraisPro" Type="Boolean" Nullable="false" />
+    <Property Name="NumeroPermis" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DateFin" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CodeCategoriePermis" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ClePermis" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="SalaireNet" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="Prospect" Type="Boolean" Nullable="false" />
+    <Property Name="TelAutre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TelDomicile" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CodeService" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CodeSite" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NomUtilisateur" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HeureCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CodeSupHier" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="AppliquerIndemnité" Type="Boolean" Nullable="false" />
+    <Property Name="ChiffreAffaireEstime" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="MontantAdeduireCAInferieur" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="MontantHeurSuppl" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="existedansPointeuse" Type="Boolean" Nullable="false" />
+    <Property Name="NbFingerPrint" Type="Int32" Nullable="false" />
+    <Property Name="DateDebutEchelon" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DateEchangeEchelon" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DateDebutDomSalaire" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="DateFinDomSalaire" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="DemandeDomSalaire" Type="Boolean" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_ClientParent">
+    <Key>
+      <PropertyRef Name="CodeClientParent" />
+    </Key>
+    <Property Name="CodeClientParent" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_ClientParentAssociation">
+    <Key>
+      <PropertyRef Name="CodeClientParent" />
+      <PropertyRef Name="CodeClientFils" />
+    </Key>
+    <Property Name="CodeClientParent" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeClientFils" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_Equipe">
+    <Key>
+      <PropertyRef Name="CodeEquipe" />
+    </Key>
+    <Property Name="CodeEquipe" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ChefEquipe" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_TypeTache">
+    <Key>
+      <PropertyRef Name="CodeTypeTache" />
+    </Key>
+    <Property Name="CodeTypeTache" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Crm_Sanction">
+    <Key>
+      <PropertyRef Name="IdSanction" />
+    </Key>
+    <Property Name="IdSanction" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LibelleSanction" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NoteSanction" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TypeTache" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModeTache" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodeUtilisateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Degres" Type="Int32" />
+    <Property Name="TypeSanction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Crm_Degres_Sanction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="du" Type="Int32" Nullable="false" />
+    <Property Name="au" Type="Int32" Nullable="false" />
+    <Property Name="libelle" Type="String" Nullable="false" MaxLength="245" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Crm_Document">
+    <Key>
+      <PropertyRef Name="Id_Document" />
+    </Key>
+    <Property Name="Id_Document" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Extension" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Data" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="TypeDocument" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Code_Exp" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Crm_EquipeRespensable">
+    <Key>
+      <PropertyRef Name="CodeEquipe" />
+      <PropertyRef Name="CodeRespensable" />
+    </Key>
+    <Property Name="CodeEquipe" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CodeRespensable" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_Service">
+    <Key>
+      <PropertyRef Name="CodeService" />
+    </Key>
+    <Property Name="CodeService" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CodeChefService" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_ServiceEquipe">
+    <Key>
+      <PropertyRef Name="CodeService" />
+      <PropertyRef Name="CodeEquipe" />
+    </Key>
+    <Property Name="CodeService" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CodeEquipe" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_Projet">
+    <Key>
+      <PropertyRef Name="CodeProjet" />
+    </Key>
+    <Property Name="CodeProjet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodeTypeProjet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MontantProjet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateDeclenchement" Type="DateTime" Precision="3" />
+    <Property Name="DateFinPrevu" Type="DateTime" Precision="3" />
+    <Property Name="Cloture" Type="Boolean" />
+    <Property Name="DateCloture" Type="DateTime" Precision="3" />
+    <Property Name="ObjectifProjet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionProjet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ResponsableProjet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_HistoriqueType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="NumeroTache" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="IdSanction" Type="Int32" />
+    <Property Name="IdDegres" Type="Int32" />
+    <Property Name="DateOperation" Type="DateTime" Precision="3" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TypePiece" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NomValidateur" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ClientCRM">
+    <Key>
+      <PropertyRef Name="CodeClient" />
+    </Key>
+    <Property Name="CodeClient" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RaisonSociale" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Adresse1" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="MartriculeFiscale" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tel1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CodeClientCommercial" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MotPasse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="imageElement" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="imagephysique" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Crm_ModuleNature">
+    <Key>
+      <PropertyRef Name="IdNatureType" />
+    </Key>
+    <Property Name="IdNatureType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nature" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Crm_TacheNature" Relationship="CrmModels.FK_Crm_ModuleNature_Crm_TacheNature" FromRole="Crm_ModuleNature" ToRole="Crm_TacheNature" />
+  </EntityType>
+  <EntityType Name="Crm_TacheNature">
+    <Key>
+      <PropertyRef Name="Nature" />
+    </Key>
+    <Property Name="Nature" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Crm_ModuleNature" Relationship="CrmModels.FK_Crm_ModuleNature_Crm_TacheNature" FromRole="Crm_TacheNature" ToRole="Crm_ModuleNature" />
+  </EntityType>
+  <Association Name="FK_Crm_ModuleNature_Crm_TacheNature">
+    <End Type="CrmModels.Crm_TacheNature" Role="Crm_TacheNature" Multiplicity="1" />
+    <End Type="CrmModels.Crm_ModuleNature" Role="Crm_ModuleNature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crm_TacheNature">
+        <PropertyRef Name="Nature" />
+      </Principal>
+      <Dependent Role="Crm_ModuleNature">
+        <PropertyRef Name="Nature" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Crm_Motif">
+    <Key>
+      <PropertyRef Name="CodeMotif" />
+    </Key>
+    <Property Name="CodeMotif" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_TypeProjet">
+    <Key>
+      <PropertyRef Name="CodeTypeProjet" />
+    </Key>
+    <Property Name="CodeTypeProjet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LibelleTypeProjet" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_ChatReclamation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Reclamation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RaisonSociale" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreation" Type="DateTime" Precision="3" />
+    <Property Name="Createur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_TacheReclamation">
+    <Key>
+      <PropertyRef Name="NumeroTache" />
+    </Key>
+    <Property Name="NumeroTache" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroOrdre" Type="Int32" Nullable="false" />
+    <Property Name="NumDossier" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TacheTitre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionTache" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nature" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Degres" Type="Int32" Nullable="false" />
+    <Property Name="NomPlanificateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NomValidateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NomTesteur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeRespensable" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Duree" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SalaireNet" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="Coef" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="MontantCharge" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="NumeroEtat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EtatValidation" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UtilisateurCreateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paye" Type="Boolean" Nullable="false" />
+    <Property Name="TypePiece" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NumPiece" Type="Int32" Nullable="false" />
+    <Property Name="ValiderPar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AExpliquer" Type="Boolean" Nullable="false" />
+    <Property Name="IndicateurACorriger" Type="Int32" Nullable="false" />
+    <Property Name="IndicateurAValider" Type="Int32" Nullable="false" />
+    <Property Name="IndicateurAExpliquer" Type="Int32" Nullable="false" />
+    <Property Name="CodeClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RaisonSociale" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AnuulerPar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateAnnulation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConfirmerPar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateConfirmation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NonConfirmerPar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateNonConfirmation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DatePrevus" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateDebutExecution" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateFinExecution" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DurerExecution" Type="Int32" Nullable="false" />
+    <Property Name="DurerExcutionValider" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DureeReel" Type="Int32" Nullable="false" />
+    <Property Name="NumReclamation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Crm_ReclamationClient">
+    <Key>
+      <PropertyRef Name="Id_Reclamation" />
+    </Key>
+    <Property Name="Id_Reclamation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Titre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateReclamation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CodeClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RaisonSociale" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Soft" Type="Boolean" Nullable="false" />
+    <Property Name="Technique" Type="Boolean" Nullable="false" />
+    <Property Name="NomContact" Type="Int32" Nullable="false" />
+    <Property Name="CodeMoyenCommunication" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OutilCommunication" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Observation" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Createur" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="logo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroDossier" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrisEnChargePar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DatePrisEnCharge" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ObjetReclamation" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Paye" Type="Boolean" Nullable="false" />
+    <Property Name="TypeReclamation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Commercial" Type="Boolean" Nullable="false" />
+    <Property Name="UtilisateurContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Duree" Type="Int32" Nullable="false" />
+    <Property Name="Nature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdNatureType" Type="Int32" />
+  </EntityType>
+</Schema>

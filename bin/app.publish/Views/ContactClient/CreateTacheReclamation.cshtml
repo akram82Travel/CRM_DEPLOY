@@ -1,0 +1,362 @@
+﻿@model CRMSTUBSOFT.Crm_TacheReclamation
+@{
+    ViewBag.Title = "Création Tâche";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Créer une Tâche</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_TacheReclamation">Tâches</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Création
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    @using (Html.BeginForm("CreateTacheReclamation", "ContactClient", FormMethod.Post, new { id = "TacheValidation", novalidate = "novalidate" }))
+    {
+        @*<form id="TacheValidation" novalidate>*@
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h4 class="card-title">	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;</h4>
+                        <div class="heading-elements">
+                            <button type="submit" name="submit" id="submit" class="btn btn-success pull-right" style=" margin-top: -12px;"><i class="la la-save"></i> Enregistrer</button>
+                        </div>
+                        <hr />
+                    </div>
+                    <div class="card-body row pt-0">
+                        @Html.HiddenFor(model => model.NumeroTache, new { htmlAttributes = new { @class = "form-control", @value = @ViewData["Compteur"], @readonly = "readonly" } })
+                        @Html.HiddenFor(model => model.DateCreation, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
+
+                        <div class="col-md-4">
+                            <div class="form-group  row no-gutters mb-4">
+                                <label for="CodeClient" class="col-sm-12 pt-0 col-form-label"> Prtojet </label>
+                                <div class="col-sm-12">
+                                    @Html.DropDownListFor(model => model.NumPiece, (IEnumerable<SelectListItem>)ViewData["ListProjet"], "Sélectionner un Projet", new { @class = "select2 form-control", @id = "NumPiece", @required = "required" })
+                                    <div class="invalid-feedback">Sélectionner un Projet !</div>
+                                    @Html.HiddenFor(model => model.NumPiece, new { htmlAttributes = new { @class = "form-control", @id = "NumPiece" } })
+                                </div>
+
+                            </div>
+
+                            <div class="form-group  row no-gutters mb-4">
+                                <label for="CodeClient" class="col-sm-12 pt-0 col-form-label"> Client </label>
+                                <div class="col-sm-12">
+                                    @Html.DropDownListFor(model => model.CodeClient, (IEnumerable<SelectListItem>)ViewData["ListClient"], "Sélectionner un Client", new { @class = "select2 form-control", @id = "CodeClient", @onchange = "FixeClient()", @required = "required" })
+                                    <div class="invalid-feedback">Sélectionner un client !</div>
+                                    @Html.HiddenFor(model => model.RaisonSociale, new { htmlAttributes = new { @class = "form-control", @id = "RaisonSociale" } })
+                                </div>
+
+                            </div>
+                            <label> Affectation Claire <input type="checkbox" name="check" id="check" /> </label>
+                            <input type="hidden" name="CheckText" id="CheckText" />
+                            <hr />
+
+                            <div class="form-group row" id="NomPlanificateurD">
+                                <label for="NomPlanificateur" class="col-sm-4  pt-0 col-form-label">Nom Planificateur </label>
+                                <div class="col-sm-8">
+                                    @Html.DropDownListFor(model => model.NomPlanificateur, (IEnumerable<SelectListItem>)ViewData["ListResponsable"], "Sélectionner un Planificateur", new { @class = "select2 form-control", @id = "NomPlanificateur", @required = "required" })
+                                    @*@Html.ValidationMessageFor(model => model.NomPlanificateur, "", new { @class = "text-danger" })*@
+                                    <div class="invalid-feedback">Sélectionner un Planificateur!</div>
+                                </div>
+                            </div>
+                            <div class="form-group row" id="NomValidateurD">
+                                <label for="NomValidateur" class="col-sm-4  pt-0 col-form-label">Nom Validateur </label>
+                                <div class="col-sm-8">
+                                    @Html.DropDownListFor(model => model.NomValidateur, (IEnumerable<SelectListItem>)ViewData["ListResponsable"], "Sélectionner un Validateur", new { @class = "select2 form-control", @id = "NomValidateur" })
+                                    <div class="invalid-feedback">Sélectionner un Validateur!</div>
+                                </div>
+                            </div>
+                            <div class="form-group row" id="NomTesteurD">
+                                <label for="NomTesteur" class="col-sm-4  pt-0 col-form-label">Nom Testeur </label>
+                                <div class="col-sm-8">
+                                    @Html.DropDownListFor(model => model.NomTesteur, (IEnumerable<SelectListItem>)ViewData["ListResponsable"], "Sélectionner un Testeur", new { @class = "select2 form-control", @id = "NomTesteur" })
+                                    <div class="invalid-feedback">Sélectionner un Testeur!</div>
+                                </div>
+                            </div>
+                            <div class="form-group row" id="AffectD">
+                                <label for="NomTesteur" class="col-sm-4  pt-0 col-form-label">Affectée a </label>
+                                <div class="col-sm-8">
+                                    @Html.ListBoxFor(model => model.SelectedresponsableId, new MultiSelectList(Model.ListeRespensables, "CodeRespensable", "Nom"), new { @multiple = "multiple", @placeholder = "Sélectionner des responsables", @class = "selectize-multiple" })
+                                    <div class="invalid-feedback">Sélectionner au moins un personne pour affecté cette tache!</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Nature" class="col-sm-4  pt-0 col-form-label">Nature </label>
+                                <div class="col-sm-8">
+                                    @Html.DropDownListFor(model => model.Nature, (IEnumerable<SelectListItem>)ViewData["ListNature"], "Sélectionner nature tache", new { @class = "select2 form-control", @required = "required", @id = "Nature" })
+                                    <div class="invalid-feedback">Sélectionner la nature de cette tache!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row no-gutters">
+                                <label for="TacheTitre" class="col-sm-12  pt-0  col-form-label"> Titre </label>
+                                <div class="col-sm-12">
+                                    @Html.EditorFor(model => model.TacheTitre, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                                    <div class="invalid-feedback">Entrer un titre valide!</div>
+                                </div>
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="DescriptionTache" class="col-sm-12 pt-0  col-form-label"> Description </label>
+                                <div class="col-sm-12">
+                                    @Html.TextAreaFor(model => model.DescriptionTache, htmlAttributes: new { @class = "form-control", @required = "required" })
+                                    @*@Html.ValidationMessageFor(model => model.DescriptionTache, "", new { @class = "text-danger" })*@
+                                    <div class="invalid-feedback">Entrer une titre Description!</div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+
+
+                                <div class="form-group col-md-6">
+                                    <label for="NumeroTache" class="col-sm-12 pt-0  col-form-label">Type </label>
+                                    <div class="col-sm-9">
+                                        @Html.RadioButtonFor(m => m.Type, "M", new { @checked = "checked" }) <label for="Type">Ajout</label>
+                                        <br />
+                                        @Html.RadioButtonFor(m => m.Type, "A") <label for="Type">Maintenance</label>
+
+                                        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="Nature">Mode </label>
+                                    <div>
+                                        @Html.DropDownListFor(model => model.TypePiece, (IEnumerable
+                                        <SelectListItem>)ViewData["ListMode"], "Sélectionner mode tache", new { @class = "select2 form-control", @required = "required", @id = "TypePiece" })
+                                        <div class="invalid-feedback">Sélectionner la mode de cette tache!</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div class="form-group row">
+                                <label for="DatePrevus" class="col-sm-3 col-form-label"> Date Prévue </label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.DatePrevus, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
+                                    @Html.ValidationMessageFor(model => model.DatePrevus, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Duree" class="col-sm-3 col-form-label"> Durée Estimée </label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.Duree, new { htmlAttributes = new { @class = "form-control", @type = "time", @Value = "02:00" } })
+                                    @Html.ValidationMessageFor(model => model.Duree, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row hidden">
+                                <label for="Degres" class="col-sm-3 col-form-label"> Degrés </label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.Degres, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                                    @Html.ValidationMessageFor(model => model.TacheTitre, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-12 row">
+                            <div class="form-group col-md-12 row" id="GenralRapport">
+                                <label for="NumeroTache" class="col-sm-4 col-form-label"><input type="checkbox" onclick="LoadList('Rapport','AjoutRapport')" />  Rapport </label>
+                                <div class="col-sm-5" id="Rapport" style="display: none">
+                                    <select name="@Html.NameFor(model => model.NumDossier)" id="@Html.IdFor(model => model.NumDossier)" class="selectpicker form-control" data-live-search="true">
+                                        <option value="">Sélectionner un Rapport</option>
+
+                                        @foreach (var item in Model.ListeRapport)
+                                        {
+
+                                            <option value="@item.NumeroRapport">N°:@item.NumeroRapport @Html.Raw(@item.DescriptionRapport) (@item.CodeClient)</option>
+                                        }
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-12 row" id="GenralReclmation">
+                                <label for="NumeroTache" class="col-sm-4 col-form-label"><input type="checkbox" id="chechrec" checked="checked" onclick="LoadList('Reclamation','AjoutRecl')" />  Réclamation </label>
+                                <div class="col-sm-5" id="Reclamation">
+
+                                    <select name="@Html.NameFor(model => model.NumReclamation)" id="@Html.IdFor(model => model.NumReclamation)" class="selectpicker form-control" data-live-search="true">
+                                        <option value="@Model.NumReclamation">@Model.NumReclamation</option>
+
+                                        @foreach (var item in Model.ListeCrm_ReclamationClient)
+                                        {
+                                            <option value="@item.Id_Reclamation">N°:@item.Id_Reclamation  @Html.Raw(@item.Titre) (@item.CodeClient)</option>
+                                        }
+
+                                    </select>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        @*</form>*@
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(function () {
+                $('#NumDossier').selectpicker({
+                    dropdownAutoWidth: false,
+                });
+                $('#CodeClient').change(function () {
+                    var code_client = $(this).val();
+                    if (code_client != "Sélectionner un client") {
+                        $('#NumDossier').find('option:contains("")').show();
+                        $('#NumDossier').find('option:not(:contains("' + code_client + '"))').hide();
+                        $('#NumDossier').selectpicker('refresh');
+
+                        $('#NumReclamation').find('option:contains("")').show();
+                        $('#NumReclamation').find('option:not(:contains("' + code_client + '"))').hide();
+                        $('#NumReclamation').selectpicker('refresh');
+                    } else {
+                        $('#NumDossier').find('option').show();
+                        $('#NumDossier').selectpicker('refresh');
+
+                        $('#NumReclamation').find('option').show();
+                        $('#NumReclamation').selectpicker('refresh');
+                    }
+                });
+                //$("#submit").click();
+            });
+       
+
+    </script>
+
+    <script type="text/javascript">
+
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var form = document.getElementById('TacheValidation');
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            }, false);
+        })();
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#check").click(function ()
+            {
+            var form = document.getElementById('TacheValidation');
+                if ($(this).is(':checked')) {
+                  $("#CheckText").val("true");
+                  $('#NomValidateurD').hide();
+                  $('#NomTesteurD').hide();
+                  $('#AffectD').hide();
+                  $('#GenralRapport').hide();
+                  $('#GenralReclmation').hide();
+
+
+                }
+                else
+              {
+                 $("#CheckText").val("false");
+                 $('#NomValidateurD').show();
+                 $('#NomTesteurD').show();
+                 $('#AffectD').show();
+                 $('#GenralRapport').show();
+                 $('#GenralReclmation').show();
+              }
+            });
+        });
+    </script>
+
+}
+
+<script>
+var now = new Date();
+now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+document.getElementById('DatePrevus').value = now.toISOString().slice(0,16);
+//document.getElementById('DatePrevusProchaineReunion').value = now.toISOString().slice(0,16);
+
+        function FixeClient(codeClient) {
+            var select = document.getElementById("CodeClient");
+            var selectR = document.getElementById("NumDossier");
+            document.getElementById("RaisonSociale").value = select.options[select.selectedIndex].text;
+            $("#CodeClient").change(function () {
+                //console.log($('#Rapport .option:contains(""+codeClient+"")').html());
+
+
+                //$("#Rapport .selectize-dropdown-content div:contains("41110039")).html().hide();
+                //$("#Rapport .selectize-dropdown-content").css("visibility", "hidden");
+            });
+
+
+            //alert(selectR.options[selectR.selectedIndex].getAttribute('data-CodeClient'));
+            //selectR.options[selectR.selectedIndex].getAttribute('data-CodeClient')=select.options[select.selectedIndex].text;
+        }
+
+
+        function LoadList(z,a) {
+            var x = document.getElementById(z);
+            var y = document.getElementById(a);
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                y.style.display = "block";
+            } else {
+                x.style.display = "none";
+                y.style.display = "none";
+            }
+        }
+
+        var now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        document.getElementById('DateCreation').value = now.toISOString().slice(0, 16);
+
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    document.getElementById('DatePrevus').value = now.toISOString().slice(0, 16);
+
+    
+</script>
+

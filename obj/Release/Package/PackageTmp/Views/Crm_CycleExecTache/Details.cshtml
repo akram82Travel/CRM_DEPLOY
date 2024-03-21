@@ -1,0 +1,83 @@
+﻿@model CRMSTUBSOFT.Crm_CycleExecTache
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Crm_CycleExecTache</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroTache)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroTache)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nomutilisateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nomutilisateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OldStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OldStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDebutExecution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDebutExecution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFinExecution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFinExecution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Encours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Encours)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTacheExec }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

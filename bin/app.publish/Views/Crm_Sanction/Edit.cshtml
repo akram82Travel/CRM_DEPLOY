@@ -1,0 +1,132 @@
+﻿@model CRMSTUBSOFT.Crm_Sanction
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Modification sanctions</span></div>
+                <div class="col-md-6" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_Sanction">Sanction&Bonification</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Modifier Sanction/Bonification
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Infos Générale</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.IdSanction)
+                    <div class="form-group" style="position: absolute; right: 0; top: 10px">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Modifier" class="btn btn-info" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group row no-gutters mb-4">
+                                <label class="control-label col-md-12">Titre sanction</label>
+
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.LibelleSanction, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LibelleSanction, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group row no-gutters mb-4">
+                                <label class="control-label col-md-12">Note sanction</label>
+
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.NoteSanction, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NoteSanction, "", new { @class = "text-danger" })
+                                    <small>la Note est selon chef de projet et sa mesure</small>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group row no-gutters mb-4">
+                                <label class="control-label col-md-12">Type Tache</label>
+                                <div class="col-md-12">
+                                    <div>
+                                        @Html.DropDownListFor(model => model.TypeTache, (IEnumerable
+                                        <SelectListItem>)ViewData["ListType"], "Sélectionner Type tache", new { @class = "select2 form-control", @required = "required", @id = "Type" })
+                                        <div class="invalid-feedback">Sélectionner le typede cette tache!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group row no-gutters mb-4">
+                                <label class="control-label col-md-12">Mode Tache</label>
+                                <div class="col-md-12">
+                                    <div>
+                                        @Html.DropDownListFor(model => model.ModeTache, (IEnumerable
+                                        <SelectListItem>)ViewData["ListMode"], "Sélectionner mode tache", new { @class = "select2 form-control", @required = "required", @id = "TypePiece" })
+                                        <div class="invalid-feedback">Sélectionner le mode de cette tache!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group row no-gutters mb-4">
+                                <label class="control-label col-md-12">Chef de projet</label>
+                                <div class="col-md-12">
+                                    @Html.DropDownListFor(model => model.CodeUtilisateur, (IEnumerable<SelectListItem>)ViewData["ListResponsable"], "Sélectionner un Chef de projet", new { @class = "select2 form-control", @id = "CodeUtilisateur", @required = "required" })
+                                    <div class="invalid-feedback">Sélectionner un Chef de projet !</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group row no-gutters mb-4">
+                                <label class="control-label col-md-12">Type (Sanction/Bonification)</label>
+                                <div class="col-md-12">
+                                    <select class="form-control" name="TypeSanction" id="TypeSanction">
+                                        <option>Choisir Un Type</option>
+                                        <option value="Sanction" @(Model.TypeSanction == "Sanction" ? "selected" : "")>Sanction</option>
+                                        <option value="Bonification" @(Model.TypeSanction == "Bonification" ? "selected" : "")>Bonification</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

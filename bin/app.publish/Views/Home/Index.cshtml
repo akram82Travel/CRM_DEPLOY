@@ -1,0 +1,189 @@
+﻿@model IEnumerable<CRMSTUBSOFT.Crm_TacheReclamation>
+
+@{
+    ViewBag.Title = "Home Page";
+
+}
+
+
+
+<div class="content-wrapper">
+    <div class="content-body mt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <a class="dropdown-item btn round btn-warning btn-block btn-glow" href="@Url.Action("Dashbord","Crm_TacheReclamation")"><i class="la la-file-text"></i> Kanban</a>
+            </div>
+            <div class="col-md-4">
+                <a class="dropdown-item btn round btn-danger btn-block btn-glow" href="@Url.Action("Create","Crm_TacheReclamation")"><i class="la la-plus"></i> Nouvelle Tache</a>
+            </div>
+            <div class="col-md-4">
+                <a class="dropdown-item btn round btn-secondary btn-block btn-glow" href="@Url.Action("TacheJournaliere","Crm_TacheReclamation")"><i class="la la-print"></i> Rapport Journalier</a>
+            </div>
+            <div class="col-12 mt-3">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-12">
+                        <div class="card pull-up">
+                            <div class="card-content">
+                                <div class="card-body bg-hexagons">
+                                    <div class="media d-flex">
+                                        <div class="media-body text-left">
+                                            <h3 class="info"> @ViewData["NumTacheNonCommencer"]</h3>
+                                            <h6>Non Commencée</h6>
+                                        </div>
+                                        <div>
+                                            <i class="icon-bubbles info font-large-2 float-right"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-12">
+                        <div class="card pull-up">
+                            <div class="card-content">
+                                <div class="card-body bg-hexagons">
+                                    <div class="media d-flex">
+                                        <div class="media-body text-left">
+                                            <h3 class="warning">@ViewData["NumTacheExecuter"]</h3>
+                                            <h6>En Exécution</h6>
+                                        </div>
+                                        <div>
+                                            <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-12">
+                        <div class="card pull-up">
+                            <div class="card-content">
+                                <div class="card-body bg-hexagons">
+                                    <div class="media d-flex">
+                                        <div class="media-body text-left">
+                                            <h3 class="success">@ViewData["NumTacheEnPause"]</h3>
+                                            <h6>En Pause</h6>
+                                        </div>
+                                        <div>
+                                            <i class="icon-user-follow success font-large-2 float-right"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-12">
+                        <div class="card pull-up">
+                            <div class="card-content">
+                                <div class="card-body bg-hexagons">
+                                    <div class="media d-flex">
+                                        <div class="media-body text-left">
+                                            <h3 class="danger">@ViewData["NumTacheATester"]</h3>
+                                            <h6>à tester</h6>
+                                        </div>
+                                        <div>
+                                            <i class="icon-heart danger font-large-2 float-right"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Products sell and New Orders -->
+    <div class="row match-height">
+        <div class="col-xl-8 col-12" id="ecommerceChartView">
+            <div class="card card-shadow">
+                <div class="card-header card-header-transparent py-20">
+                    <h4 class="card-title">Tâche effectuée par mois</h4>
+
+                </div>
+                <div class="widget-content tab-content bg-white p-20">
+                    <input type="date" class="form-control" id="d1" name="d1" value="@ViewData["d1"]" style="visibility: hidden; height:0" />
+                    <input type="date" class="form-control" id="d2" name="d2" value="@ViewData["d2"]" style="visibility: hidden; height:0" />
+                    <div class="ct-chart tab-pane active scoreLineShadow" id="myfirstchart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-12">
+            <div class="card">
+
+                <div class="card-header">
+                    <h4 class="card-title">Tâche en exécution</h4>
+
+                </div>
+                <div class="card-content">
+
+
+                    <div class="table-responsive">
+                        <div>
+
+                            <table id="new-orders-table" class="table table-hover table-xl mb-0">
+                                <tr>
+                                    <th class="border-top-0">Chef de Projet</th>
+                                    <th class="border-top-0">Titre</th>
+                                    <th class="border-top-0">Estimé</th>
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="text-truncate">@Html.DisplayFor(modelItem => item.UtilisateurCreateur)</td>
+                                        <td class="text-truncate p-1">
+                                            @Html.DisplayFor(modelItem => item.TacheTitre)
+                                        </td>
+                                        <td class="text-truncate">@Html.DisplayFor(modelItem => item.Duree)</td>
+                                    </tr>
+                                }
+
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--/ Products sell and New Orders -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    
+    @if (TempData["TacheAValider"] != null)
+    {
+        <script>
+
+  Swal.fire({
+  position: 'top-center',
+  showConfirmButton: false,
+  title: '@TempData["TacheAValider"]',
+  timer: 3000
+})
+        </script>
+    }
+   
+        <script>
+/*
+  Swal.fire({
+  position: 'top-center',
+  showConfirmButton: false,
+  title: '@TempData["TacheCommercial"]',
+  timer: 4000
+})**/
+        </script>
+   
+}

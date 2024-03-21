@@ -1,0 +1,89 @@
+﻿@model CRMSTUBSOFT.Crm_CycleExecTache
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Crm_CycleExecTache</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroTache)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroTache)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nomutilisateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nomutilisateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OldStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OldStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDebutExecution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDebutExecution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFinExecution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFinExecution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Encours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Encours)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

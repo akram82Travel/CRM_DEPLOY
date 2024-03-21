@@ -1,0 +1,239 @@
+﻿@model IEnumerable<CRMSTUBSOFT.Crm_ReclamationClient>
+
+@{
+    ViewBag.Title = "Liste des Réclamations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Liste des reclamations client";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
+            <div class="row no-gutters">
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Liste des Réclamations</span></div>
+                <div class="col-md-4" style=" padding-top: 8px;">
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Tableau de Bord</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/Crm_ReclamationClient">Réclamations</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Liste des Réclamations
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="btn-group float-md-right">
+                        <a href="@Url.Action("Create","Crm_ReclamationClient")" class="btn btn-success"><i class="la la-plus"></i>Ajouter</a>
+
+                        <button class="btn btn-primary pull-right" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="la la-filter"></i>   Filtrer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="card-content collapse" id="collapseFilter">
+        <form action="/Crm_ReclamationClient/SearchIndex" method="post">
+            @Html.AntiForgeryToken()
+            <nav class="header-navbar navbar-expand-sm navbar navbar-with-menu navbar-light navbar-shadow bg-white bg-lighten-5 border-amber border-lighten-4">
+                <div class="input-group col-xl-4 col-lg-6 col-md-12" style="margin-left:10%;">
+                    <label class="mb-1 text-bold-700">DU</label>&nbsp; &nbsp;&nbsp;&nbsp;
+                    <input type="datetime-local" class="form-control border-success" id="d1" name="d1" value="@ViewData["d1"]" />
+                </div>
+                <div class="input-group col-xl-4 col-lg-6 col-md-12">
+                    <label class="mb-1 text-bold-700">AU</label>&nbsp; &nbsp;&nbsp;&nbsp;
+                    <input type="datetime-local" class="form-control border-success" id="d2" name="d2" value="@ViewData["d2"]" />
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <button type="submit" class="btn btn-success" id="btnFilter">Chercher</button>
+                </div>
+            </nav>
+        </form>
+        <br />
+        <div class="row">
+
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12" style="margin-left:10%;">
+
+                <button class="btn btn-filter btn-filter-tous btn-md mb-1">
+                    <i class="ft-crosshair"></i>
+                    @Html.ActionLink("Tous", "SearchDate", "Crm_ReclamationClient", new { d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12">
+                <button class="btn btn-filter btn-filter-NonTraite btn-md mb-1">
+                    <i class="ft-alert-triangle"></i>
+                    @Html.ActionLink("Non Traité", "Search", "Crm_ReclamationClient", new { Status = "E05", d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12">
+                <button class="btn btn-filter btn-filter-Traite btn-md mb-1">
+                    <i class="ft-award"></i>
+                    @Html.ActionLink("Traité", "Search", "Crm_ReclamationClient", new { Status = "E17", d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12">
+                <button class="btn btn-filter btn-filter-Encours btn-md mb-1">
+                    <i class="ft-target"></i>
+                    @Html.ActionLink("En cours", "Search", "Crm_ReclamationClient", new { Status = "E02", d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+            <div class="col-xl-2 col-lg-6 col-md-6 col-12">
+                <button class="btn btn-filter btn-filter-terminer btn-md mb-1">
+                    <i class="ft-check-square"></i>
+                    @Html.ActionLink("Terminés", "Search", "Crm_ReclamationClient", new { Status = "E01", d1 = @ViewData["d1"], d2 = @ViewData["d2"] }, null)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+                <table class="table table-striped" style="width:100%" id="TableReclamation">
+
+                    <thead>
+                        <tr>
+                            <th>
+                                N°Réclamation
+                            </th>
+                            <th>
+                                Client
+                            </th>
+                            @*<th style="width:10%;">
+                                    @Html.DisplayNameFor(model => model.RaisonSociale)
+                                </th>*@
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Titre)
+                            </th>
+                           
+                            <th>
+                                Créateur
+                            </th>
+                            <th>
+                                Date Creation
+                            </th>
+
+
+                            <th style="width:11%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id_Reclamation)
+                                    <input type="hidden" name="Id_reclamation" id="Id_reclamation" value="@item.Id_Reclamation" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RaisonSociale)
+                                </td>
+                                @*<td style="width:10%;">
+                                        @Html.DisplayFor(modelItem => item.RaisonSociale)
+                                    </td>*@
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Titre)
+                                </td>
+                               
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Createur)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateCreation)
+                                </td>
+
+                                <td style="width:11%;">
+
+                                    @Html.ActionLink(" ", "Edit", new { id = item.Id_Reclamation }, new { @class = "success edit la la-pencil" }) |
+                                    @Html.ActionLink(" ", "Details", new { id = item.Id_Reclamation }, new { @class = "warning details  la la-eye" }) |
+                                    @*@Html.ActionLink(" ", "Delete", new { id = item.Id_Reclamation }, new { @class = "danger delete  la la-trash-o" })*@
+                                    <button class="btn p-0" name="delete" id="delete" data-id="@item.Id_Reclamation" onclick="openModal('@item.Id_Reclamation', 'Réclamation N°')">
+                                        <i class="danger delete  la la-trash-o"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+
+                <h1 class="modal-title">Confirmation Suppression</h1>
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" name="supprimer" id="supprimer" class="btn btn-danger" style="width:100px">Supprimer</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal" style="width:100px">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @if (TempData["SuccessMesage"] != null)
+    {
+        <script>
+
+  Swal.fire({
+  position: 'top-center',
+  icon: 'success',
+  showConfirmButton: false,
+  title: '@TempData["SuccessMesage"]',
+  timer: 3000
+})
+        </script>
+    }
+
+    @if (TempData["SuppressionMessage"] != null)
+    {
+        <script>
+
+  Swal.fire({
+  position: 'top-center',
+  background:'#c62828',
+  color:'#FFFFFF',
+  showConfirmButton: false,
+  title: '@TempData["SuppressionMessage"]',
+  timer: 3000
+})
+
+        </script>
+    }
+}

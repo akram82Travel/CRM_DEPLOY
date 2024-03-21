@@ -1,0 +1,75 @@
+﻿@model CRMSTUBSOFT.Crm_Projet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Crm_Projet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeTypeProjet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeTypeProjet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Libelle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Libelle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontantProjet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontantProjet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDeclenchement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDeclenchement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFinPrevu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFinPrevu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cloture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cloture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCloture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCloture)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CodeProjet }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

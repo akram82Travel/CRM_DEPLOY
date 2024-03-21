@@ -1,0 +1,61 @@
+﻿@model CRMSTUBSOFT.Crm_ReclamationClient
+
+@{
+    ViewBag.Title = "Supprimer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="content-header row">
+        <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
+            <h3 class="content-header-title mb-0 d-inline-block">Supprimer ce contact</h3>
+            <div class="row breadcrumbs-top d-inline-block">
+                <div class="breadcrumb-wrapper col-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Table de board</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/ContactClient">Contact Client</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            Supprimer
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+                <div class="alert alert-danger">
+                    <span class="alert-icon"><i class="la la-warning"></i></span>  Vous ête sûr de supprimer ?
+                </div>
+
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Titre)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Titre)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Supprimer" class="btn btn-danger" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
