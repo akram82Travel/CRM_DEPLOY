@@ -1,7 +1,7 @@
-﻿@model IEnumerable<CRMSTUBSOFT.Utilisateur>
+﻿@model IEnumerable<CRMSTUBSOFT.Client>
 
 @{
-    ViewBag.Title = "Liste des Utilisateur CRM";
+    ViewBag.Title = "Liste des Entreprises";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,7 +9,7 @@
     <div class="content-header">
         <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-new card">
             <div class="row no-gutters">
-                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Liste des Utilisateurs</span></div>
+                <div class="col-md-3"><span style="padding-top: 9px; font-size: 16px; " class="content-header-title mb-0 d-inline-block">Liste des Entreprises</span></div>
                 <div class="col-md-4" style=" padding-top: 8px;">
                     <div class="row breadcrumbs-top d-inline-block">
                         <div class="breadcrumb-wrapper">
@@ -18,10 +18,10 @@
                                     <a href="/">Tableau de Bord</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="/Utilisateurs">Utilisateurs</a>
+                                    <a href="/Clients">Entreprises</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Liste des Utilisateurs
+                                    Liste des Entreprises
                                 </li>
                             </ol>
                         </div>
@@ -29,61 +29,42 @@
                 </div>
                 <div class="col-md-5">
                     <div class="btn-group float-md-right">
-                        <a href="@Url.Action("Create","Utilisateurs")" class="btn btn-success"><i class="la la-plus"></i>Ajouter</a>
+                        <a href="@Url.Action("Create","Clients")" class="btn btn-success"><i class="la la-plus"></i>Ajouter</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="card">
         <div class="card-content">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table">
                         <thead>
                             <tr>
-
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Nom)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Prenom)
-                                </th>
-                                <th>
-                                    Mot de passe
+                                    @Html.DisplayNameFor(model => model.Respensable)
                                 </th>
 
                                 <th>
-                                    code
-                                </th>
-
-
-                                <th>
-                                    Creer Le
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Actif)
+                                    @Html.DisplayNameFor(model => model.CodeRepresentant)
                                 </th>
 
                                 <th>
-                                    Service Lier
+                                    @Html.DisplayNameFor(model => model.RaisonSociale)
                                 </th>
+
+                                
                                 <th></th>
                             </tr>
                         </thead>
+
+
                         @foreach (var item in Model)
                         {
                             <tr>
-
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Nom)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Prenom)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.MotDePasse)
+                                    @Html.DisplayFor(modelItem => item.Respensable)
                                 </td>
 
                                 <td>
@@ -91,20 +72,15 @@
                                 </td>
 
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.CreerLe)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Actif)
+                                    @Html.DisplayFor(modelItem => item.RaisonSociale)
                                 </td>
 
+
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Fonction.Libelle)
-                                </td>
-                                <td>
-                                    @Html.ActionLink(" ", "Edit", new { id = item.NomUtilisateur }, new { @class = "success edit  la la-pencil" }) |
-                                    @Html.ActionLink(" ", "Details", new { id = item.NomUtilisateur }, new { @class = "warning details  la la-eye" }) |
+                                    @Html.ActionLink(" ", "Edit", new { id = item.CodeClient }, new { @class = "success edit  la la-pencil" }) |
+                                    @Html.ActionLink(" ", "Details", new { id = item.CodeClient }, new { @class = "warning details  la la-eye" }) |
                                     @*@Html.ActionLink(" ", "Delete", new { id = item.NumeroTache }, new { @class = "danger delete  la la-trash-o" })*@
-                                    <button class="btn p-0" name="delete" id="delete" data-id="@item.NomUtilisateur" onclick="openModaldelete('@item.NomUtilisateur', 'Utilisateur N° ')">
+                                    <button class="btn p-0" name="delete" id="delete" data-id="@item.CodeClient" onclick="openModaldelete('@item.CodeClient', 'Client N° ')">
                                         <i class="danger delete  la la-trash-o"></i>
                                     </button>
                                 </td>
@@ -118,8 +94,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 <div class="modal" id="myModal">

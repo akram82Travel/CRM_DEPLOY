@@ -206,8 +206,10 @@
                                                                         <span class="ErrorSelectedresponsableId text-danger" style="visibility: hidden">Responsable Obligatoire</span>
                                                                     </div>
                                                                     <div class="col-md-12">
-                                                                        <label for="ObjetReclamation"> Observation </label>
-                                                                        <textarea name="ObjetReclamation" id="ObjetReclamation"></textarea>
+                                                                        <label for="ObjetReclamation"> Durée de traitement </label>
+                                                                        <input type="text" name="ObjetReclamation" id="ObjetReclamation" class="form-control" required>
+                                                                        <span class="ErrorObjetReclamation text-danger" style="visibility: hidden">Durée de traitement Obligatoire</span>
+
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
@@ -326,6 +328,13 @@
                 error = "yes";
             } else {
                 $(".ErrorNature").css("visibility", "hidden");
+            }
+            if ($("#ObjetReclamation").val() == "") {
+                $("#ObjetReclamation").addClass("btn-danger");
+                $(".ErrorObjetReclamation").css("visibility", "visible");
+                error = "yes";
+            } else {
+                $(".ErrorObjetReclamation").css("visibility", "hidden");
             }
         
             if (error == "yes") {
@@ -593,10 +602,10 @@ return decoded;
             var now = new Date();
             now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
             document.getElementById('DateReclamation').value = now.toISOString().slice(0, 16);
-            if ($("#ObjetReclamation").length > 0) {
-            CKEDITOR.replace("ObjetReclamation");
+            //if ($("#ObjetReclamation").length > 0) {
+            //CKEDITOR.replace("ObjetReclamation");
 
-            }
+            //}
             if ($("#DescriptionReclamation").length > 0) {
             CKEDITOR.replace("DescriptionReclamation");
             }

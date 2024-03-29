@@ -1,0 +1,1091 @@
+﻿@model CRMSTUBSOFT.Client
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Respensable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Respensable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeForme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeForme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeFamilleClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeFamilleClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeRepresentant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeRepresentant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteWeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteWeb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaisonSociale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaisonSociale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistreCommerce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistreCommerce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeuilCredit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeuilCredit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoldeCredit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoldeCredit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeuilEngagement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeuilEngagement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoldeEngagement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoldeEngagement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BlocageFacturation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BlocageFacturation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeSousRegion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeSousRegion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeZone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeZone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodePostale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodePostale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeVille)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeVille)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AresseLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AresseLivraison)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodePostaleLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodePostaleLivraison)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exoneration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exoneration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroExonoration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroExonoration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateExonoration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateExonoration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFinExonoration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFinExonoration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PayerTVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PayerTVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Export)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Export)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroExport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroExport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeRemise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeRemise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MartriculeFiscale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MartriculeFiscale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimbreFiscal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimbreFiscal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeBanque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeBanque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RibBanquaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RibBanquaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeModeReglement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeModeReglement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TauxRemise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TauxRemise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Assujetti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assujetti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbJourReglement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbJourReglement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SignalReglement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SignalReglement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fodec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fodec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeComptable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeComptable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comptabiliser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comptabiliser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UtilisateurCreation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UtilisateurCreation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalculAutoSeuilCredit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalculAutoSeuilCredit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemiseDepassement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemiseDepassement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Taxe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Taxe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepassementSeuil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepassementSeuil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DivCredit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DivCredit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inactif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inactif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contentieux)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contentieux)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObservationGarantie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObservationGarantie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactAdresseLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactAdresseLivraison)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeTypeDecharge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeTypeDecharge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOuvertureSociete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOuvertureSociete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomGerant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomGerant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateNaissanceGerant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateNaissanceGerant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CINLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CINLivraison)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatriculeFiscaleLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatriculeFiscaleLivraison)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOuvertureLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOuvertureLivraison)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManqueDocument)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManqueDocument)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prospect)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prospect)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateProspect)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateProspect)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeRespensableAdministration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeRespensableAdministration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comptoir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comptoir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Classic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChangerRaisonSociale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChangerRaisonSociale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeDevise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeDevise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extention)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extention)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientFournisseur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientFournisseur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeTypeParrain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeTypeParrain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeParrain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeParrain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodePays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodePays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeLangue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeLangue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeSousFamille)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeSousFamille)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DroitConsommation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DroitConsommation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AfficherNbPallete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AfficherNbPallete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BlocagePreavis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BlocagePreavis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbPreavis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbPreavis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemiseQuantite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemiseQuantite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegimeReel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegimeReel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capital)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capital)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutoriserSeuilSuplementaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutoriserSeuilSuplementaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAutorisationSuplementaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAutorisationSuplementaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbJourSuplementaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbJourSuplementaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValeurCreditSuplementaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValeurCreditSuplementaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValeurEngagementSuplementaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValeurEngagementSuplementaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrixUsine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrixUsine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeVilleLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeVilleLivraison)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTelevente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTelevente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLivraison)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateLivraison)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRepresentant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRepresentant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOuverturePatente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOuverturePatente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Effectif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Effectif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeFournisseur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeFournisseur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutreAdresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutreAdresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomValidateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomValidateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateValidation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateValidation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeuilDepassementCredit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeuilDepassementCredit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecalculSoldeMois)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecalculSoldeMois)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepassementBL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepassementBL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agreer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agreer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnulerTousControle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnulerTousControle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutoriserFactoring)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutoriserFactoring)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontantAutorisation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontantAutorisation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoCachet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoCachet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotaleGarantie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotaleGarantie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvecGaranti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvecGaranti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoCachet2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoCachet2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDerniereModification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDerniereModification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DerniereModification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DerniereModification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCarte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCarte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoldePoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoldePoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoldeValeurPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoldeValeurPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiverDepassementPieceNonPaye)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiverDepassementPieceNonPaye)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAutorisationPieceNonPaye)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAutorisationPieceNonPaye)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NBAutorisationPieceNonPaye)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NBAutorisationPieceNonPaye)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FraisLogistique)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FraisLogistique)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeFournisseurAutreBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeFournisseurAutreBase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomAutreBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomAutreBase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Terme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Terme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DefalcationBL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefalcationBL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeClientParent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeClientParent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promotion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promotion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToleranceVariationQuantiteFabrication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToleranceVariationQuantiteFabrication)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CodeClient }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
